@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Car, Wrench, PaintRoll } from 'lucide-react';
+import { Car, Wrench, PaintBucket, Eye, Hammer, Palette } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
@@ -23,28 +23,28 @@ const ServicesSection = () => {
       description: 'Corrección de pintura profesional para eliminar rayones y devolver el brillo original.',
       price: 'Desde $25.000',
       features: ['Pulido profesional', 'Corrección de defectos', 'Eliminación de rayones', 'Restauración del brillo'],
-      icon: PaintRoll
+      icon: PaintBucket
     },
     {
       title: 'Restauración de Ópticas',
       description: 'Recuperá la transparencia y claridad de las ópticas de tu auto para mayor seguridad.',
       price: 'Desde $8.000',
       features: ['Lijado progresivo', 'Pulido especializado', 'Protección UV', 'Mayor visibilidad'],
-      icon: Wrench
+      icon: Eye
     },
     {
       title: 'Sacabollos',
       description: 'Reparación de abolladuras sin pintura, manteniendo el acabado original de fábrica.',
       price: 'Desde $5.000',
       features: ['Sin pintura', 'Técnica PDR', 'Mantiene valor original', 'Reparación invisible'],
-      icon: Car
+      icon: Hammer
     },
     {
       title: 'Ploteos',
       description: 'Personalización y protección de tu vehículo con ploteos de alta calidad y diseños únicos.',
       price: 'Consultar',
       features: ['Diseños personalizados', 'Materiales premium', 'Protección de pintura', 'Acabado profesional'],
-      icon: PaintRoll
+      icon: Palette
     }
   ];
 
