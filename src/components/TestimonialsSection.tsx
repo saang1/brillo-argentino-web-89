@@ -2,7 +2,7 @@
 import React from 'react';
 
 const TestimonialsSection = () => {
-  // Reviews de ejemplo para mostrar arriba del mapa embebido
+  // Reviews de ejemplo para mostrar
   const featuredReviews = [
     {
       author_name: 'Carlos Rodríguez',
@@ -104,7 +104,7 @@ const TestimonialsSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto"
+                href="https://wa.me/5401164790993?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
