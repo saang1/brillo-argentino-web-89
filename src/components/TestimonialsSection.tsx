@@ -1,50 +1,10 @@
+
 import React from 'react';
+import { useGoogleReviews } from '../hooks/useGoogleReviews';
+import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
 const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      name: 'Carlos Rodríguez',
-      location: 'Zona Norte, CABA',
-      text: 'Excelente servicio! Mi BMW quedó como nuevo después del coating cerámico. La atención es muy profesional y el resultado superó mis expectativas. Totalmente recomendable.',
-      rating: 5,
-      service: 'Coating Cerámico'
-    },
-    {
-      name: 'María González',
-      location: 'San Isidro',
-      text: 'Increíble el trabajo que hicieron con mi Audi. El pulido eliminó todos los rayones y el auto brilla como el primer día. Definitivamente van a ser mi taller de confianza.',
-      rating: 5,
-      service: 'Restauración de Pintura'
-    },
-    {
-      name: 'Alejandro Fernández',
-      location: 'Vicente López',
-      text: 'El servicio de PPF es lo mejor que le pude hacer a mi auto nuevo. La protección es invisible y me da tranquilidad para el día a día. Muy profesionales en todo momento.',
-      rating: 5,
-      service: 'Paint Protection Film'
-    },
-    {
-      name: 'Laura Martínez',
-      location: 'Olivos',
-      text: 'Llevé mi auto para un lavado premium y quedé sorprendida con la calidad del trabajo. Cada detalle impecable, desde el exterior hasta el interior. Vale cada peso.',
-      rating: 5,
-      service: 'Lavado Premium'
-    },
-    {
-      name: 'Roberto Silva',
-      location: 'Martínez',
-      text: 'Después de años de uso, mi auto parecía viejo. Con el paquete VIP lo transformaron completamente. Parece 0km otra vez. Servicio de primera calidad.',
-      rating: 5,
-      service: 'Paquete VIP'
-    },
-    {
-      name: 'Ana Patricia López',
-      location: 'San Fernando',
-      text: 'El detailing interior que le hicieron a mi auto fue espectacular. Los cueros quedaron como nuevos y el aroma es increíble. Muy contentos con el resultado.',
-      rating: 5,
-      service: 'Detailing Interior'
-    }
-  ];
+  const { reviews, loading, error } = useGoogleReviews();
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
@@ -57,6 +17,35 @@ const TestimonialsSection = () => {
     ));
   };
 
+  const getInitials = (name: string) => {
+    return name
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+  };
+
+  if (loading) {
+    return (
+      <section id="testimonios" className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+              Lo que Dicen <span className="text-gradient">Nuestros Clientes</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Cargando reviews de Google Maps...
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-500"></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="testimonios" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -65,34 +54,44 @@ const TestimonialsSection = () => {
             Lo que Dicen <span className="text-gradient">Nuestros Clientes</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            La satisfacción de nuestros clientes es nuestra mayor motivación. 
-            Leé las experiencias de quienes ya confiaron en nosotros.
+            Reviews reales de nuestros clientes en Google Maps. 
+            {error && <span className="block text-sm text-orange-600 mt-2">Mostrando reviews destacadas</span>}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {reviews.map((review, index) => (
             <div 
               key={index}
               className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover-lift"
             >
               <div className="flex items-center mb-4">
-                {renderStars(testimonial.rating)}
+                {renderStars(review.rating)}
               </div>
               
               <blockquote className="text-gray-700 text-lg leading-relaxed mb-6 italic">
-                "{testimonial.text}"
+                "{review.text}"
               </blockquote>
               
               <div className="border-t border-gray-200 pt-6">
                 <div className="flex items-center justify-between">
-                  <div>
-                    <h4 className="text-gray-900 font-bold text-lg">{testimonial.name}</h4>
-                    <p className="text-gray-600 text-sm">{testimonial.location}</p>
+                  <div className="flex items-center space-x-3">
+                    <Avatar className="w-10 h-10">
+                      {review.profile_photo_url && (
+                        <AvatarImage src={review.profile_photo_url} alt={review.author_name} />
+                      )}
+                      <AvatarFallback className="bg-red-100 text-red-600 font-semibold">
+                        {getInitials(review.author_name)}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <h4 className="text-gray-900 font-bold text-lg">{review.author_name}</h4>
+                      <p className="text-gray-600 text-sm">{review.relative_time_description}</p>
+                    </div>
                   </div>
                   <div className="text-right">
-                    <div className="bg-red-500/20 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">
-                      {testimonial.service}
+                    <div className="bg-blue-500/20 text-blue-600 px-3 py-1 rounded-full text-xs font-semibold">
+                      Google Maps
                     </div>
                   </div>
                 </div>
@@ -119,15 +118,14 @@ const TestimonialsSection = () => {
               >
                 Agendá tu Turno
               </a>
-              <button 
-                onClick={() => {
-                  const element = document.getElementById('servicios');
-                  if (element) element.scrollIntoView({ behavior: 'smooth' });
-                }}
+              <a 
+                href="https://maps.app.goo.gl/5KuKY8pbRRR3gSjUA"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border-2 border-red-500 text-red-500 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold hover:bg-red-500 hover:text-white transition-all duration-300"
               >
-                Ver Servicios
-              </button>
+                Ver Más Reviews
+              </a>
             </div>
           </div>
         </div>
