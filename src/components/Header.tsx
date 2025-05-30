@@ -1,32 +1,15 @@
+
 import React, { useState, useEffect } from 'react';
 import { Car } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isOverWhiteSection, setIsOverWhiteSection] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
-
-      // Check if we're over white sections (services, testimonials, contact)
-      const servicesSection = document.getElementById('servicios');
-      const testimonialsSection = document.getElementById('testimonios');
-      const contactSection = document.getElementById('contacto');
-      if (servicesSection && testimonialsSection && contactSection) {
-        const headerHeight = 80; // Account for header height
-        const currentScrollPos = scrollY + headerHeight;
-        const servicesTop = servicesSection.offsetTop;
-        const servicesBottom = servicesTop + servicesSection.offsetHeight;
-        const testimonialsTop = testimonialsSection.offsetTop;
-        const testimonialsBottom = testimonialsTop + testimonialsSection.offsetHeight;
-        const contactTop = contactSection.offsetTop;
-        const contactBottom = contactTop + contactSection.offsetHeight;
-        const isInWhiteSection = currentScrollPos >= servicesTop && currentScrollPos <= servicesBottom || currentScrollPos >= testimonialsTop && currentScrollPos <= testimonialsBottom || currentScrollPos >= contactTop && currentScrollPos <= contactBottom;
-        setIsOverWhiteSection(isInWhiteSection);
-      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -42,12 +25,12 @@ const Header = () => {
     }
   };
 
-  // Enhanced text color classes with better visibility
-  const textColorClass = isOverWhiteSection 
-    ? 'text-gray-900 drop-shadow-sm' 
+  // Use isScrolled for text color changes to match navbar background changes
+  const textColorClass = isScrolled 
+    ? 'text-gray-900' 
     : 'text-white drop-shadow-lg shadow-black/50';
   
-  const logoTextColor = isOverWhiteSection 
+  const logoTextColor = isScrolled 
     ? 'text-gray-900' 
     : 'text-white';
 
@@ -111,13 +94,13 @@ const Header = () => {
           >
             <div className="w-6 h-6 flex flex-col justify-center space-y-1">
               <div className={`h-0.5 w-full transition-all duration-300 ${
-                isOverWhiteSection ? 'bg-gray-900' : 'bg-white'
+                isScrolled ? 'bg-gray-900' : 'bg-white'
               } ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''} drop-shadow-md`} />
               <div className={`h-0.5 w-full transition-all duration-300 ${
-                isOverWhiteSection ? 'bg-gray-900' : 'bg-white'
+                isScrolled ? 'bg-gray-900' : 'bg-white'
               } ${isMobileMenuOpen ? 'opacity-0' : ''} drop-shadow-md`} />
               <div className={`h-0.5 w-full transition-all duration-300 ${
-                isOverWhiteSection ? 'bg-gray-900' : 'bg-white'
+                isScrolled ? 'bg-gray-900' : 'bg-white'
               } ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''} drop-shadow-md`} />
             </div>
           </button>
