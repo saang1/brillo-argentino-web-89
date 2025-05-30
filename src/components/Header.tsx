@@ -28,8 +28,8 @@ const Header = () => {
               <Car className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Premium</h1>
-              <p className="text-xs text-gray-600 -mt-1">Car Detailing</p>
+              <h1 className="text-xl font-bold text-slate-50">Premium</h1>
+              <p className="text-xs -mt-1 text-gray-50">Car Detailing</p>
             </div>
           </div>
 
