@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const GallerySection = () => {
@@ -18,10 +17,10 @@ const GallerySection = () => {
       service: 'Restauración + Protección UV'
     },
     {
-      before: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Audi A4 Restauración',
-      service: 'Detailing Completo'
+      before: '/lovable-uploads/a3110208-cdf4-47e1-8636-91506b11e4fc.png',
+      after: '/lovable-uploads/d9c595b3-fe94-427a-b456-19d29233d409.png',
+      title: 'Restauración Sistema de Frenos',
+      service: 'Limpieza + Pintura + Protección'
     },
     {
       before: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
