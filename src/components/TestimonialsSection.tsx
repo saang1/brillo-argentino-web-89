@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const TestimonialsSection = () => {
@@ -51,7 +50,7 @@ const TestimonialsSection = () => {
     return Array.from({ length: 5 }, (_, index) => (
       <span 
         key={index} 
-        className={`text-2xl ${index < rating ? 'text-yellow-400' : 'text-gray-600'}`}
+        className={`text-2xl ${index < rating ? 'text-yellow-400' : 'text-gray-400'}`}
       >
         ★
       </span>
@@ -59,13 +58,13 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonios" className="py-20 bg-gray-800/30">
+    <section id="testimonios" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             Lo que Dicen <span className="text-gradient">Nuestros Clientes</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             La satisfacción de nuestros clientes es nuestra mayor motivación. 
             Leé las experiencias de quienes ya confiaron en nosotros.
           </p>
@@ -75,24 +74,24 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-gray-900/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover-lift"
+              className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover-lift"
             >
               <div className="flex items-center mb-4">
                 {renderStars(testimonial.rating)}
               </div>
               
-              <blockquote className="text-gray-300 text-lg leading-relaxed mb-6 italic">
+              <blockquote className="text-gray-700 text-lg leading-relaxed mb-6 italic">
                 "{testimonial.text}"
               </blockquote>
               
-              <div className="border-t border-gray-700 pt-6">
+              <div className="border-t border-gray-200 pt-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="text-white font-bold text-lg">{testimonial.name}</h4>
-                    <p className="text-gray-400 text-sm">{testimonial.location}</p>
+                    <h4 className="text-gray-900 font-bold text-lg">{testimonial.name}</h4>
+                    <p className="text-gray-600 text-sm">{testimonial.location}</p>
                   </div>
                   <div className="text-right">
-                    <div className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-semibold">
+                    <div className="bg-red-500/20 text-red-600 px-3 py-1 rounded-full text-xs font-semibold">
                       {testimonial.service}
                     </div>
                   </div>
@@ -107,7 +106,7 @@ const TestimonialsSection = () => {
             <h3 className="text-2xl font-bold text-white mb-4">
               ¿Querés ser el próximo en dejar tu testimonio?
             </h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-200 mb-6">
               Experimentá la diferencia de un servicio premium de car detailing. 
               Tu auto se lo merece.
             </p>
@@ -125,7 +124,7 @@ const TestimonialsSection = () => {
                   const element = document.getElementById('servicios');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-full font-semibold hover:bg-blue-400 hover:text-white transition-all duration-300"
+                className="border-2 border-red-500 text-red-500 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold hover:bg-red-500 hover:text-white transition-all duration-300"
               >
                 Ver Servicios
               </button>

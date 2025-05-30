@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const GallerySection = () => {
@@ -32,13 +31,13 @@ const GallerySection = () => {
   ];
 
   return (
-    <section id="galeria" className="py-20 bg-gray-900">
+    <section id="galeria" className="py-20 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             Galería <span className="text-gradient">Antes y Después</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Mirá la transformación que logramos en cada vehículo. 
             Estos resultados hablan por sí solos de la calidad de nuestro trabajo.
           </p>
@@ -51,7 +50,7 @@ const GallerySection = () => {
               className="group cursor-pointer"
               onClick={() => setSelectedImage(index)}
             >
-              <div className="bg-gray-800 rounded-2xl overflow-hidden hover-lift">
+              <div className="bg-white rounded-2xl overflow-hidden hover-lift shadow-lg border border-gray-200">
                 <div className="relative">
                   <div className="grid grid-cols-2 h-64">
                     <div className="relative overflow-hidden">
@@ -80,8 +79,8 @@ const GallerySection = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-blue-400 font-semibold">{item.service}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-red-600 font-semibold">{item.service}</p>
                 </div>
               </div>
             </div>
@@ -95,7 +94,7 @@ const GallerySection = () => {
             onClick={() => setSelectedImage(null)}
           >
             <div className="max-w-4xl w-full">
-              <div className="bg-gray-800 rounded-2xl overflow-hidden">
+              <div className="bg-white rounded-2xl overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                   <div className="relative">
                     <img 
@@ -119,10 +118,10 @@ const GallerySection = () => {
                   </div>
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-white mb-2">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {galleryItems[selectedImage].title}
                   </h3>
-                  <p className="text-blue-400 font-semibold">
+                  <p className="text-red-600 font-semibold">
                     {galleryItems[selectedImage].service}
                   </p>
                 </div>

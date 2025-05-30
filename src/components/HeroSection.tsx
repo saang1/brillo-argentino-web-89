@@ -18,18 +18,18 @@ const HeroSection = () => {
           backgroundImage: `url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
         }}
       >
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-gray-900/50"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white">
             Tu Auto
             <span className="block text-gradient">Como Nuevo</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">
             Servicio premium de car detailing en zona norte. Restauramos el brillo original de tu vehículo con técnicas profesionales y productos de primera calidad.
           </p>
           
@@ -45,7 +45,7 @@ const HeroSection = () => {
               href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20de%20car%20detailing"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-400 hover:text-white transition-all duration-300 w-full sm:w-auto"
+              className="border-2 border-red-500 text-red-500 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-500 hover:text-white transition-all duration-300 w-full sm:w-auto"
             >
               Consultanos por WhatsApp
             </a>
@@ -53,16 +53,16 @@ const HeroSection = () => {
           
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400">+500</div>
-              <div className="text-gray-400 mt-1">Autos Atendidos</div>
+              <div className="text-3xl font-bold text-red-500">+500</div>
+              <div className="text-gray-300 mt-1">Autos Atendidos</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400">98%</div>
-              <div className="text-gray-400 mt-1">Clientes Satisfechos</div>
+              <div className="text-3xl font-bold text-red-500">98%</div>
+              <div className="text-gray-300 mt-1">Clientes Satisfechos</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400">5★</div>
-              <div className="text-gray-400 mt-1">Calificación Promedio</div>
+              <div className="text-3xl font-bold text-red-500">5★</div>
+              <div className="text-gray-300 mt-1">Calificación Promedio</div>
             </div>
           </div>
         </div>
