@@ -133,7 +133,7 @@ const GallerySection = () => {
 
         <div className="text-center mt-12">
           <a 
-            href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20ver%20más%20trabajos%20realizados"
+            href="https://instagram.com/samurai.detail"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
