@@ -1,46 +1,34 @@
-
 import React, { useState, useEffect } from 'react';
 import { Car } from 'lucide-react';
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isOverWhiteSection, setIsOverWhiteSection] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
-      
+
       // Check if we're over white sections (services, testimonials, contact)
       const servicesSection = document.getElementById('servicios');
       const testimonialsSection = document.getElementById('testimonios');
       const contactSection = document.getElementById('contacto');
-      
       if (servicesSection && testimonialsSection && contactSection) {
         const headerHeight = 80; // Account for header height
         const currentScrollPos = scrollY + headerHeight;
-        
         const servicesTop = servicesSection.offsetTop;
         const servicesBottom = servicesTop + servicesSection.offsetHeight;
         const testimonialsTop = testimonialsSection.offsetTop;
         const testimonialsBottom = testimonialsTop + testimonialsSection.offsetHeight;
         const contactTop = contactSection.offsetTop;
         const contactBottom = contactTop + contactSection.offsetHeight;
-        
-        const isInWhiteSection = 
-          (currentScrollPos >= servicesTop && currentScrollPos <= servicesBottom) ||
-          (currentScrollPos >= testimonialsTop && currentScrollPos <= testimonialsBottom) ||
-          (currentScrollPos >= contactTop && currentScrollPos <= contactBottom);
-        
+        const isInWhiteSection = currentScrollPos >= servicesTop && currentScrollPos <= servicesBottom || currentScrollPos >= testimonialsTop && currentScrollPos <= testimonialsBottom || currentScrollPos >= contactTop && currentScrollPos <= contactBottom;
         setIsOverWhiteSection(isInWhiteSection);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -54,9 +42,7 @@ const Header = () => {
   // Dynamic text color based on background
   const textColorClass = isOverWhiteSection ? 'text-gray-900' : 'text-slate-50';
   const mobileMenuTextColor = isOverWhiteSection ? 'text-gray-900' : 'text-gray-900';
-
-  return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-2xl' : 'bg-transparent'}`}>
+  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-2xl' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -65,23 +51,23 @@ const Header = () => {
               <Car className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className={`text-xl font-bold transition-colors duration-300 ${textColorClass}`}>Premium</h1>
-              <p className={`text-xs -mt-1 transition-colors duration-300 ${isOverWhiteSection ? 'text-gray-600' : 'text-gray-50'}`}>Car Detailing</p>
+              <h1 className="">Premium</h1>
+              <p className="">Car Detailing</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('inicio')} className={`transition-colors duration-300 ${textColorClass}`}>
+            <button onClick={() => scrollToSection('inicio')} className="">
               Inicio
             </button>
-            <button onClick={() => scrollToSection('servicios')} className={`transition-colors duration-300 ${textColorClass}`}>
+            <button onClick={() => scrollToSection('servicios')} className="">
               Servicios
             </button>
-            <button onClick={() => scrollToSection('galeria')} className={`transition-colors duration-300 ${textColorClass}`}>
+            <button onClick={() => scrollToSection('galeria')} className="">
               Galería
             </button>
-            <button onClick={() => scrollToSection('testimonios')} className={`transition-colors duration-300 ${textColorClass}`}>
+            <button onClick={() => scrollToSection('testimonios')} className="">
               Testimonios
             </button>
             <button onClick={() => scrollToSection('contacto')} className="bg-gradient-primary text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-200">
@@ -100,8 +86,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-md rounded-lg mt-2 p-4 border border-gray-200">
+        {isMobileMenuOpen && <div className="md:hidden bg-white/95 backdrop-blur-md rounded-lg mt-2 p-4 border border-gray-200">
             <nav className="flex flex-col space-y-3">
               <button onClick={() => scrollToSection('inicio')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-2">
                 Inicio
@@ -119,11 +104,8 @@ const Header = () => {
                 Contacto
               </button>
             </nav>
-          </div>
-        )}
+          </div>}
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
