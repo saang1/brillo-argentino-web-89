@@ -1,6 +1,5 @@
 
 import React from 'react';
-import EmbeddedReviews from './EmbeddedReviews';
 
 const TestimonialsSection = () => {
   // Reviews de ejemplo para mostrar arriba del mapa embebido
@@ -93,9 +92,6 @@ const TestimonialsSection = () => {
             </div>
           ))}
         </div>
-
-        {/* Mapa embebido de Google Maps */}
-        <EmbeddedReviews />
 
         <div className="text-center mt-16">
           <div className="bg-gradient-dark rounded-2xl p-8 max-w-4xl mx-auto">
