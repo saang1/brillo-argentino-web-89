@@ -12,10 +12,10 @@ const GallerySection = () => {
       service: 'Limpieza Profunda + Acondicionamiento'
     },
     {
-      before: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Mercedes-Benz Clase C',
-      service: 'Lavado Premium + PPF'
+      before: '/lovable-uploads/3ae9cb9b-c524-45e3-9f2d-23dc5342cb4c.png',
+      after: '/lovable-uploads/0b8e6a58-97a7-4faf-b08d-145b176ca126.png',
+      title: 'Pulido de Faros Profesional',
+      service: 'Restauración + Protección UV'
     },
     {
       before: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
