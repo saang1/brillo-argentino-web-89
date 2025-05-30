@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const GallerySection = () => {
@@ -5,10 +6,10 @@ const GallerySection = () => {
 
   const galleryItems = [
     {
-      before: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Restauración Completa BMW',
-      service: 'Pulido + Coating Cerámico'
+      before: '/lovable-uploads/c29b6a2c-b3e5-40a4-8f42-ac7731cb416e.png',
+      after: '/lovable-uploads/162c40ce-2b22-4327-9dc4-32d07d352d7e.png',
+      title: 'Detailing Interior Alfa Romeo',
+      service: 'Limpieza Profunda + Acondicionamiento'
     },
     {
       before: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -59,7 +60,7 @@ const GallerySection = () => {
                         alt={`${item.title} - Antes`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/20"></div>
+                      <div className="absolute inset-0 bg-black/10"></div>
                       <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         ANTES
                       </div>
@@ -70,7 +71,7 @@ const GallerySection = () => {
                         alt={`${item.title} - Después`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/20"></div>
+                      <div className="absolute inset-0 bg-black/10"></div>
                       <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         DESPUÉS
                       </div>
