@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const GallerySection = () => {
@@ -23,10 +24,10 @@ const GallerySection = () => {
       service: 'Limpieza + Pintura + Protección'
     },
     {
-      before: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      after: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      title: 'Volkswagen Golf GTI',
-      service: 'Pulido + Protección'
+      before: '/lovable-uploads/e115b780-9bf3-42dc-a809-be9861d90858.png',
+      after: '/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png',
+      title: 'Restauración de Llantas Volkswagen',
+      service: 'Limpieza + Pulido + Protección'
     }
   ];
 
