@@ -15,10 +15,10 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `url('/lovable-uploads/ccd71cd9-1c75-4e87-aea7-99ab0cf45a35.png')`
         }}
       >
-        <div className="absolute inset-0 bg-gray-900/50"></div>
+        <div className="absolute inset-0 bg-gray-900/60"></div>
       </div>
 
       {/* Content */}
