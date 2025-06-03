@@ -16,17 +16,17 @@ const Footer = () => {
                 <Car className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Samurai Detail</h3>
+                <h3 className="text-xl font-bold">Car Detailing</h3>
                 <p className="text-xs text-gray-400 -mt-1">Tu auto como nuevo</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              Especialistas en car detailing premium en Castelar, Buenos Aires. 
+              Especialistas en car detailing premium. 
               Transformamos tu vehículo con técnicas profesionales y productos de primera calidad.
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com/samurai.detail" 
+                href="https://instagram.com/cardetailing" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-pink-600 p-3 rounded-full transition-colors duration-300"
@@ -36,7 +36,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://wa.me/5401164790993" 
+                href="https://wa.me/1234567890" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-green-600 p-3 rounded-full transition-colors duration-300"
@@ -115,19 +115,19 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contacto</h4>
             <ul className="space-y-2">
               <li className="text-gray-300">
-                <span className="text-blue-400">📱</span> +54 011 6479-0993
+                <span className="text-blue-400">📱</span> +1 (234) 567-890
               </li>
               <li className="text-gray-300">
-                <span className="text-blue-400">📧</span> info@samuraidetail.com.ar
+                <span className="text-blue-400">📧</span> info@cardetailing.com
               </li>
               <li className="text-gray-300">
-                <span className="text-blue-400">📍</span> Buenos Aires 890, Castelar
+                <span className="text-blue-400">📍</span> Calle Principal 123
               </li>
               <li className="text-gray-300">
                 <span className="text-blue-400">🕒</span> Lun-Vie: 9:00-18:00
               </li>
               <li className="text-gray-300">
-                <span className="text-blue-400">📸</span> @samurai.detail
+                <span className="text-blue-400">📸</span> @cardetailing
               </li>
             </ul>
           </div>
@@ -136,7 +136,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Samurai Detail. Todos los derechos reservados.
+              © {currentYear} Car Detailing. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-blue-400 text-sm transition-colors">

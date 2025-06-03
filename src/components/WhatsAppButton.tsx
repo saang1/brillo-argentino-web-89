@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 const WhatsAppButton = () => {
@@ -19,7 +20,7 @@ const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
     const message = "Hola! Estoy interesado en sus servicios de car detailing. ¿Podrían brindarme más información?";
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/5401164790993?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/1234567890?text=${encodedMessage}`, '_blank');
   };
 
   return (
