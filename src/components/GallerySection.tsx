@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const GallerySection = () => {
@@ -132,14 +131,11 @@ const GallerySection = () => {
         )}
 
         <div className="text-center mt-12">
-          <a 
-            href="https://instagram.com/samurai.detail"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button 
             className="inline-flex items-center bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
           >
             Ver Más Trabajos
-          </a>
+          </button>
         </div>
       </div>
     </section>
