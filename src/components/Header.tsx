@@ -33,7 +33,8 @@ const Header = () => {
               <Car className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className={`font-bold text-lg ${logoTextColor} drop-shadow-md`}>Samurai Detail</h1>
+              <h1 className={`font-bold text-lg ${logoTextColor} drop-shadow-md`}>Detailing
+            </h1>
               <p className={`text-sm ${logoTextColor} drop-shadow-md opacity-90`}></p>
             </div>
           </div>
