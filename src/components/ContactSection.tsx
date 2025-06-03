@@ -36,7 +36,7 @@ Mensaje: ${formData.message}
 Enviado desde la web de Car Detailing.`;
 
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/1167336300?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/541167336300?text=${encodedMessage}`;
     
     window.open(whatsappUrl, '_blank');
     
@@ -180,7 +180,7 @@ Enviado desde la web de Car Detailing.`;
                 
                 <div>
                   <h4 className="text-blue-400 font-semibold mb-1">📱 WhatsApp</h4>
-                  <a href="https://wa.me/1167336300" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  <a href="https://wa.me/541167336300" className="text-gray-300 hover:text-blue-400 transition-colors">
                     +54 11 6733-6300
                   </a>
                 </div>
