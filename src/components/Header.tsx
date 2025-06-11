@@ -1,16 +1,21 @@
+
 import React, { useState, useEffect } from 'react';
 import { Car } from 'lucide-react';
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setIsScrolled(scrollY > 20);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -24,7 +29,9 @@ const Header = () => {
   // Use isScrolled for text color changes to match navbar background changes
   const textColorClass = isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg shadow-black/50';
   const logoTextColor = isScrolled ? 'text-gray-900' : 'text-white';
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-2xl' : 'bg-gradient-to-b from-black/30 to-transparent'}`}>
+
+  return (
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-2xl' : 'bg-gradient-to-b from-black/30 to-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -33,8 +40,7 @@ const Header = () => {
               <Car className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className={`font-bold text-lg ${logoTextColor} drop-shadow-md`}>Detailing
-            </h1>
+              <h1 className={`font-bold text-lg ${logoTextColor} drop-shadow-md`}>Detailing</h1>
               <p className={`text-sm ${logoTextColor} drop-shadow-md opacity-90`}></p>
             </div>
           </div>
@@ -43,6 +49,9 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <button onClick={() => scrollToSection('inicio')} className={`font-medium text-lg hover:text-red-500 transition-all duration-200 ${textColorClass} hover:scale-105`}>
               Inicio
+            </button>
+            <button onClick={() => scrollToSection('nosotros')} className={`font-medium text-lg hover:text-red-500 transition-all duration-200 ${textColorClass} hover:scale-105`}>
+              Nosotros
             </button>
             <button onClick={() => scrollToSection('servicios')} className={`font-medium text-lg hover:text-red-500 transition-all duration-200 ${textColorClass} hover:scale-105`}>
               Servicios
@@ -69,10 +78,14 @@ const Header = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && <div className="md:hidden bg-white/98 backdrop-blur-md rounded-lg mt-2 p-4 border border-gray-200 shadow-2xl">
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white/98 backdrop-blur-md rounded-lg mt-2 p-4 border border-gray-200 shadow-2xl">
             <nav className="flex flex-col space-y-3">
               <button onClick={() => scrollToSection('inicio')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-gray-50 rounded-lg px-2">
                 Inicio
+              </button>
+              <button onClick={() => scrollToSection('nosotros')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-gray-50 rounded-lg px-2">
+                Nosotros
               </button>
               <button onClick={() => scrollToSection('servicios')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-gray-50 rounded-lg px-2">
                 Servicios
@@ -87,8 +100,11 @@ const Header = () => {
                 Contacto
               </button>
             </nav>
-          </div>}
+          </div>
+        )}
       </div>
-    </header>;
+    </header>
+  );
 };
+
 export default Header;
