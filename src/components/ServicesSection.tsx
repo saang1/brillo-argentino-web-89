@@ -1,10 +1,11 @@
-
 import React from 'react';
-import { Car, Wrench, PaintBucket, Eye, Hammer, Palette } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Car, Wrench, PaintBucket, Eye, Hammer, Palette, ArrowRight } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
     {
+      id: 'tratamientos-sonax',
       title: 'Tratamientos Sonax Certificado',
       description: 'Productos profesionales Sonax para el cuidado integral de tu vehículo con certificación oficial.',
       price: 'Consultar',
@@ -12,6 +13,7 @@ const ServicesSection = () => {
       icon: Car
     },
     {
+      id: 'limpieza-interior',
       title: 'Limpieza de Interior',
       description: 'Limpieza profunda y detallada del interior de tu vehículo, tapizados, cueros y plásticos.',
       price: 'Desde $12.000',
@@ -19,6 +21,7 @@ const ServicesSection = () => {
       icon: Wrench
     },
     {
+      id: 'service-pintura',
       title: 'Service de Pintura/Pulidos',
       description: 'Corrección de pintura profesional para eliminar rayones y devolver el brillo original.',
       price: 'Desde $25.000',
@@ -26,6 +29,7 @@ const ServicesSection = () => {
       icon: PaintBucket
     },
     {
+      id: 'restauracion-opticas',
       title: 'Restauración de Ópticas',
       description: 'Recuperá la transparencia y claridad de las ópticas de tu auto para mayor seguridad.',
       price: 'Desde $8.000',
@@ -33,6 +37,7 @@ const ServicesSection = () => {
       icon: Eye
     },
     {
+      id: 'sacabollos',
       title: 'Sacabollos',
       description: 'Reparación de abolladuras sin pintura, manteniendo el acabado original de fábrica.',
       price: 'Desde $5.000',
@@ -40,6 +45,7 @@ const ServicesSection = () => {
       icon: Hammer
     },
     {
+      id: 'ploteos',
       title: 'Ploteos',
       description: 'Personalización y protección de tu vehículo con ploteos de alta calidad y diseños únicos.',
       price: 'Consultar',
@@ -89,14 +95,23 @@ const ServicesSection = () => {
                   ))}
                 </ul>
                 
-                <a 
-                  href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="block w-full bg-gradient-primary text-white text-center rounded-full font-semibold hover:shadow-lg transition-all duration-300 py-[12px] my-0"
-                >
-                  Consultar Precio
-                </a>
+                <div className="space-y-3">
+                  <Link 
+                    to={`/servicios/${service.id}`}
+                    className="flex items-center justify-center w-full bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 py-3 group"
+                  >
+                    Ver más
+                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </Link>
+                  <a 
+                    href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="block w-full bg-gradient-primary text-white text-center rounded-full font-semibold hover:shadow-lg transition-all duration-300 py-3"
+                  >
+                    Consultar Precio
+                  </a>
+                </div>
               </div>
             );
           })}
