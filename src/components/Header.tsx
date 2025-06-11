@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Car, ChevronDown } from 'lucide-react';
 import {
   DropdownMenu,
@@ -15,6 +15,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,11 +28,19 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
+    // If we're on the main page, just scroll
+    if (location.pathname === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth'
+        });
+        setIsMobileMenuOpen(false);
+        setIsMobileServicesOpen(false);
+      }
+    } else {
+      // If we're on a service page, navigate to main page with hash
+      navigate(`/#${sectionId}`);
       setIsMobileMenuOpen(false);
       setIsMobileServicesOpen(false);
     }
@@ -52,7 +61,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('/')}>
             <div className="bg-gradient-primary p-2 rounded-lg shadow-lg">
               <Car className="h-6 w-6 text-white" />
             </div>
