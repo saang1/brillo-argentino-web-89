@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Shield, CheckCircle, MessageCircle } from 'lucide-react';
 import Header from '@/components/Header';
@@ -10,6 +9,11 @@ import { getServiceById } from '@/data/servicesData';
 const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const service = serviceId ? getServiceById(serviceId) : null;
+
+  // Scroll to top whenever the component mounts or serviceId changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [serviceId]);
 
   if (!service) {
     return (
