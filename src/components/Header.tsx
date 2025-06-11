@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Car, ChevronDown } from 'lucide-react';
@@ -80,24 +79,21 @@ const Header = () => {
                   <ChevronDown className="h-4 w-4" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-64 bg-white/98 backdrop-blur-md border border-gray-200 shadow-xl rounded-lg mt-2">
+              <DropdownMenuContent className="w-72 bg-white border border-gray-300 shadow-2xl rounded-lg mt-2 z-50">
                 <DropdownMenuItem 
                   onClick={() => scrollToSection('servicios')}
-                  className="text-gray-700 hover:text-red-600 hover:bg-gray-50 cursor-pointer px-4 py-3 text-sm font-medium"
+                  className="text-gray-700 hover:text-red-600 hover:bg-red-50 cursor-pointer px-6 py-4 text-base font-semibold border-b border-gray-100"
                 >
                   Ver todos los servicios
                 </DropdownMenuItem>
-                <DropdownMenuSeparator className="bg-gray-200" />
+                <DropdownMenuSeparator className="bg-gray-300" />
                 {servicesData.map((service) => (
                   <DropdownMenuItem
                     key={service.id}
                     onClick={() => navigateToService(service.id)}
-                    className="text-gray-700 hover:text-red-600 hover:bg-gray-50 cursor-pointer px-4 py-3 text-sm"
+                    className="text-gray-700 hover:text-red-600 hover:bg-red-50 cursor-pointer px-6 py-4 text-base transition-colors duration-200"
                   >
-                    <div>
-                      <div className="font-medium">{service.title}</div>
-                      <div className="text-xs text-gray-500 mt-1">{service.price}</div>
-                    </div>
+                    <div className="font-medium">{service.title}</div>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -126,12 +122,12 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white/98 backdrop-blur-md rounded-lg mt-2 p-4 border border-gray-200 shadow-2xl">
+          <div className="md:hidden bg-white border border-gray-300 rounded-lg mt-2 p-4 shadow-2xl">
             <nav className="flex flex-col space-y-3">
-              <button onClick={() => scrollToSection('inicio')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-gray-50 rounded-lg px-2">
+              <button onClick={() => scrollToSection('inicio')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3">
                 Inicio
               </button>
-              <button onClick={() => scrollToSection('nosotros')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-gray-50 rounded-lg px-2">
+              <button onClick={() => scrollToSection('nosotros')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3">
                 Nosotros
               </button>
               
@@ -139,16 +135,16 @@ const Header = () => {
               <div>
                 <button 
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="w-full text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-gray-50 rounded-lg px-2 flex items-center justify-between"
+                  className="w-full text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3 flex items-center justify-between"
                 >
                   Servicios
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isMobileServicesOpen && (
-                  <div className="ml-4 mt-2 space-y-2 border-l-2 border-gray-200 pl-4">
+                  <div className="ml-4 mt-2 space-y-2 border-l-2 border-red-200 pl-4">
                     <button 
                       onClick={() => scrollToSection('servicios')}
-                      className="block w-full text-left text-gray-600 hover:text-red-600 transition-colors duration-200 py-2 text-sm font-medium hover:bg-gray-50 rounded px-2"
+                      className="block w-full text-left text-gray-600 hover:text-red-600 transition-colors duration-200 py-3 text-base font-semibold hover:bg-red-50 rounded px-3"
                     >
                       Ver todos los servicios
                     </button>
@@ -156,20 +152,19 @@ const Header = () => {
                       <button
                         key={service.id}
                         onClick={() => navigateToService(service.id)}
-                        className="block w-full text-left text-gray-600 hover:text-red-600 transition-colors duration-200 py-2 text-sm hover:bg-gray-50 rounded px-2"
+                        className="block w-full text-left text-gray-600 hover:text-red-600 transition-colors duration-200 py-3 text-base hover:bg-red-50 rounded px-3"
                       >
                         <div className="font-medium">{service.title}</div>
-                        <div className="text-xs text-gray-500">{service.price}</div>
                       </button>
                     ))}
                   </div>
                 )}
               </div>
 
-              <button onClick={() => scrollToSection('galeria')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-gray-50 rounded-lg px-2">
+              <button onClick={() => scrollToSection('galeria')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3">
                 Galería
               </button>
-              <button onClick={() => scrollToSection('testimonios')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-gray-50 rounded-lg px-2">
+              <button onClick={() => scrollToSection('testimonios')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3">
                 Testimonios
               </button>
               <button onClick={() => scrollToSection('contacto')} className="bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-200 text-center mt-2 font-semibold">
