@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
               <div className="border-t border-accent-yellow/30 pt-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-primary text-white font-semibold rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-support-brown to-primary-red text-white font-semibold rounded-full flex items-center justify-center">
                       {getInitials(review.author_name)}
                     </div>
                     <div>
@@ -60,7 +60,7 @@ const TestimonialsSection = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="bg-secondary-blue/20 text-secondary-blue px-3 py-1 rounded-full text-xs font-semibold border border-secondary-blue/30">
+                    <div className="bg-support-brown/20 text-accent-yellow px-3 py-1 rounded-full text-xs font-semibold border border-accent-yellow/30">
                       Google Maps
                     </div>
                   </div>
@@ -79,10 +79,10 @@ const TestimonialsSection = () => {
               Tu auto se lo merece.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/5401164790993?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto" target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:bg-secondary-blue transition-all duration-300">
+              <a href="https://wa.me/5401164790993?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto" target="_blank" rel="noopener noreferrer" className="btn-primary">
                 Agendá tu Turno
               </a>
-              <a href="https://maps.app.goo.gl/E7tpbgHghBP62yz16" target="_blank" rel="noopener noreferrer" className="border-2 border-primary-red text-primary-red bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold hover:bg-primary-red hover:text-white transition-all duration-300">
+              <a href="https://maps.app.goo.gl/E7tpbgHghBP62yz16" target="_blank" rel="noopener noreferrer" className="btn-secondary">
                 Ver Más Reviews
               </a>
             </div>

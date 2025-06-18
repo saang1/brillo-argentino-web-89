@@ -159,7 +159,7 @@ Enviado desde la web de Car Detailing.`;
 
               <button
                 type="submit"
-                className="w-full bg-gradient-primary text-white py-4 rounded-lg font-semibold hover:shadow-lg hover:bg-secondary-blue transition-all duration-300"
+                className="btn-primary w-full py-4"
               >
                 Enviar Consulta por WhatsApp
               </button>

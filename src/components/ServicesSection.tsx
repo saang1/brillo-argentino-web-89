@@ -74,7 +74,7 @@ const ServicesSection = () => {
             return (
               <div key={index} className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 shadow-lg hover-lift group backdrop-blur-sm">
                 <div className="flex items-center mb-6">
-                  <div className="bg-gradient-primary p-3 rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="icon-container mr-4 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -99,7 +99,7 @@ const ServicesSection = () => {
                 <div className="space-y-3">
                   <Link 
                     to={`/servicios/${service.id}`}
-                    className="flex items-center justify-center w-full bg-support-brown/20 text-white rounded-full font-semibold hover:bg-secondary-blue/20 transition-all duration-300 py-3 group border border-accent-yellow/20"
+                    className="flex items-center justify-center w-full bg-support-brown/20 text-white rounded-full font-semibold hover:bg-support-brown/40 transition-all duration-300 py-3 group border border-accent-yellow/20"
                   >
                     Ver más
                     <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -108,7 +108,7 @@ const ServicesSection = () => {
                     href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="block w-full bg-gradient-primary text-white text-center rounded-full font-semibold hover:shadow-lg hover:bg-secondary-blue transition-all duration-300 py-3"
+                    className="btn-primary block w-full text-center"
                   >
                     Consultar Precio
                   </a>
@@ -126,7 +126,7 @@ const ServicesSection = () => {
             href="https://wa.me/5491123456789?text=Hola%2C%20necesito%20un%20servicio%20personalizado" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="inline-flex items-center bg-transparent border-2 border-primary-red text-primary-red px-8 py-3 rounded-full font-semibold hover:bg-primary-red hover:text-white transition-all duration-300"
+            className="btn-secondary inline-flex items-center"
           >
             Consultar Servicio Personalizado
           </a>

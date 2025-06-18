@@ -28,11 +28,11 @@ const HeroSection = () => {
           <p className="text-xl sm:text-2xl text-support-gray mb-8 max-w-2xl mx-auto leading-relaxed">Servicio premium de car detailing en zona oeste. Restauramos el brillo original de tu vehículo con técnicas profesionales y productos de primera calidad.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button onClick={scrollToContact} className="bg-gradient-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 w-full sm:w-auto hover:bg-secondary-blue">
+            <button onClick={scrollToContact} className="btn-primary w-full sm:w-auto">
               Reservá tu Turno Ahora
             </button>
             
-            <a href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="border-2 border-primary-red text-primary-red bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-red hover:text-white transition-all duration-300 w-full sm:w-auto">
+            <a href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto">
               Consultanos por WhatsApp
             </a>
           </div>

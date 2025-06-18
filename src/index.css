@@ -104,11 +104,11 @@
   }
   
   .bg-gradient-primary {
-    background: linear-gradient(135deg, #E0312F 0%, #2F32E0 100%);
+    background: linear-gradient(135deg, #7C4A2E 0%, #E0312F 100%);
   }
   
   .bg-gradient-accent {
-    background: linear-gradient(135deg, #FFD700 0%, #E0312F 50%, #2F32E0 100%);
+    background: linear-gradient(135deg, #FFD700 0%, #7C4A2E 50%, #2F32E0 100%);
   }
   
   .hover-lift {
@@ -117,6 +117,22 @@
   
   .hover-lift:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(224, 49, 47, 0.3);
+    box-shadow: 0 20px 40px rgba(124, 74, 46, 0.3);
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-support-brown to-primary-red text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-support-brown text-support-brown bg-transparent px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-support-brown hover:text-white;
+  }
+
+  .icon-container {
+    @apply bg-gradient-to-br from-support-brown to-primary-red p-3 rounded-lg shadow-lg;
+  }
+
+  .icon-container-alt {
+    @apply bg-gradient-to-br from-accent-yellow to-support-brown p-3 rounded-lg shadow-lg;
   }
 }

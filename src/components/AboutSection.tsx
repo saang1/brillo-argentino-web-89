@@ -71,7 +71,7 @@ const AboutSection = () => {
               href="https://wa.me/541167336300?text=Hola%2C%20quiero%20conocer%20más%20sobre%20sus%20servicios" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex items-center bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:bg-secondary-blue transition-all duration-300"
+              className="btn-primary inline-flex items-center"
             >
               Conocé más sobre nosotros
             </a>
@@ -88,7 +88,7 @@ const AboutSection = () => {
                 />
               </div>
               {/* Tarjeta flotante */}
-              <div className="absolute -bottom-6 -left-6 bg-gradient-primary text-white p-6 rounded-2xl shadow-2xl border border-accent-yellow/50">
+              <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-support-brown to-primary-red text-white p-6 rounded-2xl shadow-2xl border border-accent-yellow/50">
                 <div className="text-3xl font-bold">+500</div>
                 <div className="text-sm opacity-90">Autos Transformados</div>
               </div>
@@ -100,7 +100,7 @@ const AboutSection = () => {
                 const IconComponent = stat.icon;
                 return (
                   <div key={index} className="bg-support-brown/20 backdrop-blur-sm rounded-2xl p-6 border border-accent-yellow/30 text-center hover-lift">
-                    <div className="bg-gradient-primary p-3 rounded-lg inline-flex mb-4">
+                    <div className="icon-container-alt inline-flex mb-4">
                       <IconComponent className="h-6 w-6 text-white" />
                     </div>
                     <div className="text-2xl font-bold text-accent-yellow mb-1">{stat.number}</div>
