@@ -1,3 +1,4 @@
+
 import React from 'react';
 const TestimonialsSection = () => {
   // Reviews de ejemplo para mostrar
@@ -20,46 +21,46 @@ const TestimonialsSection = () => {
   const renderStars = (rating: number) => {
     return Array.from({
       length: 5
-    }, (_, index) => <span key={index} className={`text-2xl ${index < rating ? 'text-yellow-400' : 'text-gray-400'}`}>
+    }, (_, index) => <span key={index} className={`text-2xl ${index < rating ? 'text-accent-yellow' : 'text-support-gray'}`}>
         ★
       </span>);
   };
   const getInitials = (name: string) => {
     return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
   };
-  return <section id="testimonios" className="py-20 bg-white">
+  return <section id="testimonios" className="py-20 bg-support-brown/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Lo que Dicen <span className="text-gradient">Nuestros Clientes</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Reviews de nuestros clientes en Google Maps</p>
+          <p className="text-xl text-support-gray max-w-3xl mx-auto">Reviews de nuestros clientes en Google Maps</p>
         </div>
 
         {/* Reviews destacadas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {featuredReviews.map((review, index) => <div key={index} className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover-lift">
+          {featuredReviews.map((review, index) => <div key={index} className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 shadow-lg hover-lift backdrop-blur-sm">
               <div className="flex items-center mb-4">
                 {renderStars(review.rating)}
               </div>
               
-              <blockquote className="text-gray-700 text-lg leading-relaxed mb-6 italic">
+              <blockquote className="text-support-gray text-lg leading-relaxed mb-6 italic">
                 "{review.text}"
               </blockquote>
               
-              <div className="border-t border-gray-200 pt-6">
+              <div className="border-t border-accent-yellow/30 pt-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-red-100 text-red-600 font-semibold rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-primary text-white font-semibold rounded-full flex items-center justify-center">
                       {getInitials(review.author_name)}
                     </div>
                     <div>
-                      <h4 className="text-gray-900 font-bold text-lg">{review.author_name}</h4>
-                      <p className="text-gray-600 text-sm">{review.relative_time_description}</p>
+                      <h4 className="text-white font-bold text-lg">{review.author_name}</h4>
+                      <p className="text-support-gray text-sm">{review.relative_time_description}</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="bg-blue-500/20 text-blue-600 px-3 py-1 rounded-full text-xs font-semibold">
+                    <div className="bg-secondary-blue/20 text-secondary-blue px-3 py-1 rounded-full text-xs font-semibold border border-secondary-blue/30">
                       Google Maps
                     </div>
                   </div>
@@ -69,19 +70,19 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-gradient-dark rounded-2xl p-8 max-w-4xl mx-auto">
+          <div className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 max-w-4xl mx-auto backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-white mb-4">
               ¿Querés ser el próximo en dejar tu testimonio?
             </h3>
-            <p className="text-gray-200 mb-6">
+            <p className="text-support-gray mb-6">
               Experimentá la diferencia de un servicio premium de car detailing. 
               Tu auto se lo merece.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/5401164790993?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto" target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300">
+              <a href="https://wa.me/5401164790993?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto" target="_blank" rel="noopener noreferrer" className="bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:bg-secondary-blue transition-all duration-300">
                 Agendá tu Turno
               </a>
-              <a href="https://maps.app.goo.gl/E7tpbgHghBP62yz16" target="_blank" rel="noopener noreferrer" className="border-2 border-red-500 text-red-500 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold hover:bg-red-500 hover:text-white transition-all duration-300">
+              <a href="https://maps.app.goo.gl/E7tpbgHghBP62yz16" target="_blank" rel="noopener noreferrer" className="border-2 border-primary-red text-primary-red bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-semibold hover:bg-primary-red hover:text-white transition-all duration-300">
                 Ver Más Reviews
               </a>
             </div>

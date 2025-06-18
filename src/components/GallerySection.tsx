@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 
 const GallerySection = () => {
@@ -31,13 +32,13 @@ const GallerySection = () => {
   ];
 
   return (
-    <section id="galeria" className="py-20 bg-gray-100">
+    <section id="galeria" className="py-20 bg-neutral-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Galería <span className="text-gradient">Antes y Después</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-support-gray max-w-3xl mx-auto">
             Mirá la transformación que logramos en cada vehículo. 
             Estos resultados hablan por sí solos de la calidad de nuestro trabajo.
           </p>
@@ -50,7 +51,7 @@ const GallerySection = () => {
               className="group cursor-pointer"
               onClick={() => setSelectedImage(index)}
             >
-              <div className="bg-white rounded-2xl overflow-hidden hover-lift shadow-lg border border-gray-200">
+              <div className="bg-support-brown/20 rounded-2xl overflow-hidden hover-lift shadow-lg border border-accent-yellow/30 backdrop-blur-sm">
                 <div className="relative">
                   <div className="grid grid-cols-2 h-64">
                     <div className="relative overflow-hidden">
@@ -60,7 +61,7 @@ const GallerySection = () => {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-black/10"></div>
-                      <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      <div className="absolute top-4 left-4 bg-primary-red text-white px-3 py-1 rounded-full text-sm font-semibold">
                         ANTES
                       </div>
                     </div>
@@ -71,7 +72,7 @@ const GallerySection = () => {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-black/10"></div>
-                      <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      <div className="absolute top-4 right-4 bg-accent-yellow text-neutral-black px-3 py-1 rounded-full text-sm font-semibold">
                         DESPUÉS
                       </div>
                     </div>
@@ -79,8 +80,8 @@ const GallerySection = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-red-600 font-semibold">{item.service}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-accent-yellow font-semibold">{item.service}</p>
                 </div>
               </div>
             </div>
@@ -94,7 +95,7 @@ const GallerySection = () => {
             onClick={() => setSelectedImage(null)}
           >
             <div className="max-w-4xl w-full">
-              <div className="bg-white rounded-2xl overflow-hidden">
+              <div className="bg-support-brown/20 rounded-2xl overflow-hidden border border-accent-yellow/50 backdrop-blur-sm">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                   <div className="relative">
                     <img 
@@ -102,7 +103,7 @@ const GallerySection = () => {
                       alt="Antes"
                       className="w-full h-80 md:h-96 object-cover"
                     />
-                    <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full font-semibold">
+                    <div className="absolute top-4 left-4 bg-primary-red text-white px-4 py-2 rounded-full font-semibold">
                       ANTES
                     </div>
                   </div>
@@ -112,16 +113,16 @@ const GallerySection = () => {
                       alt="Después"
                       className="w-full h-80 md:h-96 object-cover"
                     />
-                    <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-semibold">
+                    <div className="absolute top-4 right-4 bg-accent-yellow text-neutral-black px-4 py-2 rounded-full font-semibold">
                       DESPUÉS
                     </div>
                   </div>
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-2xl font-bold text-white mb-2">
                     {galleryItems[selectedImage].title}
                   </h3>
-                  <p className="text-red-600 font-semibold">
+                  <p className="text-accent-yellow font-semibold">
                     {galleryItems[selectedImage].service}
                   </p>
                 </div>
@@ -132,7 +133,7 @@ const GallerySection = () => {
 
         <div className="text-center mt-12">
           <button 
-            className="inline-flex items-center bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+            className="inline-flex items-center bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:bg-secondary-blue transition-all duration-300"
           >
             Ver Más Trabajos
           </button>

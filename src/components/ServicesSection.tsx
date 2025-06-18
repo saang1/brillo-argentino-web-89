@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Car, Wrench, PaintBucket, Eye, Hammer, Palette, ArrowRight } from 'lucide-react';
@@ -55,13 +56,13 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicios" className="py-20 bg-white">
+    <section id="servicios" className="py-20 bg-support-brown/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Nuestros <span className="text-gradient">Servicios</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-support-gray max-w-3xl mx-auto">
             Ofrecemos una gama completa de servicios de car detailing profesional, 
             desde limpieza integral hasta restauración especializada de tu vehículo.
           </p>
@@ -71,25 +72,25 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div key={index} className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover-lift group">
+              <div key={index} className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 shadow-lg hover-lift group backdrop-blur-sm">
                 <div className="flex items-center mb-6">
                   <div className="bg-gradient-primary p-3 rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-red-600 font-semibold">{service.price}</p>
+                    <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                    <p className="text-accent-yellow font-semibold">{service.price}</p>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-support-gray mb-6 leading-relaxed">
                   {service.description}
                 </p>
                 
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-700">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3 flex-shrink-0"></div>
+                    <li key={featureIndex} className="flex items-center text-white">
+                      <div className="w-2 h-2 bg-accent-yellow rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
@@ -98,7 +99,7 @@ const ServicesSection = () => {
                 <div className="space-y-3">
                   <Link 
                     to={`/servicios/${service.id}`}
-                    className="flex items-center justify-center w-full bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 py-3 group"
+                    className="flex items-center justify-center w-full bg-support-brown/20 text-white rounded-full font-semibold hover:bg-secondary-blue/20 transition-all duration-300 py-3 group border border-accent-yellow/20"
                   >
                     Ver más
                     <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
@@ -107,7 +108,7 @@ const ServicesSection = () => {
                     href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="block w-full bg-gradient-primary text-white text-center rounded-full font-semibold hover:shadow-lg transition-all duration-300 py-3"
+                    className="block w-full bg-gradient-primary text-white text-center rounded-full font-semibold hover:shadow-lg hover:bg-secondary-blue transition-all duration-300 py-3"
                   >
                     Consultar Precio
                   </a>
@@ -118,14 +119,14 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6">
+          <p className="text-support-gray mb-6">
             ¿No encontrás lo que buscás? Consultanos por servicios personalizados.
           </p>
           <a 
             href="https://wa.me/5491123456789?text=Hola%2C%20necesito%20un%20servicio%20personalizado" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="inline-flex items-center bg-transparent border-2 border-red-500 text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-500 hover:text-white transition-all duration-300"
+            className="inline-flex items-center bg-transparent border-2 border-primary-red text-primary-red px-8 py-3 rounded-full font-semibold hover:bg-primary-red hover:text-white transition-all duration-300"
           >
             Consultar Servicio Personalizado
           </a>
