@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Car, Wrench, PaintBucket, Eye, Hammer, Palette, ArrowRight } from 'lucide-react';
+import { Car, Wrench, PaintBucket, Eye, Hammer, Palette, ArrowRight, Zap, Star } from 'lucide-react';
 
 const ServicesSection = () => {
   const services = [
@@ -55,15 +56,42 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicios" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="servicios" className="relative py-20 bg-gray-900 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 star-pattern opacity-15"></div>
+      <div className="absolute inset-0 grunge-texture"></div>
+      
+      {/* Lightning Effects */}
+      <div className="absolute top-16 left-10 text-red-500 lightning-glow animate-pulse">
+        <Zap className="h-10 w-10 transform rotate-45" />
+      </div>
+      <div className="absolute bottom-24 right-20 text-yellow-400 lightning-glow animate-pulse delay-700">
+        <Zap className="h-8 w-8 transform -rotate-12" />
+      </div>
+
+      {/* Stars */}
+      <div className="absolute top-24 right-16 text-yellow-400 animate-pulse delay-300">
+        <Star className="h-6 w-6 fill-current" />
+      </div>
+      <div className="absolute bottom-32 left-24 text-red-500 animate-pulse delay-1000">
+        <Star className="h-8 w-8 fill-current" />
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-vintage">
             Nuestros <span className="text-gradient">Servicios</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ofrecemos una gama completa de servicios de car detailing profesional, 
-            desde limpieza integral hasta restauración especializada de tu vehículo.
+          
+          <div className="flex items-center justify-center my-8">
+            <div className="h-1 w-20 bg-gradient-to-r from-transparent to-red-500"></div>
+            <Wrench className="h-8 w-8 mx-4 text-yellow-400 lightning-glow" />
+            <div className="h-1 w-20 bg-gradient-to-l from-transparent to-red-500"></div>
+          </div>
+          
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
+            Ofrecemos una gama completa de <span className="text-red-500">servicios premium</span> de car detailing, 
+            desde limpieza integral hasta <span className="text-yellow-400">restauración especializada</span> de tu máquina.
           </p>
         </div>
 
@@ -71,25 +99,25 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <div key={index} className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover-lift group">
+              <div key={index} className="vintage-border bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover-lift group grunge-texture">
                 <div className="flex items-center mb-6">
-                  <div className="bg-gradient-primary p-3 rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="h-6 w-6 text-white" />
+                  <div className="bg-gradient-elite p-3 rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300 lightning-glow">
+                    <IconComponent className="h-6 w-6 text-black" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-red-600 font-semibold">{service.price}</p>
+                    <h3 className="text-xl font-bold text-white text-racing">{service.title}</h3>
+                    <p className="text-red-500 font-semibold text-vintage">{service.price}</p>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-300 mb-6 leading-relaxed">
                   {service.description}
                 </p>
                 
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-700">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3 flex-shrink-0"></div>
+                    <li key={featureIndex} className="flex items-center text-gray-300">
+                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3 flex-shrink-0 lightning-glow"></div>
                       {feature}
                     </li>
                   ))}
@@ -98,18 +126,18 @@ const ServicesSection = () => {
                 <div className="space-y-3">
                   <Link 
                     to={`/servicios/${service.id}`}
-                    className="flex items-center justify-center w-full bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 py-3 group"
+                    className="flex items-center justify-center w-full vintage-border bg-gray-700/50 text-gray-200 rounded-full font-semibold hover:bg-gray-600/50 transition-all duration-300 py-3 group text-racing uppercase tracking-wide"
                   >
-                    Ver más
+                    🔧 VER MÁS 🔧
                     <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
                   <a 
                     href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="block w-full bg-gradient-primary text-white text-center rounded-full font-semibold hover:shadow-lg transition-all duration-300 py-3"
+                    className="block w-full btn-elite text-center py-3"
                   >
-                    Consultar Precio
+                    ⚡ CONSULTAR PRECIO ⚡
                   </a>
                 </div>
               </div>
@@ -118,17 +146,19 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6">
-            ¿No encontrás lo que buscás? Consultanos por servicios personalizados.
-          </p>
-          <a 
-            href="https://wa.me/5491123456789?text=Hola%2C%20necesito%20un%20servicio%20personalizado" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center bg-transparent border-2 border-red-500 text-red-600 px-8 py-3 rounded-full font-semibold hover:bg-red-500 hover:text-white transition-all duration-300"
-          >
-            Consultar Servicio Personalizado
-          </a>
+          <div className="vintage-border bg-gray-800/50 p-8 max-w-2xl mx-auto grunge-texture">
+            <p className="text-gray-300 mb-6 font-semibold">
+              ¿No encontrás lo que buscás? <span className="text-red-500">Consultanos por servicios personalizados.</span>
+            </p>
+            <a 
+              href="https://wa.me/5491123456789?text=Hola%2C%20necesito%20un%20servicio%20personalizado" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="border-3 border-red-500 text-red-500 bg-gray-900/80 backdrop-blur-sm px-8 py-4 font-bold uppercase tracking-wide hover:bg-red-500 hover:text-black transition-all duration-300 vintage-border text-racing"
+            >
+              🏁 SERVICIO PERSONALIZADO 🏁
+            </a>
+          </div>
         </div>
       </div>
     </section>
