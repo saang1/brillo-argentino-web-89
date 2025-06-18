@@ -1,6 +1,4 @@
-
 import React, { useState } from 'react';
-import { Zap, Star, Wrench } from 'lucide-react';
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -33,42 +31,15 @@ const GallerySection = () => {
   ];
 
   return (
-    <section id="galeria" className="relative py-20 bg-gray-950 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 star-pattern opacity-20"></div>
-      <div className="absolute inset-0 grunge-texture"></div>
-      
-      {/* Lightning Effects */}
-      <div className="absolute top-20 right-12 text-yellow-400 lightning-glow animate-pulse">
-        <Zap className="h-12 w-12 transform rotate-12" />
-      </div>
-      <div className="absolute bottom-16 left-20 text-red-500 lightning-glow animate-pulse delay-500">
-        <Zap className="h-8 w-8 transform -rotate-45" />
-      </div>
-
-      {/* Stars */}
-      <div className="absolute top-32 left-16 text-red-500 animate-pulse delay-200">
-        <Star className="h-8 w-8 fill-current" />
-      </div>
-      <div className="absolute bottom-24 right-24 text-yellow-400 animate-pulse delay-800">
-        <Star className="h-6 w-6 fill-current" />
-      </div>
-
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="galeria" className="py-20 bg-gray-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-vintage">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-gray-900">
             Galería <span className="text-gradient">Antes y Después</span>
           </h2>
-          
-          <div className="flex items-center justify-center my-8">
-            <div className="h-1 w-20 bg-gradient-to-r from-transparent to-red-500"></div>
-            <Wrench className="h-8 w-8 mx-4 text-yellow-400 lightning-glow" />
-            <div className="h-1 w-20 bg-gradient-to-l from-transparent to-red-500"></div>
-          </div>
-          
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
-            Mirá la <span className="text-red-500">transformación épica</span> que logramos en cada máquina. 
-            Estos resultados hablan por sí solos de la <span className="text-yellow-400">calidad artesanal</span> de nuestro trabajo.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Mirá la transformación que logramos en cada vehículo. 
+            Estos resultados hablan por sí solos de la calidad de nuestro trabajo.
           </p>
         </div>
 
@@ -79,7 +50,7 @@ const GallerySection = () => {
               className="group cursor-pointer"
               onClick={() => setSelectedImage(index)}
             >
-              <div className="vintage-border bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden hover-lift shadow-lg grunge-texture">
+              <div className="bg-white rounded-2xl overflow-hidden hover-lift shadow-lg border border-gray-200">
                 <div className="relative">
                   <div className="grid grid-cols-2 h-64">
                     <div className="relative overflow-hidden">
@@ -88,8 +59,8 @@ const GallerySection = () => {
                         alt={`${item.title} - Antes`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/20"></div>
-                      <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold text-racing lightning-glow">
+                      <div className="absolute inset-0 bg-black/10"></div>
+                      <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         ANTES
                       </div>
                     </div>
@@ -99,8 +70,8 @@ const GallerySection = () => {
                         alt={`${item.title} - Después`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-black/20"></div>
-                      <div className="absolute top-4 right-4 bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold text-racing lightning-glow">
+                      <div className="absolute inset-0 bg-black/10"></div>
+                      <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         DESPUÉS
                       </div>
                     </div>
@@ -108,8 +79,8 @@ const GallerySection = () => {
                 </div>
                 
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2 text-racing">{item.title}</h3>
-                  <p className="text-red-500 font-bold text-vintage">{item.service}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-red-600 font-semibold">{item.service}</p>
                 </div>
               </div>
             </div>
@@ -123,7 +94,7 @@ const GallerySection = () => {
             onClick={() => setSelectedImage(null)}
           >
             <div className="max-w-4xl w-full">
-              <div className="vintage-border bg-gray-800/90 backdrop-blur-sm rounded-2xl overflow-hidden grunge-texture">
+              <div className="bg-white rounded-2xl overflow-hidden">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                   <div className="relative">
                     <img 
@@ -131,7 +102,7 @@ const GallerySection = () => {
                       alt="Antes"
                       className="w-full h-80 md:h-96 object-cover"
                     />
-                    <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full font-bold text-racing lightning-glow">
+                    <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full font-semibold">
                       ANTES
                     </div>
                   </div>
@@ -141,16 +112,16 @@ const GallerySection = () => {
                       alt="Después"
                       className="w-full h-80 md:h-96 object-cover"
                     />
-                    <div className="absolute top-4 right-4 bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-racing lightning-glow">
+                    <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-semibold">
                       DESPUÉS
                     </div>
                   </div>
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-white mb-2 text-racing">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {galleryItems[selectedImage].title}
                   </h3>
-                  <p className="text-red-500 font-bold text-vintage">
+                  <p className="text-red-600 font-semibold">
                     {galleryItems[selectedImage].service}
                   </p>
                 </div>
@@ -160,8 +131,10 @@ const GallerySection = () => {
         )}
 
         <div className="text-center mt-12">
-          <button className="btn-elite">
-            ⚡ VER MÁS TRABAJOS ⚡
+          <button 
+            className="inline-flex items-center bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+          >
+            Ver Más Trabajos
           </button>
         </div>
       </div>

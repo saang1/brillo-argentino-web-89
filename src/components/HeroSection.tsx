@@ -1,7 +1,4 @@
-
 import React from 'react';
-import { Zap, Star, Wrench } from 'lucide-react';
-
 const HeroSection = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contacto');
@@ -11,117 +8,57 @@ const HeroSection = () => {
       });
     }
   };
-
-  return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 star-pattern opacity-20"></div>
-      
-      {/* Grunge Texture Overlay */}
-      <div className="absolute inset-0 grunge-texture"></div>
-      
-      {/* Lightning Effects */}
-      <div className="absolute top-20 left-10 text-yellow-400 lightning-glow animate-pulse">
-        <Zap className="h-12 w-12 transform rotate-45" />
-      </div>
-      <div className="absolute bottom-32 right-16 text-yellow-400 lightning-glow animate-pulse delay-1000">
-        <Zap className="h-16 w-16 transform -rotate-12" />
-      </div>
-      <div className="absolute top-1/3 right-20 text-yellow-400 lightning-glow animate-pulse delay-500">
-        <Zap className="h-10 w-10 transform rotate-90" />
-      </div>
-
-      {/* Stars */}
-      <div className="absolute top-16 right-32 text-yellow-400 animate-pulse">
-        <Star className="h-8 w-8 fill-current" />
-      </div>
-      <div className="absolute bottom-20 left-32 text-red-500 animate-pulse delay-700">
-        <Star className="h-6 w-6 fill-current" />
-      </div>
-      <div className="absolute top-2/3 left-16 text-yellow-400 animate-pulse delay-300">
-        <Star className="h-10 w-10 fill-current" />
-      </div>
-
-      {/* Main Logo/Helmet Effect */}
-      <div className="absolute top-20 left-1/2 transform -translate-x-1/2">
-        <div className="w-32 h-32 bg-gradient-to-b from-red-500 to-red-700 rounded-full elite-glow relative">
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-20 h-12 bg-blue-600 rounded-lg opacity-80"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-16 bg-white opacity-90 rounded"></div>
-        </div>
+  return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url('/lovable-uploads/ccd71cd9-1c75-4e87-aea7-99ab0cf45a35.png')`
+    }}>
+        <div className="absolute inset-0 bg-gray-900/60"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Main Title */}
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-6 leading-tight text-vintage">
-            <span className="text-red-500">ELITE</span>
-            <span className="block text-gradient text-racing">GARAGE</span>
-            <span className="text-yellow-400">DETAILING</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+            Tu Auto
+            <span className="block text-gradient">Como Nuevo</span>
           </h1>
           
-          {/* Separator with tools */}
-          <div className="flex items-center justify-center my-8">
-            <div className="h-1 w-20 bg-gradient-to-r from-transparent to-red-500"></div>
-            <Wrench className="h-8 w-8 mx-4 text-yellow-400 lightning-glow" />
-            <div className="h-1 w-20 bg-gradient-to-l from-transparent to-red-500"></div>
-          </div>
+          <p className="text-xl sm:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed">Servicio premium de car detailing en zona oeste. Restauramos el brillo original de tu vehículo con técnicas profesionales y productos de primera calidad.</p>
           
-          <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed font-semibold">
-            <span className="text-red-500">PREMIUM DETAILING</span> con actitud rebelde. 
-            Transformamos tu máquina con <span className="text-yellow-400">técnicas artesanales</span> y productos de primera.
-          </p>
-          
-          {/* Phone Number Display */}
-          <div className="vintage-border bg-gray-900 p-4 mb-8 inline-block">
-            <p className="text-racing text-2xl text-yellow-400">📞 11-6912-2284</p>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-            <button onClick={scrollToContact} className="btn-elite">
-              ⚡ RESERVÁ TU TURNO ⚡
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button onClick={scrollToContact} className="bg-gradient-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+              Reservá tu Turno Ahora
             </button>
             
-            <a 
-              href="https://wa.me/541169122284?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20de%20car%20detailing" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="border-3 border-red-500 text-red-500 bg-gray-900/80 backdrop-blur-sm px-8 py-4 font-bold uppercase tracking-wide hover:bg-red-500 hover:text-black transition-all duration-300 vintage-border text-racing"
-            >
-              🏁 WHATSAPP 🏁
+            <a href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="border-2 border-red-500 text-red-500 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-500 hover:text-white transition-all duration-300 w-full sm:w-auto">
+              Consultanos por WhatsApp
             </a>
           </div>
           
-          {/* Stats with Vintage Style */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="vintage-border bg-gray-900/50 p-6 grunge-texture">
-              <div className="text-4xl font-bold text-gradient text-vintage">+500</div>
-              <div className="text-yellow-400 mt-2 font-semibold uppercase tracking-wide">Máquinas Atendidas</div>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-red-500">+500</div>
+              <div className="text-gray-300 mt-1">Autos Atendidos</div>
             </div>
-            <div className="vintage-border bg-gray-900/50 p-6 grunge-texture">
-              <div className="text-4xl font-bold text-gradient text-vintage">100%</div>
-              <div className="text-yellow-400 mt-2 font-semibold uppercase tracking-wide">Satisfacción Total</div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-red-500">98%</div>
+              <div className="text-gray-300 mt-1">Clientes Satisfechos</div>
             </div>
-            <div className="vintage-border bg-gray-900/50 p-6 grunge-texture">
-              <div className="text-4xl font-bold text-gradient text-vintage">5★</div>
-              <div className="text-yellow-400 mt-2 font-semibold uppercase tracking-wide">Elite Rating</div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-red-500">5★</div>
+              <div className="text-gray-300 mt-1">Calificación Promedio</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Lightning Pattern */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-red-900/20 to-transparent">
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="flex space-x-4">
-            <Zap className="h-6 w-6 text-yellow-400 lightning-glow animate-pulse" />
-            <Zap className="h-8 w-8 text-red-500 lightning-glow animate-pulse delay-200" />
-            <Zap className="h-6 w-6 text-yellow-400 lightning-glow animate-pulse delay-400" />
-          </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
