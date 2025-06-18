@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Car, ChevronDown } from 'lucide-react';
+import { Zap, ChevronDown, Star } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,7 +29,6 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    // If we're on the main page, just scroll
     if (location.pathname === '/') {
       const element = document.getElementById(sectionId);
       if (element) {
@@ -39,7 +39,6 @@ const Header = () => {
         setIsMobileServicesOpen(false);
       }
     } else {
-      // If we're on a service page, navigate to main page with hash
       navigate(`/#${sectionId}`);
       setIsMobileMenuOpen(false);
       setIsMobileServicesOpen(false);
@@ -52,132 +51,174 @@ const Header = () => {
     setIsMobileServicesOpen(false);
   };
 
-  // Use isScrolled for text color changes to match navbar background changes
-  const textColorClass = isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg shadow-black/50';
-  const logoTextColor = isScrolled ? 'text-gray-900' : 'text-white';
+  const headerBg = isScrolled 
+    ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl border-b-2 border-red-500' 
+    : 'bg-gradient-to-r from-gray-900/80 via-gray-800/60 to-gray-900/80 backdrop-blur-sm';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-2xl' : 'bg-gradient-to-b from-black/30 to-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerBg}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('/')}>
-            <div className="bg-gradient-primary p-2 rounded-lg shadow-lg">
-              <Car className="h-6 w-6 text-white" />
+          <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => navigate('/')}>
+            <div className="relative">
+              <div className="bg-gradient-to-b from-red-500 to-red-700 p-3 rounded-full elite-glow group-hover:scale-110 transition-transform duration-300">
+                <div className="relative">
+                  <Zap className="h-6 w-6 text-yellow-400 lightning-glow" />
+                  <Star className="h-3 w-3 text-yellow-400 absolute -top-1 -right-1 animate-pulse" />
+                </div>
+              </div>
             </div>
             <div>
-              <h1 className={`font-bold text-lg ${logoTextColor} drop-shadow-md`}>Detailing</h1>
-              <p className={`text-sm ${logoTextColor} drop-shadow-md opacity-90`}></p>
+              <h1 className="font-bold text-lg text-vintage text-red-500 drop-shadow-md">
+                ELITE
+              </h1>
+              <p className="text-sm text-yellow-400 font-semibold uppercase tracking-wider drop-shadow-md">
+                GARAGE
+              </p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('inicio')} className={`font-medium text-lg hover:text-red-500 transition-all duration-200 ${textColorClass} hover:scale-105`}>
-              Inicio
+            <button 
+              onClick={() => scrollToSection('inicio')} 
+              className="font-bold text-lg hover:text-red-400 transition-all duration-200 text-yellow-400 hover:scale-105 uppercase tracking-wide text-racing"
+            >
+              INICIO
             </button>
-            <button onClick={() => scrollToSection('nosotros')} className={`font-medium text-lg hover:text-red-500 transition-all duration-200 ${textColorClass} hover:scale-105`}>
-              Nosotros
+            <button 
+              onClick={() => scrollToSection('nosotros')} 
+              className="font-bold text-lg hover:text-red-400 transition-all duration-200 text-yellow-400 hover:scale-105 uppercase tracking-wide text-racing"
+            >
+              NOSOTROS
             </button>
             
             {/* Services Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className={`font-medium text-lg hover:text-red-500 transition-all duration-200 ${textColorClass} hover:scale-105 flex items-center gap-1`}>
-                  Servicios
+                <button className="font-bold text-lg hover:text-red-400 transition-all duration-200 text-yellow-400 hover:scale-105 flex items-center gap-1 uppercase tracking-wide text-racing">
+                  SERVICIOS
                   <ChevronDown className="h-4 w-4" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-72 bg-white border border-gray-300 shadow-2xl rounded-lg mt-2 z-50">
+              <DropdownMenuContent className="w-72 bg-gray-900 border-2 border-red-500 shadow-2xl rounded-none mt-2 z-50 elite-glow">
                 <DropdownMenuItem 
                   onClick={() => scrollToSection('servicios')}
-                  className="text-gray-700 hover:text-red-600 hover:bg-red-50 cursor-pointer px-6 py-4 text-base font-semibold border-b border-gray-100"
+                  className="text-yellow-400 hover:text-red-400 hover:bg-red-500/20 cursor-pointer px-6 py-4 text-base font-bold border-b border-red-500/30 uppercase tracking-wide text-racing"
                 >
-                  Ver todos los servicios
+                  VER TODOS LOS SERVICIOS ⚡
                 </DropdownMenuItem>
-                <DropdownMenuSeparator className="bg-gray-300" />
+                <DropdownMenuSeparator className="bg-red-500" />
                 {servicesData.map((service) => (
                   <DropdownMenuItem
                     key={service.id}
                     onClick={() => navigateToService(service.id)}
-                    className="text-gray-700 hover:text-red-600 hover:bg-red-50 cursor-pointer px-6 py-4 text-base transition-colors duration-200"
+                    className="text-gray-300 hover:text-yellow-400 hover:bg-red-500/20 cursor-pointer px-6 py-4 text-base transition-colors duration-200 font-semibold"
                   >
-                    <div className="font-medium">{service.title}</div>
+                    <div className="font-medium uppercase">{service.title}</div>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <button onClick={() => scrollToSection('galeria')} className={`font-medium text-lg hover:text-red-500 transition-all duration-200 ${textColorClass} hover:scale-105`}>
-              Galería
+            <button 
+              onClick={() => scrollToSection('galeria')} 
+              className="font-bold text-lg hover:text-red-400 transition-all duration-200 text-yellow-400 hover:scale-105 uppercase tracking-wide text-racing"
+            >
+              GALERÍA
             </button>
-            <button onClick={() => scrollToSection('testimonios')} className={`font-medium text-lg hover:text-red-500 transition-all duration-200 ${textColorClass} hover:scale-105`}>
-              Testimonios
+            <button 
+              onClick={() => scrollToSection('testimonios')} 
+              className="font-bold text-lg hover:text-red-400 transition-all duration-200 text-yellow-400 hover:scale-105 uppercase tracking-wide text-racing"
+            >
+              TESTIMONIOS
             </button>
-            <button onClick={() => scrollToSection('contacto')} className="bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-200 font-semibold border-2 border-white/20">
-              Contacto
+            <button 
+              onClick={() => scrollToSection('contacto')} 
+              className="btn-elite text-sm"
+            >
+              🏁 CONTACTO 🏁
             </button>
           </nav>
 
           {/* Mobile menu button */}
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors duration-200">
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+            className="md:hidden p-2 rounded-lg hover:bg-red-500/20 transition-colors duration-200"
+          >
             <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <div className={`h-0.5 w-full transition-all duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-white'} ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''} drop-shadow-md`} />
-              <div className={`h-0.5 w-full transition-all duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-white'} ${isMobileMenuOpen ? 'opacity-0' : ''} drop-shadow-md`} />
-              <div className={`h-0.5 w-full transition-all duration-300 ${isScrolled ? 'bg-gray-900' : 'bg-white'} ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''} drop-shadow-md`} />
+              <div className={`h-0.5 w-full transition-all duration-300 bg-yellow-400 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''} drop-shadow-md`} />
+              <div className={`h-0.5 w-full transition-all duration-300 bg-yellow-400 ${isMobileMenuOpen ? 'opacity-0' : ''} drop-shadow-md`} />
+              <div className={`h-0.5 w-full transition-all duration-300 bg-yellow-400 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''} drop-shadow-md`} />
             </div>
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border border-gray-300 rounded-lg mt-2 p-4 shadow-2xl">
+          <div className="md:hidden bg-gray-900 border-2 border-red-500 rounded-none mt-2 p-4 shadow-2xl elite-glow">
             <nav className="flex flex-col space-y-3">
-              <button onClick={() => scrollToSection('inicio')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3">
-                Inicio
+              <button 
+                onClick={() => scrollToSection('inicio')} 
+                className="text-yellow-400 hover:text-red-400 transition-colors duration-200 text-left py-3 font-bold text-lg hover:bg-red-500/20 rounded px-3 uppercase tracking-wide text-racing"
+              >
+                INICIO
               </button>
-              <button onClick={() => scrollToSection('nosotros')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3">
-                Nosotros
+              <button 
+                onClick={() => scrollToSection('nosotros')} 
+                className="text-yellow-400 hover:text-red-400 transition-colors duration-200 text-left py-3 font-bold text-lg hover:bg-red-500/20 rounded px-3 uppercase tracking-wide text-racing"
+              >
+                NOSOTROS
               </button>
               
               {/* Mobile Services Submenu */}
               <div>
                 <button 
                   onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                  className="w-full text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3 flex items-center justify-between"
+                  className="w-full text-yellow-400 hover:text-red-400 transition-colors duration-200 text-left py-3 font-bold text-lg hover:bg-red-500/20 rounded px-3 flex items-center justify-between uppercase tracking-wide text-racing"
                 >
-                  Servicios
+                  SERVICIOS
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isMobileServicesOpen && (
-                  <div className="ml-4 mt-2 space-y-2 border-l-2 border-red-200 pl-4">
+                  <div className="ml-4 mt-2 space-y-2 border-l-2 border-red-500 pl-4">
                     <button 
                       onClick={() => scrollToSection('servicios')}
-                      className="block w-full text-left text-gray-600 hover:text-red-600 transition-colors duration-200 py-3 text-base font-semibold hover:bg-red-50 rounded px-3"
+                      className="block w-full text-left text-yellow-400 hover:text-red-400 transition-colors duration-200 py-3 text-base font-bold hover:bg-red-500/20 rounded px-3 uppercase"
                     >
-                      Ver todos los servicios
+                      VER TODOS ⚡
                     </button>
                     {servicesData.map((service) => (
                       <button
                         key={service.id}
                         onClick={() => navigateToService(service.id)}
-                        className="block w-full text-left text-gray-600 hover:text-red-600 transition-colors duration-200 py-3 text-base hover:bg-red-50 rounded px-3"
+                        className="block w-full text-left text-gray-300 hover:text-yellow-400 transition-colors duration-200 py-3 text-base hover:bg-red-500/20 rounded px-3 font-semibold"
                       >
-                        <div className="font-medium">{service.title}</div>
+                        <div className="font-medium uppercase">{service.title}</div>
                       </button>
                     ))}
                   </div>
                 )}
               </div>
 
-              <button onClick={() => scrollToSection('galeria')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3">
-                Galería
+              <button 
+                onClick={() => scrollToSection('galeria')} 
+                className="text-yellow-400 hover:text-red-400 transition-colors duration-200 text-left py-3 font-bold text-lg hover:bg-red-500/20 rounded px-3 uppercase tracking-wide text-racing"
+              >
+                GALERÍA
               </button>
-              <button onClick={() => scrollToSection('testimonios')} className="text-gray-700 hover:text-red-600 transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-red-50 rounded-lg px-3">
-                Testimonios
+              <button 
+                onClick={() => scrollToSection('testimonios')} 
+                className="text-yellow-400 hover:text-red-400 transition-colors duration-200 text-left py-3 font-bold text-lg hover:bg-red-500/20 rounded px-3 uppercase tracking-wide text-racing"
+              >
+                TESTIMONIOS
               </button>
-              <button onClick={() => scrollToSection('contacto')} className="bg-gradient-primary text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-200 text-center mt-2 font-semibold">
-                Contacto
+              <button 
+                onClick={() => scrollToSection('contacto')} 
+                className="btn-elite text-center mt-2 text-sm"
+              >
+                🏁 CONTACTO 🏁
               </button>
             </nav>
           </div>
