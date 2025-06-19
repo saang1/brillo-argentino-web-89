@@ -16,15 +16,15 @@ export interface ServiceDetail {
 
 export const servicesData: ServiceDetail[] = [
   {
-    id: 'tratamientos-sonax',
-    title: 'Tratamientos Sonax Certificado',
-    shortDescription: 'Productos profesionales Sonax para el cuidado integral de tu vehículo con certificación oficial.',
-    fullDescription: 'Nuestros tratamientos Sonax certificados representan la excelencia en el cuidado automotriz. Utilizamos productos de máxima calidad respaldados por la prestigiosa marca alemana Sonax, líder mundial en productos de detailing profesional.',
+    id: 'limpieza-tapizados',
+    title: 'Limpieza de tapizados de autos y interiores',
+    shortDescription: 'Tratamientos profesionales con productos certificados para una limpieza profunda y duradera.',
+    fullDescription: 'Transformamos el interior de tu vehículo con una limpieza profunda y especializada. Utilizamos productos certificados que garantizan resultados duraderos y un ambiente saludable.',
     price: 'Consultar',
-    features: ['Productos certificados Sonax', 'Tratamientos profesionales', 'Garantía de calidad', 'Resultados duraderos'],
+    features: ['Restauración profunda de tapizados', 'Limpieza integral del interior', 'Productos profesionales y seguros', 'Renová el interior de tu auto'],
     process: [
       'Evaluación inicial del vehículo',
-      'Lavado preliminar con productos Sonax',
+      'Lavado preliminar con productos certificados',
       'Aplicación de tratamientos específicos',
       'Protección y acabado final',
       'Control de calidad y entrega'
@@ -50,24 +50,24 @@ export const servicesData: ServiceDetail[] = [
     ]
   },
   {
-    id: 'limpieza-interior',
-    title: 'Limpieza de Interior',
-    shortDescription: 'Limpieza profunda y detallada del interior de tu vehículo, tapizados, cueros y plásticos.',
-    fullDescription: 'Transformamos el interior de tu vehículo con una limpieza profunda y especializada. Nuestro proceso incluye el tratamiento específico para cada tipo de material: tela, cuero, vinilo y plásticos.',
+    id: 'autos-inundados',
+    title: 'Autos inundados',
+    shortDescription: 'Tu auto sufrió una inundación? Nos encargamos de restaurarlo a fondo, eliminando humedad, olores y suciedad para que vuelva a sentirse como nuevo, por dentro y por fuera.',
+    fullDescription: 'Nuestro servicio de restauración para autos inundados incluye una limpieza profunda y detallada, así como tratamientos específicos para eliminar la humedad y los olores. Utilizamos equipos de última generación y productos especializados para garantizar resultados óptimos.',
     price: 'Desde $12.000',
-    features: ['Aspirado completo', 'Limpieza de tapizados', 'Acondicionamiento de cueros', 'Desinfección'],
+    features: ['Extracción total de agua y humedad', 'Desinfección profunda', 'Revisión de zonas críticas', 'Recuperación estética y funcional'],
     process: [
       'Aspirado completo de alfombras y asientos',
       'Limpieza de tapizados con productos específicos',
       'Tratamiento y acondicionamiento de cueros',
-      'Limpieza de plásticos y viniles',
+      'Limpieza de plásticos y superficies duras',
       'Desinfección y aromatización'
     ],
     benefits: [
       'Eliminación de manchas y olores',
-      'Protección de materiales',
-      'Ambiente saludable',
-      'Mayor confort de manejo'
+      'Prevención de moho y hongos',
+      'Restauración de la estética interior',
+      'Volve a disfrutar de tu auto como nuevo'
     ],
     duration: '2-3 horas',
     warranty: '1 mes',
@@ -84,12 +84,12 @@ export const servicesData: ServiceDetail[] = [
     ]
   },
   {
-    id: 'service-pintura',
-    title: 'Service de Pintura/Pulidos',
-    shortDescription: 'Corrección de pintura profesional para eliminar rayones y devolver el brillo original.',
-    fullDescription: 'Nuestro servicio de corrección de pintura utiliza técnicas profesionales y productos de última generación para eliminar defectos, rayones y opacidad, devolviendo a tu vehículo su brillo original de fábrica.',
+    id: 'pullido-abrillantado',
+    title: 'Pulidos y Abrillantados Autos y Motos',
+    shortDescription: 'Dejá tu vehículo con un acabado impecable y brillante, eliminando imperfecciones y restaurando su color original.',
+    fullDescription: 'Ofrecemos un servicio profesional de pulido y abrillantado que elimina rayones, marcas y oxidación de la pintura. Utilizamos técnicas avanzadas y productos de alta calidad para devolverle a tu vehículo su brillo original y protegerlo contra futuros daños.',
     price: 'Desde $25.000',
-    features: ['Pulido profesional', 'Corrección de defectos', 'Eliminación de rayones', 'Restauración del brillo'],
+    features: ['Pulido en varias etapas', 'Brillo espejo y acabado premium', 'Servicio para autos y motos', 'Corrección de rayones y marcas'],
     process: [
       'Evaluación del estado de la pintura',
       'Lavado y descontaminación',
@@ -118,104 +118,206 @@ export const servicesData: ServiceDetail[] = [
     ]
   },
   {
-    id: 'restauracion-opticas',
-    title: 'Restauración de Ópticas',
-    shortDescription: 'Recuperá la transparencia y claridad de las ópticas de tu auto para mayor seguridad.',
-    fullDescription: 'Restauramos la transparencia y claridad de los faros delanteros y traseros de tu vehículo. Con el tiempo, las ópticas se opacan debido a la exposición UV y elementos ambientales, reduciendo la visibilidad y seguridad.',
+    id: 'tratamientos-cuidado',
+    title: 'Tratamientos para el cuidado',
+    shortDescription: 'Protegé y realzá tu vehículo con nuestros tratamientos especializados. Cuidamos cada superficie con productos de alta calidad para mantenerlo siempre como nuevo.',
+    fullDescription: 'Ofrecemos una amplia gama de tratamientos para el cuidado de tu vehículo, desde protección de pintura hasta acondicionamiento de interiores. Nuestros productos profesionales aseguran que cada superficie esté protegida y se mantenga en óptimas condiciones.',
     price: 'Desde $8.000',
-    features: ['Lijado progresivo', 'Pulido especializado', 'Protección UV', 'Mayor visibilidad'],
+    features: ['Protección de pintura y superficies', 'Tratamientos para cuero, plásticos y telas', 'Defensa contra rayos UV y clima', 'Productos profesionales y seguros'],
     process: [
-      'Desmontaje de ópticas si es necesario',
-      'Lijado húmedo con diferentes granos',
-      'Pulido con compuestos específicos',
-      'Aplicación de barniz protector UV',
-      'Montaje y verificación final'
+      'Inspección detallada del vehículo',
+      'Limpieza profunda',
+      'Aplicación de productos especializados',
+      'Trabajo por etapas y con precisión',
+      'Control final de calidad'
     ],
     benefits: [
-      'Mayor seguridad de manejo',
-      'Mejor iluminación nocturna',
+      'Mayor protección y durabilidad',
+      'Brillo profundo y acabado premium',
       'Apariencia renovada',
-      'Protección UV duradera'
+      'Facilitan la limpieza diaria'
     ],
     duration: '2-3 horas',
     warranty: '6 meses',
     images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
     faqs: [
       {
-        question: '¿Mejora realmente la iluminación?',
-        answer: 'Sí, al restaurar la transparencia, la luz pasa sin obstáculos mejorando significativamente la iluminación.'
+        question: '¿El tratamiento elimina completamente los malos olores del interior?',
+        answer: 'Sí, en la mayoría de los casos. Usamos técnicas de limpieza profunda y desinfección que eliminan olores causados por humedad, comida, cigarrillo o mascotas. En casos extremos, podemos aplicar tratamientos adicionales para garantizar resultados efectivos.'
       },
       {
-        question: '¿Se vuelven a opacar?',
-        answer: 'Con nuestro tratamiento UV, las ópticas mantienen su transparencia por mucho más tiempo.'
+        question: '¿Qué pasa si llueve después del tratamiento?',
+        answer: 'No hay problema. Los productos que aplicamos se fijan rápidamente y son resistentes al agua una vez curados. Además, muchos de nuestros tratamientos ayudan a repeler el agua, protegiendo aún más tu vehículo.'
       }
     ]
   },
   {
-    id: 'sacabollos',
-    title: 'Sacabollos',
-    shortDescription: 'Reparación de abolladuras sin pintura, manteniendo el acabado original de fábrica.',
-    fullDescription: 'Utilizamos la técnica PDR (Paintless Dent Repair) para reparar abolladuras sin dañar la pintura original. Este método profesional mantiene el valor y acabado de fábrica de tu vehículo.',
+    id: 'ceramicos-vidrios',
+    title: 'Tratamientos cerámicos y vidrios líquido',
+    shortDescription: 'Aplicación de recubrimientos cerámicos para una protección duradera y un acabado brillante en la pintura y vidrios de tu vehículo.',
+    fullDescription: 'Ofrecemos tratamientos cerámicos avanzados que proporcionan una capa de protección duradera contra rayones, manchas y contaminantes. Nuestros recubrimientos cerámicos no solo mejoran el brillo de la pintura, sino que también facilitan la limpieza y mantenimiento del vehículo.',
     price: 'Desde $5.000',
-    features: ['Sin pintura', 'Técnica PDR', 'Mantiene valor original', 'Reparación invisible'],
+    features: ['Protección Cerámica Duradera', 'Efecto hidrofóbico', 'Brillo profesional', 'Resistencia extrema'],
     process: [
-      'Evaluación del daño',
-      'Acceso al área afectada',
-      'Aplicación de técnica PDR',
-      'Masajeado desde el interior',
-      'Verificación y acabado'
+      'Lavado profundo',
+      'Descontaminación',
+      'Pulido y corrección',
+      'Preparación de superficie',
+      'Aplicación del recubrimiento'
     ],
     benefits: [
-      'Mantiene pintura original',
-      'Reparación rápida',
-      'No afecta garantía',
-      'Costo menor que pintura tradicional'
+      'Protección duradera',
+      'Efecto hidrofóbico',
+      'Brillo profesional',
+      'Resistencia extrema'
     ],
     duration: '1-3 horas',
     warranty: 'Permanente',
     images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
     faqs: [
       {
-        question: '¿Qué tipos de abolladuras se pueden reparar?',
-        answer: 'La mayoría de abolladuras por granizo, portazos y golpes menores se pueden reparar con PDR.'
+        question: '¿Cuánto dura el tratamiento cerámico y requiere mantenimiento?',
+        answer: 'El tratamiento cerámico tiene una duración de 3 a 5 años dependiendo del uso del vehículo y condiciones de exposición. Para mantener sus propiedades óptimas, se recomienda realizar lavados con productos pH neutro y aplicar un mantenimiento cada 6 meses con productos específicos para cerámicos. Evita el uso de ceras o abrillantadores convencionales que pueden afectar el recubrimiento.'
       },
       {
-        question: '¿Queda completamente invisible?',
-        answer: 'Sí, cuando se aplica correctamente la técnica PDR, la reparación es completamente invisible.'
+        question: '¿En qué se diferencia del encerado tradicional y vale la pena la inversión?',
+        answer: 'A diferencia de las ceras que duran 2-3 meses, el tratamiento cerámico forma un enlace químico permanente con la pintura ofreciendo protección superior y duradera. Aunque la inversión inicial es mayor, a largo plazo resulta más económico al reducir la frecuencia de mantenimientos y proteger el valor del vehículo. Además, proporciona resistencia química, térmica y mecánica que las ceras no pueden igualar.'
       }
     ]
   },
   {
-    id: 'ploteos',
-    title: 'Ploteos',
-    shortDescription: 'Personalización y protección de tu vehículo con ploteos de alta calidad y diseños únicos.',
-    fullDescription: 'Ofrecemos servicios completos de ploteo vehicular, desde protección transparente hasta diseños personalizados. Utilizamos materiales premium que protegen la pintura original mientras dan un look único a tu vehículo.',
+    id: 'lavado-motor-motos',
+    title: 'Lavados a vapor de motos',
+    shortDescription: 'Mantené tu moto impecable con nuestro servicio de lavado a vapor, eliminando suciedad y grasa sin dañar componentes eléctricos ni mecánicos.',
+    fullDescription: 'Nuestro servicio de lavado a vapor para motos utiliza tecnología avanzada que permite una limpieza profunda sin necesidad de productos químicos agresivos. El vapor penetra en los rincones más difíciles, eliminando suciedad, grasa y contaminantes sin dañar componentes eléctricos ni mecánicos.',
     price: 'Consultar',
-    features: ['Diseños personalizados', 'Materiales premium', 'Protección de pintura', 'Acabado profesional'],
+    features: ['Aplicación de vapor', 'Desengrasa profundo', 'Seguro para electrónicos', 'Resultados inmediatos'],
     process: [
-      'Diseño y aprobación',
-      'Preparación del vehículo',
-      'Corte de materiales',
-      'Aplicación profesional',
+      'Inspección y protección',
+      'Pre-tratamiento',
+      'Aplicación de vapor',
+      'Desengrasa y detallado',
       'Acabado y control de calidad'
     ],
     benefits: [
-      'Protección de pintura original',
-      'Personalización única',
-      'Reversible',
-      'Resistencia a rayos UV'
+      'Ecológico y seguro',
+      'Limpieza profunda',
+      'Ahorro de tiempo',
+      'Preserva componentes'
     ],
     duration: '1-3 días',
     warranty: '2 años',
     images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
     faqs: [
       {
-        question: '¿Se puede remover sin dañar la pintura?',
-        answer: 'Sí, los ploteos de calidad se pueden remover sin dañar la pintura original cuando se hace profesionalmente.'
+        question: '¿Es seguro lavar con vapor los componentes eléctricos y el motor de mi moto?',
+        answer: 'Sí, es completamente seguro. El vapor controlado a 160°C no genera la humedad excesiva del lavado tradicional, por lo que puede aplicarse sobre tableros, conexiones eléctricas, motor y sistema de inyección sin riesgo de cortocircuitos. El proceso utiliza vapor saturado seco que se evapora rápidamente, protegiendo todos los componentes sensibles mientras logra una limpieza profunda.'
       },
       {
-        question: '¿Incluyen diseño personalizado?',
-        answer: 'Sí, ofrecemos servicio completo de diseño personalizado según tus preferencias.'
+        question: '¿El lavado a vapor funciona igual en motos muy sucias o con grasa acumulada?',
+        answer: 'Si, el lavado a vapor es altamente efectivo incluso en motos con suciedad y grasa acumulada. Utilizamos vapor a alta presión que penetra y descompone la suciedad más difícil, eliminando grasa y contaminantes sin dañar las superficies. Además, podemos complementar el servicio con productos específicos para tratar manchas difíciles o áreas muy sucias.'
+      }
+    ]
+  },
+  {
+    id: 'tapizados-motos-autos',
+    title: 'Reparación de tapizados de autos y motos',
+    shortDescription: 'Reparación y restauración de tapizados de autos y motos, utilizando técnicas avanzadas para devolverles su aspecto original.',
+    fullDescription: 'Servicio profesional de reparación de tapizados que restaura roturas, quemaduras y desgaste en asientos de cuero, tela y vinilo. Utilizamos técnicas de costura especializada, parches invisibles y retoque de color para devolver la apariencia original, garantizando resultados duraderos y estéticamente perfectos tanto en autos como motos.',
+    price: 'Consultar',
+    features: ['Reparación de roturas y rasgaduras', 'Restauración de quemaduras y agujeros', 'Retoque y igualación de colores', 'Costura profesional y parches invisibles'],
+    process: [
+      'Evaluación del daño',
+      'Preparación del área',
+      'Selección de materiales',
+      'Reparación técnica',
+      'Acabado y protección'
+    ],
+    benefits: [
+      'Ahorro económico',
+      'Preserva valor',
+      'Reparación invisible',
+      'Durabilidad garantizada'
+    ],
+    duration: '1-3 días',
+    warranty: '2 años',
+    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    faqs: [
+      {
+        question: '¿Qué tipos de daños se pueden reparar en los tapizados?',
+        answer: 'Reparamos roturas, rasgaduras, quemaduras de cigarrillo, agujeros, desgaste por uso y decoloración en cuero, tela, vinilo y materiales sintéticos. La mayoría de daños tienen solución, evaluamos cada caso para determinar la mejor técnica de reparación.'
+      },
+      {
+        question: '¿Es más conveniente reparar o cambiar todo el tapizado?',
+        answer: 'La reparación es recomendable cuando el daño es localizado y el resto del tapizado está en buen estado. Es hasta 70% más económico que el reemplazo completo y mantiene la originalidad del vehículo. Solo recomendamos cambio total cuando el deterioro es generalizado.'
+      }
+    ]
+  },
+  {
+    id: 'pintura-motos',
+    title: 'Trabajos de pintura para motos',
+    shortDescription: 'Realizamos trabajos de pintura personalizados para motos, desde retoques hasta repintados completos, con acabados de alta calidad.',
+    fullDescription: 'Ofrecemos servicios de pintura para motos que incluyen desde retoques menores hasta repintados completos. Utilizamos pinturas de alta calidad y técnicas avanzadas para garantizar un acabado duradero y estéticamente perfecto. Personalizamos el diseño según tus preferencias, asegurando que tu moto luzca única y espectacular.',
+    price: 'Consultar',
+    features: ['Preparación completa', 'Pintura multicapa', 'Diseños personalizados', 'Acabado profesional'],
+    process: [
+      'Desmontaje y preparación',
+      'Desmontaje y preparación',
+      'Aplicación de primer',
+      'Pintura base y color',
+      'Barnizado y pulido'
+    ],
+    benefits: [
+      'Renovación completa',
+      'Protección anticorrosiva',
+      'Personalización única',
+      'Valor agregado'
+    ],
+    duration: '1-3 días',
+    warranty: '2 años',
+    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    faqs: [
+      {
+        question: '¿Puedo cambiar completamente el color original de mi moto?',
+        answer: 'Sí, podemos cambiar cualquier color original. Utilizamos pinturas automotrices de alta calidad que cubren perfectamente el color anterior. Solo necesitas actualizar la documentación del vehículo según las regulaciones locales de tránsito.'
+      },
+      {
+        question: '¿La pintura nueva resiste igual que la de fábrica?',
+        answer: 'Nuestra pintura multicapa con barniz UV ofrece resistencia superior a la original de fábrica. Incluye protección contra rayos solares, lluvia ácida, gasolina y productos químicos, con garantía de no decoloración por 2 años.'
+      }
+    ]
+  },
+  {
+    id: 'limpieza-cascos-motos',
+    title: 'Limpieza de cascos de motos',
+    shortDescription: 'Mantené tu casco de moto limpio y seguro con nuestro servicio especializado, eliminando suciedad, grasa y olores de forma efectiva.',
+    fullDescription: 'Nuestro servicio de limpieza de cascos de motos asegura que tu casco esté libre de suciedad, grasa y olores. Utilizamos productos específicos y técnicas adecuadas para cada tipo de material, garantizando una limpieza profunda sin dañar la estructura del casco.',
+    price: 'Consultar',
+    features: ['Limpieza exterior completa', 'Desinfección interior profunda', 'Limpieza de visera y anti-fog', 'Tratamiento antibacteriano y desodorante'],
+    process: [
+      'Inspección inicial',
+      'Desmontaje y preparación',
+      'Limpieza exterior',
+      'Desinfección interior',
+      'Secado y ensamble'
+    ],
+    benefits: [
+      'Higiene garantizada',
+      'Visibilidad óptima',
+      'Prolonga vida útil',
+      'Comodidad renovada'
+    ],
+    duration: '1-3 días',
+    warranty: '2 años',
+    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    faqs: [
+      {
+        question: '¿La limpieza profesional puede eliminar rayones de la visera?',
+        answer: 'Podemos eliminar rayones superficiales menores con técnicas de pulido especializado. Para rayones profundos que comprometan la seguridad, recomendamos el reemplazo de la visera por una nueva para mantener la protección visual óptima.'
+      },
+      {
+        question: '¿Con qué frecuencia debo limpiar profesionalmente mi casco?',
+        answer: 'Recomendamos limpieza profesional cada 2-3 meses para uso diario, o cada 6 meses para uso ocasional. Si notas malos olores, acumulación de grasa o la visera pierde transparencia, es momento de una limpieza especializada.'
       }
     ]
   }

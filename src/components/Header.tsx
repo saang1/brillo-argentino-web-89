@@ -54,22 +54,20 @@ const Header = () => {
   };
 
   // Use isScrolled for text color changes to match navbar background changes
-  const textColorClass = isScrolled ? 'text-neutral-black' : 'text-white drop-shadow-lg shadow-black/50';
-  const logoTextColor = isScrolled ? 'text-neutral-black' : 'text-white';
+  const textColorClass = isScrolled ? 'text-white' : 'text-white drop-shadow-lg shadow-black/50';
+  const logoTextColor = isScrolled ? 'text-white' : 'text-white';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-2xl' : 'bg-gradient-to-b from-neutral-black/50 to-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 ${isScrolled ? 'bg-neutral-black backdrop-blur-md shadow-2xl' : 'bg-gradient-to-b from-neutral-black/50 to-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('/')}>
-            <div className="bg-gradient-primary p-2 rounded-lg shadow-lg">
-              <Car className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h1 className={`font-bold text-lg ${logoTextColor} drop-shadow-md`}>Detailing</h1>
-              <p className={`text-sm ${logoTextColor} drop-shadow-md opacity-90`}></p>
-            </div>
+          <div className="flex items-center cursor-pointer">
+            <img 
+              src="/lovable-uploads/elitegarage-logo.svg" 
+              alt="Elite Garage Spa Logo" 
+              className="h-16 w-16 lg:h-24 lg:w-24 object-contain hover:scale-105 transition-transform duration-200"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -89,10 +87,10 @@ const Header = () => {
                   <ChevronDown className="h-4 w-4" />
                 </button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-72 bg-white border border-support-gray shadow-2xl rounded-lg mt-2 z-50">
+              <DropdownMenuContent className="w-72 bg-neutral-black border border-support-gray shadow-2xl rounded-lg mt-2 z-50">
                 <DropdownMenuItem 
                   onClick={() => scrollToSection('servicios')}
-                  className="text-neutral-black hover:text-primary-red hover:bg-accent-yellow/10 cursor-pointer px-6 py-4 text-base font-semibold border-b border-support-gray"
+                  className="text-white hover:text-white hover:bg-accent-yellow/10 cursor-pointer px-6 py-4 text-base font-semibold"
                 >
                   Ver todos los servicios
                 </DropdownMenuItem>
@@ -101,7 +99,7 @@ const Header = () => {
                   <DropdownMenuItem
                     key={service.id}
                     onClick={() => navigateToService(service.id)}
-                    className="text-neutral-black hover:text-primary-red hover:bg-accent-yellow/10 cursor-pointer px-6 py-4 text-base transition-colors duration-200"
+                    className="text-white hover:text-white hover:bg-accent-yellow/10 cursor-pointer px-6 py-4 text-base transition-colors duration-200"
                   >
                     <div className="font-medium">{service.title}</div>
                   </DropdownMenuItem>

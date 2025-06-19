@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Star, Award, Users, Clock } from 'lucide-react';
 
@@ -27,7 +26,22 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="nosotros" className="py-20 bg-neutral-black">
+    <section id="nosotros" className="py-20 bg-neutral-black relative overflow-hidden">
+      {/* Fondo decorativo huella derecha */}
+      <img
+        src="/lovable-uploads/huella-background.png"
+        alt=""
+        aria-hidden="true"
+  className="pointer-events-none select-none absolute opacity-20 lg:opacity-30 -top-20 -right-24 w-96 lg:w-[600px] h-48 lg:h-[1200px] -rotate-12 -scale-x-100 z-0"
+
+      />
+      {/* Fondo decorativo huella izquierda */}
+      <img
+        src="/lovable-uploads/huella-background.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute opacity-20 lg:opacity-30 -top-20 -left-55 w-96 lg:w-[600px] -rotate-12 z-0"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Contenido de texto */}
@@ -82,15 +96,15 @@ const AboutSection = () => {
             <div className="relative mb-8">
               <div className="aspect-square bg-support-brown/20 rounded-2xl overflow-hidden border border-accent-yellow/30">
                 <img 
-                  src="/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png" 
+                  src="/lovable-uploads/aboutUs-moto.jpeg" 
                   alt="Equipo de Car Detailing trabajando"
-                  className="w-full h-full object-cover"
+                  className="w-full h-[480px] lg:h-[850px] object-cover"
                 />
               </div>
               {/* Tarjeta flotante */}
               <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-support-brown to-primary-red text-white p-6 rounded-2xl shadow-2xl border border-accent-yellow/50">
                 <div className="text-3xl font-bold">+500</div>
-                <div className="text-sm opacity-90">Autos Transformados</div>
+                <div className="text-sm opacity-90">Motos y Autos Transformados</div>
               </div>
             </div>
 

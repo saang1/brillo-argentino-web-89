@@ -9,10 +9,10 @@ const HeroSection = () => {
       });
     }
   };
-  return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-black">
+  return <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-black pt-32 sm:pt-0">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url('/lovable-uploads/ccd71cd9-1c75-4e87-aea7-99ab0cf45a35.png')`
+      backgroundImage: `url('/lovable-uploads/hero-section.jpeg')`
     }}>
         <div className="absolute inset-0 bg-neutral-black/70"></div>
       </div>
