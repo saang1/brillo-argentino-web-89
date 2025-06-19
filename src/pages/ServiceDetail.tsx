@@ -28,16 +28,16 @@ const ServiceDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-support-brown/10 py-8">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-neutral-black relative">
+      <section className="pt-28 pb-12 bg-neutral-black relative overflow-hidden">
         <img
           src="/lovable-uploads/huella-background.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none select-none absolute opacity-20 -top-20 -left-20 w-96 rotate-12 z-0"
+          className="pointer-events-none select-none absolute opacity-20 lg:opacity-30 -top-40 -left-55 w-72 lg:w-[600px] -rotate-12 z-0"
         />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center mb-6">
@@ -104,7 +104,7 @@ const ServiceDetail = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -172,7 +172,7 @@ const ServiceDetail = () => {
           src="/lovable-uploads/huella-background.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none select-none absolute opacity-20 -bottom-10 -right-20 w-96 -rotate-12 z-0"
+          className="pointer-events-none select-none absolute opacity-20 -bottom-10 -right-20 w-96 lg:w-[600px] -rotate-12 z-0"
         />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold text-white mb-6">

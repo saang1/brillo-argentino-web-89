@@ -58,7 +58,7 @@ const Header = () => {
   const logoTextColor = isScrolled ? 'text-white' : 'text-white';
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 ${isScrolled ? 'bg-neutral-black backdrop-blur-md shadow-2xl' : 'bg-gradient-to-b from-neutral-black/50 to-transparent'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-1 ${isScrolled ? 'bg-neutral-black backdrop-blur-md shadow-2xl' : 'bg-gradient-to-b from-neutral-black/50 to-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -75,7 +75,7 @@ const Header = () => {
             <button onClick={() => scrollToSection('inicio')} className={`font-medium text-lg hover:text-primary-red transition-all duration-200 ${textColorClass} hover:scale-105`}>
               Inicio
             </button>
-            <button onClick={() => scrollToSection('nosotros')} className={`font-medium text-lg hover:text-primary-red transition-all duration-200 ${textColorClass} hover:scale-105`}>
+            <button onClick={() => scrollToSection('nosotros')} className={`font-medium text-lg hover:text-primary-red transition-all duration-200 ${textColorClass} hover:scale-105 scroll-mt-20 lg:scroll-mt-40`}>
               Nosotros
             </button>
             

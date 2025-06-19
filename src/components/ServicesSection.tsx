@@ -66,15 +66,14 @@ const ServicesSection = () => {
     features: ['Limpieza exterior completa', 'Desinfección interior profunda', 'Limpieza de visera y anti-fog', 'Tratamiento antibacteriano y desodorante'],
     icon: ShieldCheck
   }];
-  return <section id="servicios" className="py-20 bg-support-brown/10">
+  return <section id="servicios" className="py-24 bg-support-brown/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-black">
             Nuestros <span className="text-gradient">Servicios</span>
           </h2>
           <p className="text-xl text-neutral-black max-w-3xl mx-auto">
-            Ofrecemos una gama completa de servicios de car detailing profesional, 
-            desde limpieza integral hasta restauración especializada de tu vehículo.
+            Ofrecemos una gama completa de servicios de detailing profesional para autos y motos, desde limpieza integral hasta restauración especializada que devuelve el brillo y protección original a tu vehículo.
           </p>
         </div>
 

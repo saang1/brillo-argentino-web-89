@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
   const getInitials = (name: string) => {
     return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
   };
-  return <section id="testimonios" className="py-20 bg-support-brown/10">
+  return <section id="testimonios" className="py-24 bg-support-brown/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
