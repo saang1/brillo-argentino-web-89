@@ -1,22 +1,18 @@
-
 import React from 'react';
 const TestimonialsSection = () => {
   // Reviews de ejemplo para mostrar
   const featuredReviews = [{
-    author_name: 'Carlos Rodríguez',
+    author_name: 'Mauro Sosa',
     rating: 5,
-    relative_time_description: 'hace 2 semanas',
-    text: 'Excelente servicio! Mi BMW quedó como nuevo después del coating cerámico. La atención es muy profesional y el resultado superó mis expectativas. Totalmente recomendable.'
+    text: 'Quiero agradecer a Sebastián por el trato y la amabilidad desde el primer día. Me parece que además de su trabajo excelente junto a su equipo, demuestran un compromiso para que el cliente este a gusto e informado del servicio que desea realizar a su vehículo.'
   }, {
-    author_name: 'María González',
+    author_name: 'Martin Farías',
     rating: 5,
-    relative_time_description: 'hace 1 mes',
-    text: 'Increíble el trabajo que hicieron con mi Audi. El pulido eliminó todos los rayones y el auto brilla como el primer día. Definitivamente van a ser mi taller de confianza.'
+    text: 'Sebastián hace un maravilloso trabajo, se nota que realmente hace lo que le gusta y cuando eso sucede los resultados son los mejores!  Muy servicial y responsable.  Totalmente recomendable'
   }, {
-    author_name: 'Alejandro Fernández',
+    author_name: 'Gustavo Ibarra',
     rating: 5,
-    relative_time_description: 'hace 3 semanas',
-    text: 'El servicio de PPF es lo mejor que le pude hacer a mi auto nuevo. La protección es invisible y me da tranquilidad para el día a día. Muy profesionales en todo momento.'
+    text: 'Todo excelente!. Fuí con la moto recién llegada de un viaje de 4500 kms, llena de bichos, engrasada, tierra.. quedó impecable!!. Gracias Seba y equipo!!'
   }];
   const renderStars = (rating: number) => {
     return Array.from({
@@ -31,24 +27,29 @@ const TestimonialsSection = () => {
   return <section id="testimonios" className="py-24 bg-support-brown/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-neutral-black">
             Lo que Dicen <span className="text-gradient">Nuestros Clientes</span>
           </h2>
-          <p className="text-xl text-support-gray max-w-3xl mx-auto">Reviews de nuestros clientes en Google Maps</p>
+          <p className="text-xl text-neutral-black max-w-3xl mx-auto">Reviews de nuestros clientes en Google Maps</p>
         </div>
 
         {/* Reviews destacadas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {featuredReviews.map((review, index) => <div key={index} className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 shadow-lg hover-lift backdrop-blur-sm">
+          {featuredReviews.map((review, index) => (
+            <div
+              key={index}
+              className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 shadow-lg hover-lift backdrop-blur-sm flex flex-col"
+            >
               <div className="flex items-center mb-4">
                 {renderStars(review.rating)}
               </div>
-              
+
               <blockquote className="text-support-gray text-lg leading-relaxed mb-6 italic">
                 "{review.text}"
               </blockquote>
-              
-              <div className="border-t border-accent-yellow/30 pt-6">
+
+              {/* Bloque inferior siempre al fondo */}
+              <div className="border-t border-accent-yellow/30 pt-6 mt-auto">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-support-brown to-primary-red text-white font-semibold rounded-full flex items-center justify-center">
@@ -66,7 +67,8 @@ const TestimonialsSection = () => {
                   </div>
                 </div>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
 
         <div className="text-center mt-16">
@@ -75,14 +77,14 @@ const TestimonialsSection = () => {
               ¿Querés ser el próximo en dejar tu testimonio?
             </h3>
             <p className="text-support-gray mb-6">
-              Experimentá la diferencia de un servicio premium de car detailing. 
-              Tu auto se lo merece.
+              Experimentá la diferencia de un servicio premium de detailing.
+              Tu vehículo se lo merece.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/5401164790993?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto" target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <a href="https://wa.me/5401164790993?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-primary-red to-support-brown text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 text-center">
                 Agendá tu Turno
               </a>
-              <a href="https://maps.app.goo.gl/E7tpbgHghBP62yz16" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+              <a href="https://maps.app.goo.gl/E7tpbgHghBP62yz16" target="_blank" rel="noopener noreferrer" className="border-2 border-accent-yellow text-white px-8 py-4 rounded-full font-semibold hover:bg-accent-yellow hover:text-neutral-black transition-all duration-300 text-center">
                 Ver Más Reviews
               </a>
             </div>
