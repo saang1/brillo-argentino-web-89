@@ -4,7 +4,7 @@ import { Car, PaintBucket, Eye, Hammer, Palette, ArrowRight, Droplet, Sparkle, S
 const ServicesSection = () => {
   const services = [{
     id: 'limpieza-tapizados',
-    title: 'Limpieza de tapizados de autos y interiores',
+    title: 'Limpieza de tapizados de autos e interiores',
     description: 'Tratamientos profesionales con productos certificados para una limpieza profunda y duradera.',
     price: 'Consultar',
     features: ['Restauración profunda de tapizados', 'Limpieza integral del interior', 'Productos profesionales y seguros', 'Renová el interior de tu auto'],
@@ -109,7 +109,7 @@ const ServicesSection = () => {
                     Ver más
                     <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </Link>
-                  <a href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="btn-primary block w-full text-center">
+                  <a href="https://wa.me/5491169122284?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="btn-primary block w-full text-center">
                     Consultar Precio
                   </a>
                 </div>
@@ -121,7 +121,7 @@ const ServicesSection = () => {
           <p className="text-neutral-black mb-6">
             ¿No encontrás lo que buscás? Consultanos por servicios personalizados.
           </p>
-          <a href="https://wa.me/5491123456789?text=Hola%2C%20necesito%20un%20servicio%20personalizado" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center">
+          <a href="https://wa.me/5491169122284?text=Hola%2C%20necesito%20un%20servicio%20personalizado" target="_blank" rel="noopener noreferrer" className="border-2 border-accent-yellow text-black px-6 py-3 rounded-full font-semibold hover:bg-accent-yellow hover:text-neutral-black transition-all duration-300 text-center">
             Consultar Servicio Personalizado
           </a>
         </div>

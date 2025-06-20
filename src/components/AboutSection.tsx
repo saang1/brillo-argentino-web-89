@@ -101,7 +101,7 @@ const AboutSection = () => {
             </div>
 
             <a
-              href="https://wa.me/541167336300?text=Hola%2C%20quiero%20conocer%20más%20sobre%20sus%20servicios"
+              href="https://www.instagram.com/elitegarajespa/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center"

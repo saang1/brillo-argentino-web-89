@@ -32,7 +32,7 @@ const HeroSection = () => {
               Reservá tu Turno Ahora
             </button>
             
-            <a href="https://wa.me/5491123456789?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto">
+            <a href="https://wa.me/5491169122284?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="border-2 border-accent-yellow text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-yellow hover:text-neutral-black transition-all duration-300 text-center">
               Consultanos por WhatsApp
             </a>
           </div>

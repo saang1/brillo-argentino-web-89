@@ -72,7 +72,10 @@ const GallerySection = () => {
             Galería <span className="text-gradient">Antes y Después</span>
           </h2>
           <p className="text-xl text-support-gray max-w-3xl mx-auto">
-            En Elite Garage Spa, especialistas en detailing de autos y motos en Buenos Aires, cada vehículo cuenta una historia de transformación única. Nuestra galería de antes y después muestra el poder de nuestros tratamientos profesionales de detailing
+            En Elite Garage Spa, especialistas en detailing de autos y motos en
+            Buenos Aires, cada vehículo cuenta una historia de transformación
+            única. Nuestra galería de antes y después muestra el poder de
+            nuestros tratamientos profesionales de detailing
           </p>
         </div>
 
@@ -211,9 +214,14 @@ const GallerySection = () => {
         )}
 
         <div className="text-center mt-12">
-          <button className="inline-flex items-center bg-gradient-primary text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:bg-secondary-blue transition-all duration-300">
-            Ver Más Trabajos
-          </button>
+          <a
+            href="https://wa.me/5491169122284?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary block w-[200px] text-center flex items-center justify-center mx-auto"
+          >
+            Consultar Precio
+          </a>
         </div>
       </div>
     </section>

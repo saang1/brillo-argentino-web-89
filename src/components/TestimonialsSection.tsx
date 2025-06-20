@@ -57,7 +57,6 @@ const TestimonialsSection = () => {
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-lg">{review.author_name}</h4>
-                      <p className="text-support-gray text-sm">{review.relative_time_description}</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -77,14 +76,14 @@ const TestimonialsSection = () => {
               ¿Querés ser el próximo en dejar tu testimonio?
             </h3>
             <p className="text-support-gray mb-6">
-              Experimentá la diferencia de un servicio premium de detailing.
+              Experimentá la diferencia de un servicio elite de detailing.
               Tu vehículo se lo merece.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://wa.me/5401164790993?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-primary-red to-support-brown text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 text-center">
+              <a href="https://wa.me/5491169122284?text=Hola%2C%20quiero%20agendar%20un%20turno%20para%20mi%20auto" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-primary-red to-support-brown text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
                 Agendá tu Turno
               </a>
-              <a href="https://maps.app.goo.gl/E7tpbgHghBP62yz16" target="_blank" rel="noopener noreferrer" className="border-2 border-accent-yellow text-white px-8 py-4 rounded-full font-semibold hover:bg-accent-yellow hover:text-neutral-black transition-all duration-300 text-center">
+              <a href="https://maps.app.goo.gl/2bzHin6AcZW9EWpKA" target="_blank" rel="noopener noreferrer" className="border-2 border-accent-yellow text-white px-8 py-4 rounded-full font-semibold hover:bg-accent-yellow hover:text-neutral-black transition-all duration-300 text-center">
                 Ver Más Reviews
               </a>
             </div>
@@ -94,3 +93,4 @@ const TestimonialsSection = () => {
     </section>;
 };
 export default TestimonialsSection;
+// btn-primary w-full sm:w-auto
