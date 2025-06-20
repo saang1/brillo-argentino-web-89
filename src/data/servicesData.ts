@@ -23,29 +23,29 @@ export const servicesData: ServiceDetail[] = [
     price: 'Consultar',
     features: ['Restauración profunda de tapizados', 'Limpieza integral del interior', 'Productos profesionales y seguros', 'Renová el interior de tu auto'],
     process: [
-      'Evaluación inicial del vehículo',
-      'Lavado preliminar con productos certificados',
-      'Aplicación de tratamientos específicos',
-      'Protección y acabado final',
-      'Control de calidad y entrega'
+      'Inspección y preparación',
+      'Aspirado profundo',
+      'Pre-tratamiento de manchas',
+      'Limpieza con extractor',
+      'Secado y acabado'
     ],
     benefits: [
-      'Protección duradera de la pintura',
-      'Realza el brillo natural',
-      'Resistencia a elementos externos',
-      'Mantiene el valor del vehículo'
+      'Ambiente saludable',
+      'Apariencia renovada',
+      'Mayor durabilidad',
+      'Valor preservado'
     ],
     duration: '3-5 horas',
     warranty: '6 meses',
     images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
     faqs: [
       {
-        question: '¿Qué incluye el tratamiento Sonax?',
-        answer: 'Incluye lavado, descontaminación, pulido si es necesario, y aplicación de protección Sonax certificada.'
+        question: '¿Pueden eliminar cualquier tipo de mancha de los asientos?',
+        answer: 'La mayoría de las manchas se pueden eliminar con nuestros productos y técnicas especializadas. Manchas de comida, bebidas, grasa y líquidos corporales tienen alta probabilidad de remoción completa. Algunas manchas muy antiguas o de tinta permanente pueden reducirse significativamente pero no eliminarse al 100%.'
       },
       {
-        question: '¿Cuánto dura la protección?',
-        answer: 'La protección Sonax tiene una duración de 6 a 12 meses dependiendo del uso del vehículo.'
+        question: '¿Cuánto tiempo tarda en secar el tapizado después de la limpieza?',
+        answer: 'Con nuestro sistema de extracción profesional, el tapizado queda húmedo pero no empapado. El tiempo de secado es de 2 a 4 horas dependiendo del clima y ventilación. Recomendamos dejar las ventanas entreabierta para acelerar el proceso y evitar que se forme humedad.'
       }
     ]
   },
@@ -74,12 +74,12 @@ export const servicesData: ServiceDetail[] = [
     images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
     faqs: [
       {
-        question: '¿Se pueden eliminar todas las manchas?',
-        answer: 'La mayoría de las manchas se pueden eliminar. Evaluamos cada caso para garantizar el mejor resultado posible.'
+        question: '¿Es posible recuperar completamente un auto que se inundó?',
+        answer: 'Depende del nivel de agua y tiempo de exposición. Si el agua no llegó al motor y la inundación fue breve, es posible una recuperación completa mediante desarmado, secado profundo, cambio de fluidos y restauración de componentes. Evaluamos cada caso para determinar la viabilidad técnica y económica de la restauración.'
       },
       {
-        question: '¿Incluye la limpieza del baúl?',
-        answer: 'Sí, incluye aspirado y limpieza completa del baúl y compartimentos.'
+        question: '¿Cuánto tiempo toma el proceso de restauración de un auto inundado?',
+        answer: 'El proceso completo puede tomar entre 2 a 4 semanas dependiendo del nivel de daño. Incluye desmontaje de interior, secado de componentes eléctricos, tratamiento anticorrosivo, reemplazo de fluidos, pruebas de funcionamiento y restauración completa del habitáculo para eliminar humedad y olores.'
       }
     ]
   },

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useInView } from "../hooks/useInView"; // Asegúrate de que la ruta sea correcta
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -22,6 +23,30 @@ const ContactSection = () => {
     "Trabajos de pintura para motos",
     "Limpieza de cascos de motos",
   ];
+
+  // Refs para animación
+  const animatedBlocksRef = useRef<Set<string>>(new Set());
+
+  // Formulario
+  const [formRef, formInView] = useInView({ threshold: 0.15 });
+  const alreadyAnimatedForm = animatedBlocksRef.current.has("form");
+  if (formInView && !alreadyAnimatedForm) {
+    animatedBlocksRef.current.add("form");
+  }
+
+  // Info de contacto
+  const [infoRef, infoInView] = useInView({ threshold: 0.15 });
+  const alreadyAnimatedInfo = animatedBlocksRef.current.has("info");
+  if (infoInView && !alreadyAnimatedInfo) {
+    animatedBlocksRef.current.add("info");
+  }
+
+  // Mapa
+  const [mapRef, mapInView] = useInView({ threshold: 0.15 });
+  const alreadyAnimatedMap = animatedBlocksRef.current.has("map");
+  if (mapInView && !alreadyAnimatedMap) {
+    animatedBlocksRef.current.add("map");
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -83,7 +108,15 @@ Enviado desde la web de Elite Garage Spa`;
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Formulario de Contacto */}
-          <div className="bg-support-brown/20 backdrop-blur-sm rounded-2xl border border-accent-yellow/30 px-8 pt-8 pb-6">
+          <div
+            ref={formRef}
+            className={`
+              bg-support-brown/20 backdrop-blur-sm rounded-2xl border border-accent-yellow/30 px-8 pt-8 pb-6
+              transition-all duration-700
+              ${!alreadyAnimatedForm && formInView ? "animate-fade-in-up" : ""}
+              ${alreadyAnimatedForm ? "" : "opacity-0 translate-y-8"}
+            `}
+          >
             {" "}
             <h3 className="text-2xl font-bold text-white mb-6">
               Envianos tu Consulta
@@ -180,7 +213,15 @@ Enviado desde la web de Elite Garage Spa`;
           {/* Información de Contacto y Mapa */}
           <div className="space-y-8">
             {/* Info de Contacto */}
-            <div className="bg-support-brown/20 backdrop-blur-sm rounded-2xl p-8 border border-accent-yellow/30">
+            <div
+              ref={infoRef}
+              className={`
+                bg-support-brown/20 backdrop-blur-sm rounded-2xl p-8 border border-accent-yellow/30
+                transition-all duration-700
+                ${!alreadyAnimatedInfo && infoInView ? "animate-fade-in-up delay-100" : ""}
+                ${alreadyAnimatedInfo ? "" : "opacity-0 translate-y-8"}
+              `}
+            >
               <h3 className="text-2xl font-bold text-white mb-6">
                 Información de Contacto
               </h3>
@@ -248,7 +289,15 @@ Enviado desde la web de Elite Garage Spa`;
             </div>
 
             {/* Mapa */}
-            <div className="bg-support-brown/20 backdrop-blur-sm rounded-2xl p-8 border border-accent-yellow/30">
+            <div
+              ref={mapRef}
+              className={`
+                bg-support-brown/20 backdrop-blur-sm rounded-2xl p-8 border border-accent-yellow/30
+                transition-all duration-700
+                ${!alreadyAnimatedMap && mapInView ? "animate-fade-in-up delay-200" : ""}
+                ${alreadyAnimatedMap ? "" : "opacity-0 translate-y-8"}
+              `}
+            >
               <h3 className="text-2xl font-bold text-white mb-6">
                 Nuestra Ubicación
               </h3>

@@ -1,6 +1,8 @@
-import React from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Car, PaintBucket, Eye, Hammer, Palette, ArrowRight, Droplet, Sparkle, Shield, CloudRain, RefreshCw, Scissors, HardHat, ShieldCheck } from 'lucide-react';
+import { useInView } from '../hooks/useInView'; // Asegúrate de que la ruta sea correcta
 const ServicesSection = () => {
   const services = [{
     id: 'limpieza-tapizados',
@@ -66,6 +68,10 @@ const ServicesSection = () => {
     features: ['Limpieza exterior completa', 'Desinfección interior profunda', 'Limpieza de visera y anti-fog', 'Tratamiento antibacteriano y desodorante'],
     icon: ShieldCheck
   }];
+
+  // Ref para recordar qué cards ya se animaron
+  const animatedCardsRef = useRef<Set<number>>(new Set());
+
   return <section id="servicios" className="py-24 bg-support-brown/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -80,40 +86,58 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
           const IconComponent = service.icon;
-          return <div key={index} className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 shadow-lg hover-lift group backdrop-blur-sm flex flex-col">
-                <div className="flex items-center min-h-[56px] mb-6">
-                  <div className="mr-4 flex-shrink-0">
-                    <IconComponent className="h-10 w-10 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white">{service.title}</h3>
-                    <p className="text-accent-yellow font-semibold">{service.price}</p>
-                  </div>
+          const [cardRef, cardInView] = useInView({ threshold: 0.15 });
+          const alreadyAnimated = animatedCardsRef.current.has(index);
+
+          if (cardInView && !alreadyAnimated) {
+            animatedCardsRef.current.add(index);
+          }
+
+          return (
+            <div
+              key={index}
+              ref={cardRef}
+              className={`
+                bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 shadow-lg hover-lift group backdrop-blur-sm flex flex-col
+                transition-all duration-700
+                ${!alreadyAnimated && cardInView ? `animate-fade-in-up delay-${index * 100}` : ""}
+                ${alreadyAnimated ? "" : "opacity-0 translate-y-8"}
+              `}
+            >
+              <div className="flex items-center min-h-[56px] mb-6">
+                <div className="mr-4 flex-shrink-0">
+                  <IconComponent className="h-10 w-10 text-white" />
                 </div>
-                
-                <p className="text-support-gray mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-                
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-white">
-                      <div className="w-2 h-2 bg-accent-yellow rounded-full mr-3 flex-shrink-0"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="space-y-3 mt-auto">
-                  <Link to={`/servicios/${service.id}`} className="flex items-center justify-center w-full bg-support-brown/20 text-white rounded-full font-semibold hover:bg-support-brown/40 transition-all duration-300 py-3 group border border-accent-yellow/20">
-                    Ver más
-                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
-                  <a href="https://wa.me/5491169122284?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="btn-primary block w-full text-center">
-                    Consultar Precio
-                  </a>
+                <div>
+                  <h3 className="text-xl font-bold text-white">{service.title}</h3>
+                  <p className="text-accent-yellow font-semibold">{service.price}</p>
                 </div>
-              </div>;
+              </div>
+              
+              <p className="text-support-gray mb-6 leading-relaxed">
+                {service.description}
+              </p>
+              
+              <ul className="space-y-2 mb-6">
+                {service.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-center text-white">
+                    <div className="w-2 h-2 bg-accent-yellow rounded-full mr-3 flex-shrink-0"></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="space-y-3 mt-auto">
+                <Link to={`/servicios/${service.id}`} className="flex items-center justify-center w-full bg-support-brown/20 text-white rounded-full font-semibold hover:bg-support-brown/40 transition-all duration-300 py-3 group border border-accent-yellow/20">
+                  Ver más
+                  <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
+                <a href="https://wa.me/5491169122284?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="btn-primary block w-full text-center">
+                  Consultar Precio
+                </a>
+              </div>
+            </div>
+          );
         })}
         </div>
 

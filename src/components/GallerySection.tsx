@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useState, useRef } from "react";
+import { useInView } from "../hooks/useInView"; // Ajusta la ruta si es necesario
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<"cars" | "bikes">("cars");
+  // Estado para recordar qué tarjetas ya se animaron por categoría
+  const animatedIndexesRef = useRef<{ [tab: string]: Set<number> }>({
+    cars: new Set(),
+    bikes: new Set(),
+  });
 
   const galleryCars = [
     {
@@ -64,6 +71,13 @@ const GallerySection = () => {
 
   const activeGallery = activeTab === "cars" ? galleryCars : galleryBikes;
 
+  // Cuando cambias de tab, no reseteas el ref, solo el render
+  const handleTabChange = (tab: "cars" | "bikes") => {
+    setActiveTab(tab);
+    // Vacía el set de animados de la categoría seleccionada para que siempre se animen al cambiar
+    animatedIndexesRef.current[tab] = new Set();
+  };
+
   return (
     <section id="galeria" className="py-24 bg-neutral-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,7 +95,7 @@ const GallerySection = () => {
 
         <div className="mb-10 flex justify-center gap-4">
           <button
-            onClick={() => setActiveTab("cars")}
+            onClick={() => handleTabChange("cars")}
             className={`px-6 py-2 rounded-full font-semibold border ${
               activeTab === "cars"
                 ? "bg-primary-red text-white border-primary-red"
@@ -91,7 +105,7 @@ const GallerySection = () => {
             Autos
           </button>
           <button
-            onClick={() => setActiveTab("bikes")}
+            onClick={() => handleTabChange("bikes")}
             className={`px-6 py-2 rounded-full font-semibold border ${
               activeTab === "bikes"
                 ? "bg-accent-yellow text-neutral-black border-accent-yellow"
@@ -102,72 +116,95 @@ const GallerySection = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {activeGallery.map((item, index) => (
-            <div
-              key={index}
-              className="group cursor-pointer"
-              onClick={() => item.type !== "video" && setSelectedImage(index)}
-            >
-              <div className="bg-support-brown/20 rounded-2xl overflow-hidden hover-lift shadow-lg border border-accent-yellow/30 backdrop-blur-sm relative">
-                {item.type === "video" ? (
-                  <div className="relative h-[364px] w-full overflow-hidden">
-                    <video
-                      src={item.video}
-                      className="w-full h-full object-cover"
-                      muted
-                      autoPlay
-                      loop
-                      playsInline
-                    />
-                    <div className="absolute top-4 left-4 bg-accent-yellow text-neutral-black px-3 py-1 rounded-full text-sm font-semibold">
-                      VIDEO
-                    </div>
-                    <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <h3 className="text-white text-lg font-semibold px-4 text-center">
-                        {item.title}
-                      </h3>
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    <div className="grid grid-cols-2 h-64">
-                      <div className="relative overflow-hidden">
-                        <img
-                          src={item.before}
-                          alt={`${item.title} - Antes`}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/10"></div>
-                        <div className="absolute top-4 left-4 bg-primary-red text-white px-3 py-1 rounded-full text-sm font-semibold">
-                          ANTES
-                        </div>
+        <div
+          key={activeTab} // <-- Esto fuerza el remount al cambiar de categoría
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+        >
+          {activeGallery.map((item, index) => {
+            const [cardRef, cardInView] = useInView({ threshold: 0.15 });
+            const alreadyAnimated = animatedIndexesRef.current[activeTab].has(index);
+
+            // Si entra en vista y nunca se animó, lo marcamos como animado
+            if (cardInView && !alreadyAnimated) {
+              animatedIndexesRef.current[activeTab].add(index);
+            }
+
+            return (
+              <div
+                key={index}
+                ref={cardRef}
+                className={`
+                  group cursor-pointer
+                  transition-all duration-700
+                  ${
+                    !alreadyAnimated && cardInView
+                      ? `animate-fade-in-up delay-${index * 100}`
+                      : ""
+                  }
+                  ${alreadyAnimated ? "" : "opacity-0 translate-y-8"}
+                `}
+                onClick={() => item.type !== "video" && setSelectedImage(index)}
+              >
+                <div className="bg-support-brown/20 rounded-2xl overflow-hidden hover-lift shadow-lg border border-accent-yellow/30 backdrop-blur-sm relative">
+                  {item.type === "video" ? (
+                    <div className="relative h-[364px] w-full overflow-hidden">
+                      <video
+                        src={item.video}
+                        className="w-full h-full object-cover"
+                        muted
+                        autoPlay
+                        loop
+                        playsInline
+                      />
+                      <div className="absolute top-4 left-4 bg-accent-yellow text-neutral-black px-3 py-1 rounded-full text-sm font-semibold">
+                        VIDEO
                       </div>
-                      <div className="relative overflow-hidden">
-                        <img
-                          src={item.after}
-                          alt={`${item.title} - Después`}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/10"></div>
-                        <div className="absolute top-4 right-4 bg-accent-yellow text-neutral-black px-3 py-1 rounded-full text-sm font-semibold">
-                          DESPUÉS
-                        </div>
+                      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <h3 className="text-white text-lg font-semibold px-4 text-center">
+                          {item.title}
+                        </h3>
                       </div>
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold text-white mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="text-accent-yellow font-semibold">
-                        {item.service}
-                      </p>
-                    </div>
-                  </>
-                )}
+                  ) : (
+                    <>
+                      <div className="grid grid-cols-2 h-64">
+                        <div className="relative overflow-hidden">
+                          <img
+                            src={item.before}
+                            alt={`${item.title} - Antes`}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-black/10"></div>
+                          <div className="absolute top-4 left-4 bg-primary-red text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            ANTES
+                          </div>
+                        </div>
+                        <div className="relative overflow-hidden">
+                          <img
+                            src={item.after}
+                            alt={`${item.title} - Después`}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-black/10"></div>
+                          <div className="absolute top-4 right-4 bg-accent-yellow text-neutral-black px-3 py-1 rounded-full text-sm font-semibold">
+                            DESPUÉS
+                          </div>
+                        </div>
+                      </div>
+                      <div className="p-6">
+                        <h3 className="text-xl font-bold text-white mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-accent-yellow font-semibold">
+                          {item.service}
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Modal */}

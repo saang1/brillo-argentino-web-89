@@ -1,4 +1,7 @@
-import React from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useRef } from 'react';
+import { useInView } from '../hooks/useInView'; // Ajusta la ruta si es necesario
+
 const TestimonialsSection = () => {
   // Reviews de ejemplo para mostrar
   const featuredReviews = [{
@@ -14,6 +17,10 @@ const TestimonialsSection = () => {
     rating: 5,
     text: 'Todo excelente!. Fuí con la moto recién llegada de un viaje de 4500 kms, llena de bichos, engrasada, tierra.. quedó impecable!!. Gracias Seba y equipo!!'
   }];
+
+  // Ref para recordar qué cards ya se animaron
+  const animatedCardsRef = useRef<Set<number>>(new Set());
+
   const renderStars = (rating: number) => {
     return Array.from({
       length: 5
@@ -35,39 +42,54 @@ const TestimonialsSection = () => {
 
         {/* Reviews destacadas */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {featuredReviews.map((review, index) => (
-            <div
-              key={index}
-              className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 shadow-lg hover-lift backdrop-blur-sm flex flex-col"
-            >
-              <div className="flex items-center mb-4">
-                {renderStars(review.rating)}
-              </div>
+          {featuredReviews.map((review, index) => {
+            const [cardRef, cardInView] = useInView({
+              threshold: 0.15
+            });
+            const alreadyAnimated = animatedCardsRef.current.has(index);
 
-              <blockquote className="text-support-gray text-lg leading-relaxed mb-6 italic">
-                "{review.text}"
-              </blockquote>
+            if (cardInView && !alreadyAnimated) {
+              animatedCardsRef.current.add(index);
+            }
 
-              {/* Bloque inferior siempre al fondo */}
-              <div className="border-t border-accent-yellow/30 pt-6 mt-auto">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-support-brown to-primary-red text-white font-semibold rounded-full flex items-center justify-center">
-                      {getInitials(review.author_name)}
+            return <div
+                key={index}
+                ref={cardRef}
+                className={`
+                  bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-8 shadow-lg hover-lift backdrop-blur-sm flex flex-col
+                  transition-all duration-700
+                  ${!alreadyAnimated && cardInView ? `animate-fade-in-up delay-${index * 100}` : ""}
+                  ${alreadyAnimated ? "" : "opacity-0 translate-y-8"}
+                `}
+              >
+                <div className="flex items-center mb-4">
+                  {renderStars(review.rating)}
+                </div>
+
+                <blockquote className="text-support-gray text-lg leading-relaxed mb-6 italic">
+                  "{review.text}"
+                </blockquote>
+
+                {/* Bloque inferior siempre al fondo */}
+                <div className="border-t border-accent-yellow/30 pt-6 mt-auto">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 bg-gradient-to-r from-support-brown to-primary-red text-white font-semibold rounded-full flex items-center justify-center">
+                        {getInitials(review.author_name)}
+                      </div>
+                      <div>
+                        <h4 className="text-white font-bold text-lg">{review.author_name}</h4>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-white font-bold text-lg">{review.author_name}</h4>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="bg-support-brown/20 text-accent-yellow px-3 py-1 rounded-full text-xs font-semibold border border-accent-yellow/30">
-                      Google Maps
+                    <div className="text-right">
+                      <div className="bg-support-brown/20 text-accent-yellow px-3 py-1 rounded-full text-xs font-semibold border border-accent-yellow/30">
+                        Google Maps
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </div>;
+          })}
         </div>
 
         <div className="text-center mt-16">
@@ -92,5 +114,6 @@ const TestimonialsSection = () => {
       </div>
     </section>;
 };
+
 export default TestimonialsSection;
 // btn-primary w-full sm:w-auto

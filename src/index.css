@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -135,4 +134,23 @@
   .icon-container-alt {
     @apply bg-gradient-to-br from-accent-yellow to-support-brown p-3 rounded-lg shadow-lg;
   }
+
+  /* Animaciones suaves para HeroSection */
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(34px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .animate-fade-in-up.delay-100 { animation-delay: 0.1s; }
+  .animate-fade-in-up.delay-200 { animation-delay: 0.2s; }
+  .animate-fade-in-up.delay-300 { animation-delay: 0.3s; }
+  .animate-fade-in-up.delay-400 { animation-delay: 0.4s; }
 }

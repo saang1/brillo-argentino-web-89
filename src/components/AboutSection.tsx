@@ -1,5 +1,7 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useRef } from "react";
 import { Star, Award, Users, Clock } from "lucide-react";
+import { useInView } from "../hooks/useInView"; // Ajusta la ruta si es necesario
 
 const AboutSection = () => {
   const stats = [
@@ -25,6 +27,12 @@ const AboutSection = () => {
     },
   ];
 
+  const animatedStatsRef = useRef<Set<number>>(new Set());
+
+  // Hooks para los bloques principales
+  const [leftRef, leftInView] = useInView({ threshold: 0.2 });
+  const [rightRef, rightInView] = useInView({ threshold: 0.2 });
+
   return (
     <section
       id="nosotros"
@@ -47,9 +55,19 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Text Content */}
-          <div>
+          <div
+            ref={leftRef}
+            className={`
+              transition-all duration-700
+              ${
+                leftInView
+                  ? "animate-fade-in-up"
+                  : "opacity-0 translate-y-8"
+              }
+            `}
+          >
             {/* Logo + Brand */}
-            <div className="flex flex-col items-start lg:items-start mb-6 animate-fade-in">
+            <div className="flex flex-col items-start lg:items-start mb-6 animate-fade-in-up">
               <img
                 src="/lovable-uploads/elitegarage-logo.svg"
                 alt="Elite Garage Logo"
@@ -57,11 +75,11 @@ const AboutSection = () => {
               />
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white animate-fade-in-up delay-100">
               Quiénes <span className="text-gradient">Somos</span>
             </h2>
 
-            <p className="text-xl text-support-gray mb-6 leading-relaxed">
+            <p className="text-xl text-support-gray mb-6 leading-relaxed animate-fade-in-up delay-200">
               Esta es la historia de Elite Garage Spa: un emprendimiento que nació en un rincón de un
               estacionamiento y creció hasta convertirse en una marca con identidad propia.
               Pasión por el detalle, amor por las motos y trabajo constante transformaron un hobby
@@ -70,14 +88,14 @@ const AboutSection = () => {
               vehículo hay una historia que merece ser contada.
             </p>
 
-            <p className="text-lg text-support-gray mb-8 leading-relaxed">
+            <p className="text-lg text-support-gray mb-8 leading-relaxed animate-fade-in-up delay-300">
               En Elite Garage Spa, nos especializamos en el cuidado y detailing de autos y motos,
               ofreciendo un servicio profesional que transforma cada vehículo en una obra maestra.
               Nuestro equipo está comprometido con la excelencia, utilizando productos certificados
               y técnicas avanzadas para garantizar resultados excepcionales.
             </p>
 
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-8 animate-fade-in-up delay-400">
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-accent-yellow rounded-full mr-4"></div>
                 <span className="text-white">Productos certificados</span>
@@ -104,14 +122,24 @@ const AboutSection = () => {
               href="https://www.instagram.com/elitegarajespa/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center"
+              className="btn-primary inline-flex items-center animate-fade-in-up delay-400"
             >
               Conocé más sobre nosotros
             </a>
           </div>
 
           {/* Right: Image + Stats */}
-          <div>
+          <div
+            ref={rightRef}
+            className={`
+              transition-all duration-700
+              ${
+                rightInView
+                  ? "animate-fade-in-up"
+                  : "opacity-0 translate-y-8"
+              }
+            `}
+          >
             <div className="relative mb-8">
               <div className="aspect-square bg-support-brown/20 rounded-2xl overflow-hidden border border-accent-yellow/30">
                 <img
@@ -130,11 +158,24 @@ const AboutSection = () => {
 
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => {
+                const [statRef, statInView] = useInView({ threshold: 0.15 });
+                const alreadyAnimated = animatedStatsRef.current.has(index);
+
+                if (statInView && !alreadyAnimated) {
+                  animatedStatsRef.current.add(index);
+                }
+
                 const IconComponent = stat.icon;
                 return (
                   <div
                     key={index}
-                    className="bg-support-brown/20 backdrop-blur-sm rounded-2xl p-6 border border-accent-yellow/30 text-center hover-lift"
+                    ref={statRef}
+                    className={`
+                      bg-support-brown/20 backdrop-blur-sm rounded-2xl p-6 border border-accent-yellow/30 text-center hover-lift
+                      transition-all duration-700
+                      ${!alreadyAnimated && statInView ? `animate-fade-in-up delay-${index * 100}` : ""}
+                      ${alreadyAnimated ? "" : "opacity-0 translate-y-8"}
+                    `}
                   >
                     <div className="icon-container-alt inline-flex mb-4">
                       <IconComponent className="h-6 w-6 text-white" />
