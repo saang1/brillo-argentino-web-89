@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -11,6 +11,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { getServiceById } from "@/data/servicesData";
+import { useInView } from "../hooks/useInView";
 
 const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -19,6 +20,15 @@ const ServiceDetail = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [serviceId]);
+
+  // Para animar los bloques principales SOLO UNA VEZ
+  const animatedBlocksRef = useRef<Set<string>>(new Set());
+  const [processRef, processInView] = useInView({ threshold: 0.15 });
+  const [benefitsRef, benefitsInView] = useInView({ threshold: 0.15 });
+  const [faqRef, faqInView] = useInView({ threshold: 0.15 });
+
+  // Animación para el hero (solo una vez)
+  const [heroRef, heroInView] = useInView({ threshold: 0.15 });
 
   if (!service) {
     return (
@@ -58,7 +68,14 @@ const ServiceDetail = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div
+            ref={heroRef}
+            className={`
+              grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
+              transition-all duration-700
+              ${heroInView ? 'animate-fade-in-up delay-100' : 'opacity-0 translate-y-8'}
+            `}
+          >
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 {service.title}
@@ -121,58 +138,100 @@ const ServiceDetail = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold text-neutral-black mb-8">
-                Nuestro Proceso
-              </h2>
-              <div className="space-y-6">
-                {service.process.map((step, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-6 backdrop-blur-sm"
-                  >
-                    <div className="bg-gradient-to-r from-primary-red to-support-brown text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">
-                      {index + 1}
-                    </div>
-                    <p className="text-support-gray text-lg">{step}</p>
+            {/* Proceso */}
+            {(() => {
+              const alreadyAnimated = animatedBlocksRef.current.has("process");
+              if (processInView && !alreadyAnimated) {
+                animatedBlocksRef.current.add("process");
+              }
+              return (
+                <div
+                  ref={processRef}
+                  className={`
+                    transition-all duration-700
+                    ${!alreadyAnimated && processInView ? 'animate-fade-in-up delay-100' : ''}
+                    ${alreadyAnimated ? '' : 'opacity-0 translate-y-8'}
+                  `}
+                >
+                  <h2 className="text-3xl font-bold text-neutral-black mb-8">
+                    Nuestro Proceso
+                  </h2>
+                  <div className="space-y-6">
+                    {service.process.map((step, index) => (
+                      <div
+                        key={index}
+                        className={`
+                          flex items-start bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-6 backdrop-blur-sm
+                          transition-all duration-700
+                          ${!alreadyAnimated && processInView ? `animate-fade-in-up delay-${index * 100}` : ""}
+                          ${alreadyAnimated ? "" : "opacity-0 translate-y-8"}
+                        `}
+                      >
+                        <div className="bg-gradient-to-r from-primary-red to-support-brown text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                          {index + 1}
+                        </div>
+                        <p className="text-support-gray text-lg">{step}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+              );
+            })()}
 
-            <div>
-              <h2 className="text-3xl font-bold text-neutral-black mb-8">
-                Beneficios
-              </h2>
-              <div className="space-y-4 mb-8">
-                {service.benefits.map((benefit, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-6 backdrop-blur-sm"
-                  >
-                    <CheckCircle className="h-6 w-6 text-accent-yellow mr-3 flex-shrink-0" />
-                    <p className="text-support-gray text-lg">{benefit}</p>
+            {/* Beneficios */}
+            {(() => {
+              const alreadyAnimated = animatedBlocksRef.current.has("benefits");
+              if (benefitsInView && !alreadyAnimated) {
+                animatedBlocksRef.current.add("benefits");
+              }
+              return (
+                <div
+                  ref={benefitsRef}
+                  className={`
+                    transition-all duration-700
+                    ${!alreadyAnimated && benefitsInView ? 'animate-fade-in-up delay-200' : ''}
+                    ${alreadyAnimated ? '' : 'opacity-0 translate-y-8'}
+                  `}
+                >
+                  <h2 className="text-3xl font-bold text-neutral-black mb-8">
+                    Beneficios
+                  </h2>
+                  <div className="space-y-4 mb-8">
+                    {service.benefits.map((benefit, index) => (
+                      <div
+                        key={index}
+                        className={`
+                          flex items-center bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-6 backdrop-blur-sm
+                          transition-all duration-700
+                          ${!alreadyAnimated && benefitsInView ? `animate-fade-in-up delay-${index * 100}` : ""}
+                          ${alreadyAnimated ? "" : "opacity-0 translate-y-8"}
+                        `}
+                      >
+                        <CheckCircle className="h-6 w-6 text-accent-yellow mr-3 flex-shrink-0" />
+                        <p className="text-support-gray text-lg">{benefit}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              <div className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-6 backdrop-blur-sm">
-                <h3 className="text-xl font-bold text-white mb-4">
-                  ¿Qué incluye?
-                </h3>
-                <ul className="space-y-2">
-                  {service.features.map((feature, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center text-support-gray"
-                    >
-                      <div className="w-2 h-2 bg-accent-yellow rounded-full mr-3 flex-shrink-0"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+                  <div className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-6 backdrop-blur-sm">
+                    <h3 className="text-xl font-bold text-white mb-4">
+                      ¿Qué incluye?
+                    </h3>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, index) => (
+                        <li
+                          key={index}
+                          className="flex items-center text-support-gray"
+                        >
+                          <div className="w-2 h-2 bg-accent-yellow rounded-full mr-3 flex-shrink-0"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         </div>
       </section>
@@ -183,22 +242,38 @@ const ServiceDetail = () => {
           <h2 className="text-3xl font-bold text-neutral-black text-center mb-12">
             Preguntas Frecuentes
           </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            {service.faqs.map((faq, index) => (
+          {(() => {
+            const alreadyAnimated = animatedBlocksRef.current.has("faq");
+            if (faqInView && !alreadyAnimated) {
+              animatedBlocksRef.current.add("faq");
+            }
+            return (
               <div
-                key={index}
-                className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-6 backdrop-blur-sm"
+                ref={faqRef}
+                className={`
+                  max-w-3xl mx-auto space-y-6
+                  transition-all duration-700
+                  ${!alreadyAnimated && faqInView ? 'animate-fade-in-up delay-100' : ''}
+                  ${alreadyAnimated ? '' : 'opacity-0 translate-y-8'}
+                `}
               >
-                <h3 className="text-lg font-semibold text-white mb-3 flex items-center">
-                  <MessageCircle className="h-5 w-5 text-accent-yellow mr-2" />
-                  {faq.question}
-                </h3>
-                <p className="text-support-gray leading-relaxed">
-                  {faq.answer}
-                </p>
+                {service.faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="bg-neutral-black/80 border border-accent-yellow/30 rounded-2xl p-6 backdrop-blur-sm"
+                  >
+                    <h3 className="text-lg font-semibold text-white mb-3 flex items-center">
+                      <MessageCircle className="h-5 w-5 text-accent-yellow mr-2" />
+                      {faq.question}
+                    </h3>
+                    <p className="text-support-gray leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            );
+          })()}
         </div>
       </section>
 

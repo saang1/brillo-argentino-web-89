@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Car, ChevronDown } from 'lucide-react';
@@ -121,9 +120,9 @@ const Header = () => {
           {/* Mobile menu button */}
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors duration-200">
             <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <div className={`h-0.5 w-full transition-all duration-300 ${isScrolled ? 'bg-neutral-black' : 'bg-white'} ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''} drop-shadow-md`} />
-              <div className={`h-0.5 w-full transition-all duration-300 ${isScrolled ? 'bg-neutral-black' : 'bg-white'} ${isMobileMenuOpen ? 'opacity-0' : ''} drop-shadow-md`} />
-              <div className={`h-0.5 w-full transition-all duration-300 ${isScrolled ? 'bg-neutral-black' : 'bg-white'} ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''} drop-shadow-md`} />
+              <div className={`h-0.5 w-full transition-all duration-300 bg-white ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''} drop-shadow-md`} />
+              <div className={`h-0.5 w-full transition-all duration-300 bg-white ${isMobileMenuOpen ? 'opacity-0' : ''} drop-shadow-md`} />
+              <div className={`h-0.5 w-full transition-all duration-300 bg-white ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''} drop-shadow-md`} />
             </div>
           </button>
         </div>
