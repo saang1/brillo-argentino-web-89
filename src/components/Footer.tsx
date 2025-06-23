@@ -154,7 +154,7 @@ const Footer = () => {
                 <span className="text-blue-400">📍</span> Luzuriaga 395
               </li>
               <li className="text-gray-300">
-                <span className="text-blue-400">🕒</span> Lun-Vie: 9:00 a.m - 19:00 p.ms <br />
+                <span className="text-blue-400">🕒</span> Lun-Vie: 9:00 a.m - 19:00 p.m <br />
                 <span>Sáb: 9:00 a.m - 18:00 p.m</span>
               </li>
               <li className="text-gray-300">
