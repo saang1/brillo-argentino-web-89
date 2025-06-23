@@ -4,7 +4,7 @@ import { useInView } from "../hooks/useInView"; // Ajusta la ruta si es necesari
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [activeTab, setActiveTab] = useState<"cars" | "bikes">("cars");
+  const [activeTab, setActiveTab] = useState<"cars" | "bikes">("bikes");
   // Estado para recordar qué tarjetas ya se animaron por categoría
   const animatedIndexesRef = useRef<{ [tab: string]: Set<number> }>({
     cars: new Set(),
@@ -14,10 +14,10 @@ const GallerySection = () => {
   const galleryCars = [
     {
       type: "image",
-      before: "/lovable-uploads/c29b6a2c-b3e5-40a4-8f42-ac7731cb416e.png",
-      after: "/lovable-uploads/162c40ce-2b22-4327-9dc4-32d07d352d7e.png",
-      title: "Detailing Interior Alfa Romeo",
-      service: "Limpieza Profunda + Acondicionamiento",
+      before: "/lovable-uploads/antes-auto1.JPG",
+      after: "/lovable-uploads/despues-auto1.JPG",
+      title: "Pullido de opticas",
+      service: "Restauración + Protección UV",
     },
     {
       type: "video",
@@ -33,9 +33,9 @@ const GallerySection = () => {
     },
     {
       type: "image",
-      before: "/lovable-uploads/e115b780-9bf3-42dc-a809-be9861d90858.png",
-      after: "/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png",
-      title: "Restauración de Llantas Volkswagen",
+      before: "/lovable-uploads/antes-auto2.JPG",
+      after: "/lovable-uploads/despues-auto2.JPG",
+      title: "Pullido Completo de Auto",
       service: "Limpieza + Pulido + Protección",
     },
   ];
@@ -43,8 +43,8 @@ const GallerySection = () => {
   const galleryBikes = [
     {
       type: "image",
-      before: "/lovable-uploads/placeholder-moto.jpeg",
-      after: "/lovable-uploads/placeholder-moto.jpeg",
+      before: "/lovable-uploads/antes-moto1.JPG",
+      after: "/lovable-uploads/despues-moto1.JPG",
       title: "Detailing Moto Yamaha",
       service: "Lavado + Protección",
     },
@@ -62,17 +62,17 @@ const GallerySection = () => {
     },
     {
       type: "image",
-      before: "/lovable-uploads/placeholder-moto.jpeg",
-      after: "/lovable-uploads/placeholder-moto.jpeg",
+      before: "/lovable-uploads/antes-moto2.JPG",
+      after: "/lovable-uploads/despues-moto2.JPG",
       title: "Restauración Moto Cross",
       service: "Desarme + Limpieza + Protección",
     },
   ];
 
-  const activeGallery = activeTab === "cars" ? galleryCars : galleryBikes;
+  const activeGallery = activeTab === "bikes" ? galleryBikes : galleryCars;
 
   // Cuando cambias de tab, no reseteas el ref, solo el render
-  const handleTabChange = (tab: "cars" | "bikes") => {
+  const handleTabChange = (tab: "bikes" | "cars") => {
     setActiveTab(tab);
     // Vacía el set de animados de la categoría seleccionada para que siempre se animen al cambiar
     animatedIndexesRef.current[tab] = new Set();
@@ -95,16 +95,6 @@ const GallerySection = () => {
 
         <div className="mb-10 flex justify-center gap-4">
           <button
-            onClick={() => handleTabChange("cars")}
-            className={`px-6 py-2 rounded-full font-semibold border ${
-              activeTab === "cars"
-                ? "bg-primary-red text-white border-primary-red"
-                : "bg-transparent text-support-gray border-support-gray hover:text-white"
-            } transition-colors`}
-          >
-            Autos
-          </button>
-          <button
             onClick={() => handleTabChange("bikes")}
             className={`px-6 py-2 rounded-full font-semibold border ${
               activeTab === "bikes"
@@ -114,6 +104,16 @@ const GallerySection = () => {
           >
             Motos
           </button>
+          <button
+            onClick={() => handleTabChange("cars")}
+            className={`px-6 py-2 rounded-full font-semibold border ${
+              activeTab === "cars"
+                ? "bg-primary-red text-white border-primary-red"
+                : "bg-transparent text-support-gray border-support-gray hover:text-white"
+            } transition-colors`}
+          >
+            Autos
+          </button>
         </div>
 
         <div
@@ -122,7 +122,8 @@ const GallerySection = () => {
         >
           {activeGallery.map((item, index) => {
             const [cardRef, cardInView] = useInView({ threshold: 0.15 });
-            const alreadyAnimated = animatedIndexesRef.current[activeTab].has(index);
+            const alreadyAnimated =
+              animatedIndexesRef.current[activeTab].has(index);
 
             // Si entra en vista y nunca se animó, lo marcamos como animado
             if (cardInView && !alreadyAnimated) {
