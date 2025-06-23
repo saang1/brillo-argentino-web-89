@@ -9,11 +9,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { servicesData } from '@/data/servicesData';
+import { cursosData } from '@/data/cursosData';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isMobileCoursesOpen, setIsMobileCoursesOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -37,12 +39,14 @@ const Header = () => {
         });
         setIsMobileMenuOpen(false);
         setIsMobileServicesOpen(false);
+        setIsMobileCoursesOpen(false);
       }
     } else {
       // If we're on a service page, navigate to main page with hash
       navigate(`/#${sectionId}`);
       setIsMobileMenuOpen(false);
       setIsMobileServicesOpen(false);
+      setIsMobileCoursesOpen(false);
     }
   };
 
@@ -50,6 +54,14 @@ const Header = () => {
     navigate(`/servicios/${serviceId}`);
     setIsMobileMenuOpen(false);
     setIsMobileServicesOpen(false);
+    setIsMobileCoursesOpen(false);
+  };
+
+  const navigateToCourse = (courseId: string) => {
+    navigate(`/cursos/${courseId}`);
+    setIsMobileMenuOpen(false);
+    setIsMobileServicesOpen(false);
+    setIsMobileCoursesOpen(false);
   };
 
   // Use isScrolled for text color changes to match navbar background changes
@@ -101,6 +113,34 @@ const Header = () => {
                     className="text-white hover:text-white hover:bg-accent-yellow/10 cursor-pointer px-6 py-4 text-base transition-colors duration-200"
                   >
                     <div className="font-medium">{service.title}</div>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Courses Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className={`font-medium text-lg hover:text-primary-red transition-all duration-200 ${textColorClass} hover:scale-105 flex items-center gap-1`}>
+                  Cursos
+                  <ChevronDown className="h-4 w-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-72 bg-neutral-black border border-support-gray shadow-2xl rounded-lg mt-2 z-50">
+                <DropdownMenuItem 
+                  onClick={() => scrollToSection('cursos')}
+                  className="text-white hover:text-white hover:bg-accent-yellow/10 cursor-pointer px-6 py-4 text-base font-semibold"
+                >
+                  Ver todos los cursos
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className="bg-support-gray" />
+                {cursosData.map((course) => (
+                  <DropdownMenuItem
+                    key={course.id}
+                    onClick={() => navigateToCourse(course.id)}
+                    className="text-white hover:text-white hover:bg-accent-yellow/10 cursor-pointer px-6 py-4 text-base transition-colors duration-200"
+                  >
+                    <div className="font-medium">{course.title}</div>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -162,6 +202,36 @@ const Header = () => {
                         className="block w-full text-left text-neutral-black hover:text-primary-red transition-colors duration-200 py-3 text-base hover:bg-accent-yellow/10 rounded px-3"
                       >
                         <div className="font-medium">{service.title}</div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Courses Submenu */}
+              <div>
+                <button 
+                  onClick={() => setIsMobileCoursesOpen(!isMobileCoursesOpen)}
+                  className="w-full text-neutral-black hover:text-primary-red transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-accent-yellow/10 rounded-lg px-3 flex items-center justify-between"
+                >
+                  Cursos
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileCoursesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isMobileCoursesOpen && (
+                  <div className="ml-4 mt-2 space-y-2 border-l-2 border-accent-yellow pl-4">
+                    <button 
+                      onClick={() => scrollToSection('cursos')}
+                      className="block w-full text-left text-neutral-black hover:text-primary-red transition-colors duration-200 py-3 text-base font-semibold hover:bg-accent-yellow/10 rounded px-3"
+                    >
+                      Ver todos los cursos
+                    </button>
+                    {cursosData.map((course) => (
+                      <button
+                        key={course.id}
+                        onClick={() => navigateToCourse(course.id)}
+                        className="block w-full text-left text-neutral-black hover:text-primary-red transition-colors duration-200 py-3 text-base hover:bg-accent-yellow/10 rounded px-3"
+                      >
+                        <div className="font-medium">{course.title}</div>
                       </button>
                     ))}
                   </div>
