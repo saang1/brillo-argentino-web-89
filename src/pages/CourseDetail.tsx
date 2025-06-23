@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Clock, Users, Award, BookOpen, CheckCircle, User } from 'lucide-react';
 import { cursosData } from '@/data/cursosData';
@@ -12,6 +12,11 @@ const CourseDetail = () => {
   const navigate = useNavigate();
   
   const course = cursosData.find(c => c.id === courseId);
+
+  // Scroll to top when component mounts or courseId changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [courseId]);
 
   if (!course) {
     return (
@@ -42,6 +47,17 @@ const CourseDetail = () => {
     }
   };
 
+  const handleBackToCourses = () => {
+    navigate('/#cursos');
+    // Small delay to ensure navigation completes before scrolling
+    setTimeout(() => {
+      const coursesSection = document.getElementById('cursos');
+      if (coursesSection) {
+        coursesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-neutral-black">
       <Header />
@@ -51,7 +67,7 @@ const CourseDetail = () => {
         <section className="py-16 bg-gradient-to-r from-support-brown/20 to-primary-red/20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <button
-              onClick={() => navigate('/#cursos')}
+              onClick={handleBackToCourses}
               className="flex items-center gap-2 text-accent-yellow hover:text-white transition-colors mb-8"
             >
               <ArrowLeft className="h-5 w-5" />
