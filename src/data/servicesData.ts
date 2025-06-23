@@ -33,7 +33,7 @@ export const servicesData: ServiceDetail[] = [
       'Ambiente saludable',
       'Apariencia renovada',
       'Mayor durabilidad',
-      'Valor preservado'
+      'Desinfección y eliminación de olores'
     ],
     duration: '3-5 horas',
     warranty: '6 meses',
@@ -318,6 +318,40 @@ export const servicesData: ServiceDetail[] = [
       {
         question: '¿Con qué frecuencia debo limpiar profesionalmente mi casco?',
         answer: 'Recomendamos limpieza profesional cada 2-3 meses para uso diario, o cada 6 meses para uso ocasional. Si notas malos olores, acumulación de grasa o la visera pierde transparencia, es momento de una limpieza especializada.'
+      }
+    ]
+  },
+  {
+    id: 'pulido-escape-motos',
+    title: 'Pullido de escapes y pintura de escapes de motos',
+    shortDescription: 'Devolvé el brillo y la estética a los escapes de tu moto con nuestro servicio de pulido y pintura especializada, eliminando óxido y manchas.',
+    fullDescription: 'Nuestro servicio de pulido y pintura de escapes de motos elimina el óxido, manchas y marcas, devolviendo el brillo original. Utilizamos técnicas avanzadas de pulido y pinturas resistentes al calor para garantizar un acabado duradero y estéticamente atractivo.',
+    price: 'Consultar',
+    features: ['Limpieza exterior completa', 'Desinfección interior profunda', 'Limpieza de visera y anti-fog', 'Tratamiento antibacteriano y desodorante'],
+    process: [
+      'Limpieza de escapes y tratamiento anti-óxido',
+      'Pintura resistente al calor',
+      'Acabado brillante y duradero',
+      'Secado y ensamble',
+      'Control de calidad final'
+    ],
+    benefits: [
+      'Resistencia térmica superior',
+      'Protección anticorrosiva',
+      'Renovación estética completa',
+      'Durabilidad extendida'
+    ],
+    duration: '1-3 días',
+    warranty: '2 años',
+    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    faqs: [
+      {
+        question: '¿La pintura del escape se mantiene con las altas temperaturas del motor?',
+        answer: 'Sí, utilizamos pintura térmica especializada que resiste temperaturas de hasta 650°C sin decolorarse ni desprenderse. Esta pintura está específicamente formulada para componentes de escape y mantiene su acabado y propiedades protectoras durante todo el ciclo de vida del motor.'
+      },
+      {
+        question: '¿Cuánto tiempo debo esperar antes de usar la moto después del tratamiento?',
+        answer: 'Recomendamos esperar 24 horas para el curado completo de la pintura antes del primer uso. Durante los primeros arranques es normal percibir un ligero humo, que desaparece una vez que la pintura alcanza su temperatura de trabajo y se asienta definitivamente.'
       }
     ]
   }

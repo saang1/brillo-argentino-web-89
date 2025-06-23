@@ -1,25 +1,18 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Car, PaintBucket, Eye, Hammer, Palette, ArrowRight, Droplet, Sparkle, Shield, CloudRain, RefreshCw, Scissors, HardHat, ShieldCheck } from 'lucide-react';
+import { Car, PaintBucket, Eye, Hammer, Palette, ArrowRight, Droplet, Sparkle, Shield, CloudRain, RefreshCw, Scissors, HardHat, ShieldCheck, Zap } from 'lucide-react';
 import { useInView } from '../hooks/useInView'; // Asegúrate de que la ruta sea correcta
 const ServicesSection = () => {
   const services = [{
     id: 'limpieza-tapizados',
-    title: 'Limpieza de tapizados de autos e interiores',
-    description: 'Tratamientos profesionales con productos certificados para una limpieza profunda y duradera.',
+    title: 'Limpieza y Restauración de Interiores',
+    description: 'Tratamientos profesionales especializados para todo tipo de situaciones: desde limpieza de mantenimiento hasta restauración completa de autos inundados.',
     price: 'Consultar',
-    features: ['Restauración profunda de tapizados', 'Limpieza integral del interior', 'Productos profesionales y seguros', 'Renová el interior de tu auto'],
+    features: ['Restauración profunda de tapizados', 'Limpieza integral del interior', 'Productos profesionales y seguros', 'Extracción total de agua y humedad','Desinfección y eliminación de olores'],
     icon: Car
   }, {
-    id: 'autos-inundados',
-    title: 'Autos inundados',
-    description: 'Tu auto sufrió una inundación? Nos encargamos de restaurarlo a fondo, eliminando humedad, olores y suciedad para que vuelva a sentirse como nuevo, por dentro y por fuera.',
-    price: 'Desde $12.000',
-    features: ['Extracción total de agua y humedad', 'Desinfección profunda', 'Revisión de zonas críticas', 'Recuperación estética y funcional'],
-    icon: Droplet
-  }, {
-    id: 'pullido-abrillantado',
+    id: 'PPF, ploteos y polarizados',
     title: 'Pulidos y abrillantados Autos y Motos',
     description: 'Dejá tu vehículo con un acabado impecable y brillante, eliminando imperfecciones y restaurando su color original.',
     price: 'Desde $25.000',
@@ -28,7 +21,7 @@ const ServicesSection = () => {
   }, {
     id: 'tratamientos-cuidado',
     title: 'Tratamientos para el cuidado',
-    description: 'Protegé y realzá tu vehículo con nuestros tratamientos especializados. Cuidamos cada superficie con productos de alta calidad para mantenerlo siempre como nuevo.',
+    description: 'Protegé la pintura de tu vehículo con nuestros servicios de PPF (Paint Protection Film), ploteos personalizados y polarizados de alta calidad para vidrios.',
     price: 'Desde $8.000',
     features: ['Protección de pintura y superficies', 'Tratamientos para cuero, plásticos y telas', 'Defensa contra rayos UV y clima', 'Productos profesionales y seguros'],
     icon: Eye
@@ -55,10 +48,10 @@ const ServicesSection = () => {
     icon: Scissors
   }, {
     id: 'pintura-motos',
-    title: 'Trabajos de pintura para motos',
-    description: 'Realizamos trabajos de pintura personalizados para motos, desde retoques hasta repintados completos, con acabados de alta calidad.',
+    title: 'Trabajos de pintura para motos y restauraciones',
+    description: 'Devolvé el brillo y color original a tu moto con nuestros servicios de pintura profesional, incluyendo reparaciones y restauraciones completas.',
     price: 'Consultar',
-    features: ['Preparación completa', 'Pintura multicapa', 'Diseños personalizados', 'Acabado profesional'],
+    features: ['Preparación completa', 'Pintura multicapa', 'Diseños personalizados', 'Acabado profesional',],
     icon: PaintBucket
   }, {
     id: 'limpieza-cascos-motos',
@@ -67,7 +60,14 @@ const ServicesSection = () => {
     price: 'Consultar',
     features: ['Limpieza exterior completa', 'Desinfección interior profunda', 'Limpieza de visera y anti-fog', 'Tratamiento antibacteriano y desodorante'],
     icon: ShieldCheck
-  }];
+  }, {
+    id: 'pulido-escape-motos',
+    title: 'Pullido de escapes y pintura de escapes de motos',
+    description: 'Devolvé el brillo y la estética a los escapes de tu moto con nuestro servicio de pulido y pintura especializada, eliminando óxido y manchas.',
+    price: 'Consultar',
+    features: ['Limpieza de escapes y tratamiento anti-óxido', 'Pintura resistente al calor', 'Acabado brillante y duradero', ],
+    icon: RefreshCw
+  },];
 
   // Ref para recordar qué cards ya se animaron
   const animatedCardsRef = useRef<Set<number>>(new Set());
