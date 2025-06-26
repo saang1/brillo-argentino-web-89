@@ -12,7 +12,7 @@ const ServicesSection = () => {
     features: ['Restauración profunda de tapizados', 'Limpieza integral del interior', 'Productos profesionales y seguros', 'Extracción total de agua y humedad','Desinfección y eliminación de olores'],
     icon: Car
   }, {
-    id: 'PPF, ploteos y polarizados',
+    id: 'pulido-abrillantado',
     title: 'Pulidos y abrillantados Autos y Motos',
     description: 'Dejá tu vehículo con un acabado impecable y brillante, eliminando imperfecciones y restaurando su color original.',
     price: 'Desde $25.000',

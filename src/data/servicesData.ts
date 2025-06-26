@@ -37,7 +37,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '3-5 horas',
     warranty: '6 meses',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    images: ['/lovable-uploads/limpieza-interior.jpg'],
     faqs: [
       {
         question: '¿Pueden eliminar cualquier tipo de mancha de los asientos?',
@@ -50,41 +50,7 @@ export const servicesData: ServiceDetail[] = [
     ]
   },
   {
-    id: 'autos-inundados',
-    title: 'Autos inundados',
-    shortDescription: 'Tu auto sufrió una inundación? Nos encargamos de restaurarlo a fondo, eliminando humedad, olores y suciedad para que vuelva a sentirse como nuevo, por dentro y por fuera.',
-    fullDescription: 'Nuestro servicio de restauración para autos inundados incluye una limpieza profunda y detallada, así como tratamientos específicos para eliminar la humedad y los olores. Utilizamos equipos de última generación y productos especializados para garantizar resultados óptimos.',
-    price: 'Desde $12.000',
-    features: ['Extracción total de agua y humedad', 'Desinfección profunda', 'Revisión de zonas críticas', 'Recuperación estética y funcional'],
-    process: [
-      'Aspirado completo de alfombras y asientos',
-      'Limpieza de tapizados con productos específicos',
-      'Tratamiento y acondicionamiento de cueros',
-      'Limpieza de plásticos y superficies duras',
-      'Desinfección y aromatización'
-    ],
-    benefits: [
-      'Eliminación de manchas y olores',
-      'Prevención de moho y hongos',
-      'Restauración de la estética interior',
-      'Volve a disfrutar de tu auto como nuevo'
-    ],
-    duration: '2-3 horas',
-    warranty: '1 mes',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
-    faqs: [
-      {
-        question: '¿Es posible recuperar completamente un auto que se inundó?',
-        answer: 'Depende del nivel de agua y tiempo de exposición. Si el agua no llegó al motor y la inundación fue breve, es posible una recuperación completa mediante desarmado, secado profundo, cambio de fluidos y restauración de componentes. Evaluamos cada caso para determinar la viabilidad técnica y económica de la restauración.'
-      },
-      {
-        question: '¿Cuánto tiempo toma el proceso de restauración de un auto inundado?',
-        answer: 'El proceso completo puede tomar entre 2 a 4 semanas dependiendo del nivel de daño. Incluye desmontaje de interior, secado de componentes eléctricos, tratamiento anticorrosivo, reemplazo de fluidos, pruebas de funcionamiento y restauración completa del habitáculo para eliminar humedad y olores.'
-      }
-    ]
-  },
-  {
-    id: 'pullido-abrillantado',
+    id: 'pulido-abrillantado',
     title: 'Pulidos y Abrillantados Autos y Motos',
     shortDescription: 'Dejá tu vehículo con un acabado impecable y brillante, eliminando imperfecciones y restaurando su color original.',
     fullDescription: 'Ofrecemos un servicio profesional de pulido y abrillantado que elimina rayones, marcas y oxidación de la pintura. Utilizamos técnicas avanzadas y productos de alta calidad para devolverle a tu vehículo su brillo original y protegerlo contra futuros daños.',
@@ -105,7 +71,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '4-8 horas',
     warranty: '3 meses',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    images: ['/lovable-uploads/pulido-abrillantado.JPG'],
     faqs: [
       {
         question: '¿Se pueden eliminar todos los rayones?',
@@ -139,7 +105,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '2-3 horas',
     warranty: '6 meses',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    images: ['/lovable-uploads/tratamiento.jpg'],
     faqs: [
       {
         question: '¿El tratamiento elimina completamente los malos olores del interior?',
@@ -173,7 +139,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 horas',
     warranty: 'Permanente',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    images: ['/lovable-uploads/ceramicos-vidrios.jpg'],
     faqs: [
       {
         question: '¿Cuánto dura el tratamiento cerámico y requiere mantenimiento?',
@@ -207,7 +173,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    images: ['/lovable-uploads/aboutUs-moto.jpeg'],
     faqs: [
       {
         question: '¿Es seguro lavar con vapor los componentes eléctricos y el motor de mi moto?',
@@ -241,7 +207,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    images: ['/lovable-uploads/reparacion-tapizado.jpg'],
     faqs: [
       {
         question: '¿Qué tipos de daños se pueden reparar en los tapizados?',
@@ -275,7 +241,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    images: ['/lovable-uploads/pintura-moto.JPG'],
     faqs: [
       {
         question: '¿Puedo cambiar completamente el color original de mi moto?',
@@ -309,7 +275,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    images: ['/lovable-uploads/limpieza-casco.jpg'],
     faqs: [
       {
         question: '¿La limpieza profesional puede eliminar rayones de la visera?',
@@ -323,7 +289,7 @@ export const servicesData: ServiceDetail[] = [
   },
   {
     id: 'pulido-escape-motos',
-    title: 'Pullido de escapes y pintura de escapes de motos',
+    title: 'Pulido de escapes y pintura de escapes de motos',
     shortDescription: 'Devolvé el brillo y la estética a los escapes de tu moto con nuestro servicio de pulido y pintura especializada, eliminando óxido y manchas.',
     fullDescription: 'Nuestro servicio de pulido y pintura de escapes de motos elimina el óxido, manchas y marcas, devolviendo el brillo original. Utilizamos técnicas avanzadas de pulido y pinturas resistentes al calor para garantizar un acabado duradero y estéticamente atractivo.',
     price: 'Consultar',
@@ -343,7 +309,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
-    images: ['/lovable-uploads/443218b2-6ff0-42c7-87e4-5de93e81623c.png'],
+    images: ['/lovable-uploads/pulido-escape.jpg'],
     faqs: [
       {
         question: '¿La pintura del escape se mantiene con las altas temperaturas del motor?',
