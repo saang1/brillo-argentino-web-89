@@ -123,11 +123,27 @@ const ServiceDetail = () => {
 
             <div className="lg:pl-8">
               <div className="aspect-square bg-neutral-black/50 border border-accent-yellow/30 rounded-2xl overflow-hidden">
-                <img
-                  src={service.images[0]}
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
+                {service.video ? (
+                  <div className="relative w-full h-full">
+                    <video
+                      src={service.video}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                    <div className="absolute top-4 left-4 bg-accent-yellow text-neutral-black px-3 py-1 rounded-full text-sm font-semibold z-10">
+                      VIDEO
+                    </div>
+                  </div>
+                ) : (
+                  <img
+                    src={service.images[0]}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
             </div>
           </div>

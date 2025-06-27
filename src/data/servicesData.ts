@@ -10,6 +10,7 @@ export interface ServiceDetail {
   benefits: string[];
   duration: string;
   warranty: string;
+  video: string;
   images: string[];
   faqs: { question: string; answer: string; }[];
 }
@@ -37,6 +38,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '3-5 horas',
     warranty: '6 meses',
+    video: "/lovable-uploads/limpieza.mp4",
     images: ['/lovable-uploads/limpieza-interior.jpg'],
     faqs: [
       {
@@ -71,6 +73,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '4-8 horas',
     warranty: '3 meses',
+    video: "/lovable-uploads/pulido.mp4",
     images: ['/lovable-uploads/pulido-abrillantado.JPG'],
     faqs: [
       {
@@ -81,7 +84,8 @@ export const servicesData: ServiceDetail[] = [
         question: '¿Afecta la garantía del vehículo?',
         answer: 'No, nuestros procesos profesionales no afectan la garantía del fabricante.'
       }
-    ]
+    ],
+    
   },
   {
     id: 'tratamientos-cuidado',
@@ -115,7 +119,8 @@ export const servicesData: ServiceDetail[] = [
         question: '¿Qué pasa si llueve después del tratamiento?',
         answer: 'No hay problema. Los productos que aplicamos se fijan rápidamente y son resistentes al agua una vez curados. Además, muchos de nuestros tratamientos ayudan a repeler el agua, protegiendo aún más tu vehículo.'
       }
-    ]
+    ],
+    video: ""
   },
   {
     id: 'ceramicos-vidrios',
@@ -139,6 +144,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 horas',
     warranty: 'Permanente',
+    video: "/lovable-uploads/ceramico.mp4",
     images: ['/lovable-uploads/ceramicos-vidrios.jpg'],
     faqs: [
       {
@@ -149,7 +155,8 @@ export const servicesData: ServiceDetail[] = [
         question: '¿En qué se diferencia del encerado tradicional y vale la pena la inversión?',
         answer: 'A diferencia de las ceras que duran 2-3 meses, el tratamiento cerámico forma un enlace químico permanente con la pintura ofreciendo protección superior y duradera. Aunque la inversión inicial es mayor, a largo plazo resulta más económico al reducir la frecuencia de mantenimientos y proteger el valor del vehículo. Además, proporciona resistencia química, térmica y mecánica que las ceras no pueden igualar.'
       }
-    ]
+    ],
+    
   },
   {
     id: 'lavado-motor-motos',
@@ -173,6 +180,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
+    video: "",
     images: ['/lovable-uploads/aboutUs-moto.jpeg'],
     faqs: [
       {
@@ -183,7 +191,8 @@ export const servicesData: ServiceDetail[] = [
         question: '¿El lavado a vapor funciona igual en motos muy sucias o con grasa acumulada?',
         answer: 'Si, el lavado a vapor es altamente efectivo incluso en motos con suciedad y grasa acumulada. Utilizamos vapor a alta presión que penetra y descompone la suciedad más difícil, eliminando grasa y contaminantes sin dañar las superficies. Además, podemos complementar el servicio con productos específicos para tratar manchas difíciles o áreas muy sucias.'
       }
-    ]
+    ],
+    
   },
   {
     id: 'tapizados-motos-autos',
@@ -217,7 +226,8 @@ export const servicesData: ServiceDetail[] = [
         question: '¿Es más conveniente reparar o cambiar todo el tapizado?',
         answer: 'La reparación es recomendable cuando el daño es localizado y el resto del tapizado está en buen estado. Es hasta 70% más económico que el reemplazo completo y mantiene la originalidad del vehículo. Solo recomendamos cambio total cuando el deterioro es generalizado.'
       }
-    ]
+    ],
+    video: ""
   },
   {
     id: 'pintura-motos',
@@ -241,6 +251,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
+    video: "",
     images: ['/lovable-uploads/pintura-moto.JPG'],
     faqs: [
       {
@@ -251,7 +262,8 @@ export const servicesData: ServiceDetail[] = [
         question: '¿La pintura nueva resiste igual que la de fábrica?',
         answer: 'Nuestra pintura multicapa con barniz UV ofrece resistencia superior a la original de fábrica. Incluye protección contra rayos solares, lluvia ácida, gasolina y productos químicos, con garantía de no decoloración por 2 años.'
       }
-    ]
+    ],
+    
   },
   {
     id: 'limpieza-cascos-motos',
@@ -285,7 +297,8 @@ export const servicesData: ServiceDetail[] = [
         question: '¿Con qué frecuencia debo limpiar profesionalmente mi casco?',
         answer: 'Recomendamos limpieza profesional cada 2-3 meses para uso diario, o cada 6 meses para uso ocasional. Si notas malos olores, acumulación de grasa o la visera pierde transparencia, es momento de una limpieza especializada.'
       }
-    ]
+    ],
+    video: ""
   },
   {
     id: 'pulido-escape-motos',
@@ -309,6 +322,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
+    video: "/lovable-uploads/escapepintura.mp4",
     images: ['/lovable-uploads/pulido-escape.jpg'],
     faqs: [
       {
@@ -319,7 +333,8 @@ export const servicesData: ServiceDetail[] = [
         question: '¿Cuánto tiempo debo esperar antes de usar la moto después del tratamiento?',
         answer: 'Recomendamos esperar 24 horas para el curado completo de la pintura antes del primer uso. Durante los primeros arranques es normal percibir un ligero humo, que desaparece una vez que la pintura alcanza su temperatura de trabajo y se asienta definitivamente.'
       }
-    ]
+    ],
+    
   }
 ];
 
