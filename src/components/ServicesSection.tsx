@@ -9,7 +9,7 @@ const ServicesSection = () => {
     title: 'Limpieza y Restauración de Interiores',
     description: 'Tratamientos profesionales especializados para todo tipo de situaciones: desde limpieza de mantenimiento hasta restauración completa de autos inundados.',
     price: 'Consultar',
-    features: ['Restauración profunda de tapizados', 'Limpieza integral del interior', 'Productos profesionales y seguros', 'Extracción total de agua y humedad','Desinfección y eliminación de olores'],
+    features: ['Restauración profunda de tapizados', 'Limpieza integral del interior', 'Productos profesionales y seguros', 'Extracción total de agua y humedad','Desinfección y eliminación de olores', 'Cambio de aislantes de piso en autos inundados'],
     icon: Car
   }, {
     id: 'pulido-abrillantado',

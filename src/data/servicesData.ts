@@ -25,7 +25,7 @@ export const servicesData: ServiceDetail[] = [
     features: ['Restauración profunda de tapizados', 'Limpieza integral del interior', 'Productos profesionales y seguros', 'Renová el interior de tu auto'],
     process: [
       'Inspección y preparación',
-      'Aspirado profundo',
+      'Limpieza y lubricacion de trasmisión',
       'Pre-tratamiento de manchas',
       'Limpieza con extractor',
       'Secado y acabado'
@@ -167,9 +167,9 @@ export const servicesData: ServiceDetail[] = [
     features: ['Aplicación de vapor', 'Desengrasa profundo', 'Seguro para electrónicos', 'Resultados inmediatos'],
     process: [
       'Inspección y protección',
-      'Pre-tratamiento',
+      'Hidratacion de partes plásticas, aplicación de cera protectora, dependiendo del material, Hidratacion de motor con barnis protector para mangueras y motores',
       'Aplicación de vapor',
-      'Desengrasa y detallado',
+      'Lavado,desengrasados y detallado',
       'Acabado y control de calidad'
     ],
     benefits: [
@@ -180,8 +180,8 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
-    video: "",
-    images: ['/lovable-uploads/aboutUs-moto.jpeg'],
+    video: "/lovable-uploads/lavado-motor.mp4",
+    images: [],
     faqs: [
       {
         question: '¿Es seguro lavar con vapor los componentes eléctricos y el motor de mi moto?',
@@ -237,7 +237,7 @@ export const servicesData: ServiceDetail[] = [
     price: 'Consultar',
     features: ['Preparación completa', 'Pintura multicapa', 'Diseños personalizados', 'Acabado profesional'],
     process: [
-      'Desmontaje y preparación',
+      'Trabajamos con pinturas poliuretanicas ,bicapa y tricapa mates o brillantes',
       'Desmontaje y preparación',
       'Aplicación de primer',
       'Pintura base y color',
@@ -251,7 +251,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
-    video: "",
+    video: "/lovable-uploads/pintura-moto.mp4",
     images: ['/lovable-uploads/pintura-moto.JPG'],
     faqs: [
       {
@@ -287,7 +287,8 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
-    images: ['/lovable-uploads/limpieza-casco.jpg'],
+    video: "/lovable-uploads/limpieza-casco.mp4",
+    images: [],
     faqs: [
       {
         question: '¿La limpieza profesional puede eliminar rayones de la visera?',
@@ -298,7 +299,6 @@ export const servicesData: ServiceDetail[] = [
         answer: 'Recomendamos limpieza profesional cada 2-3 meses para uso diario, o cada 6 meses para uso ocasional. Si notas malos olores, acumulación de grasa o la visera pierde transparencia, es momento de una limpieza especializada.'
       }
     ],
-    video: ""
   },
   {
     id: 'pulido-escape-motos',
@@ -309,8 +309,8 @@ export const servicesData: ServiceDetail[] = [
     features: ['Limpieza exterior completa', 'Desinfección interior profunda', 'Limpieza de visera y anti-fog', 'Tratamiento antibacteriano y desodorante'],
     process: [
       'Limpieza de escapes y tratamiento anti-óxido',
-      'Pintura resistente al calor',
-      'Acabado brillante y duradero',
+      'Pintura alta temperatura',
+      'Pinturas mate o satinadas en rojo ,negro ,gris plata o negro satinado',
       'Secado y ensamble',
       'Control de calidad final'
     ],
