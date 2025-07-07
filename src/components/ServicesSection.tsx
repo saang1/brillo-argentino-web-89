@@ -15,21 +15,21 @@ const ServicesSection = () => {
     id: 'pulido-abrillantado',
     title: 'Pulidos y abrillantados Autos y Motos',
     description: 'Dejá tu vehículo con un acabado impecable y brillante, eliminando imperfecciones y restaurando su color original.',
-    price: 'Desde $25.000',
+    price: 'Consultar',
     features: ['Pulido en varias etapas', 'Brillo espejo y acabado premium', ' Servicio para autos y motos', 'Corrección de rayones y marcas'],
     icon: Sparkle
   }, {
     id: 'tratamientos-cuidado',
     title: 'Tratamientos para el cuidado',
     description: 'Protegé la pintura de tu vehículo con nuestros servicios de PPF (Paint Protection Film), ploteos personalizados y polarizados de alta calidad para vidrios.',
-    price: 'Desde $8.000',
+    price: 'Consultar',
     features: ['Protección de pintura y superficies', 'Tratamientos para cuero, plásticos y telas', 'Defensa contra rayos UV y clima', 'Productos profesionales y seguros'],
     icon: Eye
   }, {
     id: 'ceramicos-vidrios',
     title: 'Tratamientos cerámicos y vidrios líquido',
     description: 'Aplicación de recubrimientos cerámicos para una protección duradera y un acabado brillante en la pintura y vidrios de tu vehículo.',
-    price: 'Desde $5.000',
+    price: 'Consultar',
     features: ['Protección Cerámica Duradera', 'Efecto hidrofóbico', 'Brillo profesional', 'Resistencia extrema'],
     icon: Shield
   }, {
