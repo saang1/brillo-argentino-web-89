@@ -9,6 +9,7 @@ import TerminosCondiciones from "./pages/TerminosCondiciones";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import NotFound from "./pages/NotFound";
 import CourseDetail from "./pages/CourseDetail";
+import AppLoader from "./components/AppLoader";
 
 const queryClient = new QueryClient();
 
@@ -17,17 +18,19 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/servicios/:serviceId" element={<ServiceDetail />} />
-          <Route path="/cursos/:courseId" element={<CourseDetail />} />
-          <Route path="/terminos-condiciones" element={<TerminosCondiciones />} />
-          <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <AppLoader>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/servicios/:serviceId" element={<ServiceDetail />} />
+            <Route path="/cursos/:courseId" element={<CourseDetail />} />
+            <Route path="/terminos-condiciones" element={<TerminosCondiciones />} />
+            <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </AppLoader>
     </TooltipProvider>
   </QueryClientProvider>
 );
