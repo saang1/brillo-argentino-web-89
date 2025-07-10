@@ -13,6 +13,7 @@ export interface Course {
   certification: string;
   image: string;
   highlights: string[];
+  price: string;
 }
 
 export const cursosData: Course[] = [
@@ -44,6 +45,7 @@ export const cursosData: Course[] = [
       'Clases 100% prácticas',
       'Kit de herramientas incluido',
       'Certificación oficial'
-    ]
+    ],
+    price: 'Consultar'
   }
 ];
