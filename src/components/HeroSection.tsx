@@ -14,14 +14,14 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-black pt-32 sm:pt-0"
     >
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/lovable-uploads/hero-section.jpeg')`,
-        }}
-      >
-        <div className="absolute inset-0 bg-neutral-black/70"></div>
-      </div>
+      <img
+        src="/lovable-uploads/hero-section.jpeg"
+        alt="Auto y moto en Elite Garage Spa"
+        loading="lazy" // Lazy load
+        className="absolute inset-0 w-full h-full object-cover bg-center bg-no-repeat z-0"
+        style={{ objectFit: "cover" }}
+      />
+      <div className="absolute inset-0 bg-neutral-black/70 z-0"></div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -57,8 +57,8 @@ const HeroSection = () => {
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
             <div className="text-center animate-fade-in-up delay-200">
-              <div className="text-3xl font-bold text-accent-yellow">+500</div>
-              <div className="text-support-gray mt-1">Autos Atendidos</div>
+              <div className="text-3xl font-bold text-accent-yellow">+8000</div>
+              <div className="text-support-gray mt-1">Motos y Autos Atendidos</div>
             </div>
             <div className="text-center animate-fade-in-up delay-300">
               <div className="text-3xl font-bold text-accent-yellow">98%</div>

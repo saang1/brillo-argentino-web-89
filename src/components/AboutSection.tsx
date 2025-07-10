@@ -7,12 +7,12 @@ const AboutSection = () => {
   const stats = [
     {
       icon: Users,
-      number: "500+",
+      number: "8000+",
       label: "Clientes Satisfechos",
     },
     {
       icon: Award,
-      number: "5",
+      number: "7",
       label: "Años de Experiencia",
     },
     {
@@ -43,12 +43,14 @@ const AboutSection = () => {
         src="/lovable-uploads/huella-background.png"
         alt=""
         aria-hidden="true"
+        loading="lazy" // Lazy load
         className="pointer-events-none select-none absolute opacity-20 lg:opacity-30 -top-20 -right-24 w-96 lg:w-[600px] h-48 lg:h-[1200px] -rotate-12 -scale-x-100 z-0"
       />
       <img
         src="/lovable-uploads/huella-background.png"
         alt=""
         aria-hidden="true"
+        loading="lazy" // Lazy load
         className="pointer-events-none select-none absolute opacity-20 lg:opacity-30 -top-20 -left-55 w-96 lg:w-[600px] -rotate-12 z-0"
       />
 
@@ -71,6 +73,7 @@ const AboutSection = () => {
               <img
                 src="/lovable-uploads/elitegarage-logo.svg"
                 alt="Elite Garage Logo"
+                loading="lazy" // Lazy load
                 className="w-45 h-auto mb-2"
               />
             </div>
@@ -145,11 +148,12 @@ const AboutSection = () => {
                 <img
                   src="/lovable-uploads/aboutUs-moto.jpeg"
                   alt="Equipo de Car Detailing trabajando"
+                  loading="lazy" // Lazy load
                   className="w-full h-full lg:h-[850px] object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-support-brown to-primary-red text-white p-6 rounded-2xl shadow-2xl border border-accent-yellow/50">
-                <div className="text-3xl font-bold">+500</div>
+                <div className="text-3xl font-bold">+8000</div>
                 <div className="text-sm opacity-90">
                   Motos y Autos Transformados
                 </div>

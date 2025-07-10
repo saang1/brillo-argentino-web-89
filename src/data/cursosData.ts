@@ -18,9 +18,9 @@ export interface Course {
 export const cursosData: Course[] = [
   {
     id: 'detailing-basico',
-    title: 'Curso de Detailing Básico para Principiantes',
-    shortDescription: 'Aprende las técnicas fundamentales del car detailing desde cero.',
-    fullDescription: 'Un curso completo diseñado para quienes quieren iniciarse en el mundo del car detailing profesional. Aprenderás desde los conceptos básicos hasta las técnicas más efectivas para el cuidado y mantenimiento de vehículos.',
+    title: 'Curso de Detailing Básico para Motos',
+    shortDescription: 'Aprende las técnicas fundamentales del detailing en motos desde cero.',
+    fullDescription: 'Un curso completo diseñado para quienes quieren iniciarse en el mundo del detailing profesional en motos. Aprenderás desde los conceptos básicos hasta las técnicas más efectivas para el cuidado y mantenimiento de motos.',
     duration: '4 semanas',
     modality: 'Presencial',
     instructor: 'Carlos Mendoza - 10 años de experiencia',
