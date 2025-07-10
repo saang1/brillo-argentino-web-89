@@ -24,13 +24,13 @@ const GallerySection = () => {
     {
       type: "video",
       video: "/lovable-uploads/antesDespues-auto1.mp4",
-      title: "Pulido de Faros Profesional",
+      title: "Limpieza de Interior",
       service: "Restauración + Protección UV",
     },
     {
       type: "video",
       video: "/lovable-uploads/antesDespues-auto2.mp4",
-      title: "Restauración Sistema de Frenos",
+      title: "Limpieza Tapizado Completo",
       service: "Limpieza + Pintura + Protección",
     },
     {
@@ -47,13 +47,13 @@ const GallerySection = () => {
       type: "image",
       before: "/lovable-uploads/antes-moto1.JPG",
       after: "/lovable-uploads/despues-moto1.JPG",
-      title: "Detailing Moto Yamaha",
+      title: "Detailing",
       service: "Lavado + Protección",
     },
     {
       type: "video",
       video: "/lovable-uploads/antesDespues-moto1.mp4",
-      title: "Restauración Completa Moto",
+      title: "Lavado Completo de Moto y Detailing",
       service: "Pulido + Restauración Acrílico",
     },
     {
@@ -66,7 +66,7 @@ const GallerySection = () => {
       type: "image",
       before: "/lovable-uploads/antes-moto2.JPG",
       after: "/lovable-uploads/despues-moto2.JPG",
-      title: "Restauración Moto Cross",
+      title: "Restauración Moto",
       service: "Desarme + Limpieza + Protección",
     },
   ];

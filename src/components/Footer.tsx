@@ -151,7 +151,7 @@ const Footer = () => {
                 <span className="text-blue-400">📱</span> +54 11 6912-2284
               </li>
               <li className="text-gray-300">
-                <span className="text-blue-400">📧</span> info@elitegaragespa.com
+                <span className="text-blue-400">📧</span> elitegarajespa@gmail.com
               </li>
               <li className="text-gray-300">
                 <span className="text-blue-400">📍</span> Luzuriaga 395
