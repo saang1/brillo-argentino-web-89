@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -122,27 +122,52 @@ const ServiceDetail = () => {
             </div>
 
             <div className="lg:pl-8">
-              <div className="aspect-square bg-neutral-black/50 border border-accent-yellow/30 rounded-2xl overflow-hidden">
+              <div className="aspect-square bg-neutral-black/50 border border-accent-yellow/30 rounded-2xl overflow-hidden relative">
                 {service.video ? (
-                  <div className="relative w-full h-full">
-                    <video
-                      src={service.video}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                    />
-                    <div className="absolute top-4 left-4 bg-accent-yellow text-neutral-black px-3 py-1 rounded-full text-sm font-semibold z-10">
-                      VIDEO
-                    </div>
-                  </div>
+                  (() => {
+                    // eslint-disable-next-line react-hooks/rules-of-hooks
+                    const [videoLoaded, setVideoLoaded] = useState(false);
+                    return (
+                      <div className="relative w-full h-full">
+                        {!videoLoaded && (
+                          <div className="absolute inset-0 bg-neutral-800 animate-pulse rounded-2xl z-10" />
+                        )}
+                        <video
+                          src={service.video}
+                          poster={service.images[0]}
+                          preload="none"
+                          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          onLoadedData={() => setVideoLoaded(true)}
+                        />
+                        <div className="absolute top-4 left-4 bg-accent-yellow text-neutral-black px-3 py-1 rounded-full text-sm font-semibold z-20">
+                          VIDEO
+                        </div>
+                      </div>
+                    );
+                  })()
                 ) : (
-                  <img
-                    src={service.images[0]}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
+                  (() => {
+                    // eslint-disable-next-line react-hooks/rules-of-hooks
+                    const [imgLoaded, setImgLoaded] = useState(false);
+                    return (
+                      <div className="relative w-full h-full">
+                        {!imgLoaded && (
+                          <div className="absolute inset-0 bg-neutral-800 animate-pulse rounded-2xl z-10" />
+                        )}
+                        <img
+                          src={service.images[0]}
+                          alt={service.title}
+                          className={`w-full h-full object-cover transition-opacity duration-500 rounded-2xl ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
+                          onLoad={() => setImgLoaded(true)}
+                          loading="lazy"
+                        />
+                      </div>
+                    );
+                  })()
                 )}
               </div>
             </div>
