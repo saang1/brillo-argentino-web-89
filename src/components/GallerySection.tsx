@@ -1,15 +1,17 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useInView } from "../hooks/useInView"; // Ajusta la ruta si es necesario
 
 const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState<"cars" | "bikes">("bikes");
+  const [loading, setLoading] = useState(true);
   // Estado para recordar qué tarjetas ya se animaron por categoría
   const animatedIndexesRef = useRef<{ [tab: string]: Set<number> }>({
     cars: new Set(),
     bikes: new Set(),
   });
+  const loadedAssetsRef = useRef<{ [src: string]: boolean }>({});
 
   const galleryCars = [
     {
@@ -77,6 +79,42 @@ const GallerySection = () => {
     // Vacía el set de animados de la categoría seleccionada para que siempre se animen al cambiar
     animatedIndexesRef.current[tab] = new Set();
   };
+
+  const preloadAsset = (src: string, type: "image" | "video") => {
+    if (loadedAssetsRef.current[src]) return Promise.resolve();
+    return new Promise((resolve) => {
+      if (type === "image") {
+        const img = new window.Image();
+        img.src = src;
+        img.onload = () => {
+          loadedAssetsRef.current[src] = true;
+          resolve(null);
+        };
+        img.onerror = resolve;
+      } else {
+        const video = document.createElement("video");
+        video.src = src;
+        video.onloadedmetadata = () => {
+          loadedAssetsRef.current[src] = true;
+          resolve(null);
+        };
+        video.onerror = resolve;
+      }
+    });
+  };
+
+  useEffect(() => {
+    const assets = [];
+    activeGallery.forEach((item) => {
+      if (item.type === "image") {
+        assets.push(preloadAsset(item.before, "image"));
+        assets.push(preloadAsset(item.after, "image"));
+      } else if (item.type === "video") {
+        assets.push(preloadAsset(item.video, "video"));
+      }
+    });
+    Promise.all(assets).then(() => setLoading(false));
+  }, [activeTab]);
 
   return (
     <section id="galeria" className="py-24 bg-neutral-black">
