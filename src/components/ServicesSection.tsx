@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Car, PaintBucket, Eye, Hammer, Palette, ArrowRight, Droplet, Sparkle, Shield, CloudRain, RefreshCw, Scissors, HardHat, ShieldCheck, Zap } from 'lucide-react';
 import { useInView } from '../hooks/useInView'; // Asegúrate de que la ruta sea correcta
