@@ -216,7 +216,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '1-3 días',
     warranty: '2 años',
-    images: ['/lovable-uploads/reparacion-tapizado.jpg'],
+    images: ['/lovable-uploads/reparacion-tapizado.jpeg'],
     faqs: [
       {
         question: '¿Qué tipos de daños se pueden reparar en los tapizados?',

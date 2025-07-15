@@ -39,7 +39,7 @@ export const cursosData: Course[] = [
       'Práctica supervisada'
     ],
     certification: 'Certificado de Detailing Básico Elite Garage Spa',
-    image: '/lovable-uploads/curso.jpg',
+    image: '/lovable-uploads/curso.jpeg',
     highlights: [
       'Clases 100% prácticas',
       'Kit de herramientas incluido',
