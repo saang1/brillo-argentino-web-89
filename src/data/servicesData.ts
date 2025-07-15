@@ -109,7 +109,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     duration: '2-3 horas',
     warranty: '6 meses',
-    images: ['/lovable-uploads/tratamiento.jpg'],
+    images: ['/lovable-uploads/tratamiento.jpeg'],
     faqs: [
       {
         question: '¿El tratamiento elimina completamente los malos olores del interior?',

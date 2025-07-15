@@ -121,18 +121,18 @@ const Header = () => {
             {/* Courses Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <button className={`font-medium text-lg hover:text-primary-red transition-all duration-200 ${textColorClass} hover:scale-105 flex items-center gap-1`}>
+                {/* <button className={`font-medium text-lg hover:text-primary-red transition-all duration-200 ${textColorClass} hover:scale-105 flex items-center gap-1`}>
                   Cursos
                   <ChevronDown className="h-4 w-4" />
-                </button>
+                </button> */}
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-72 bg-neutral-black border border-support-gray shadow-2xl rounded-lg mt-2 z-50">
-                <DropdownMenuItem 
+                {/* <DropdownMenuItem 
                   onClick={() => scrollToSection('cursos')}
                   className="text-white hover:text-white hover:bg-accent-yellow/10 cursor-pointer px-6 py-4 text-base font-semibold"
                 >
                   Ver todos los cursos
-                </DropdownMenuItem>
+                </DropdownMenuItem> */}
                 <DropdownMenuSeparator className="bg-support-gray" />
                 {cursosData.map((course) => (
                   <DropdownMenuItem
@@ -209,15 +209,15 @@ const Header = () => {
               </div>
 
               {/* Mobile Courses Submenu */}
-              <div>
-                <button 
+              {/* <div> */}
+                {/* <button 
                   onClick={() => setIsMobileCoursesOpen(!isMobileCoursesOpen)}
                   className="w-full text-neutral-black hover:text-primary-red transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-accent-yellow/10 rounded-lg px-3 flex items-center justify-between"
                 >
                   Cursos
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileCoursesOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {isMobileCoursesOpen && (
+                </button> */}
+                {/* {isMobileCoursesOpen && (
                   <div className="ml-4 mt-2 space-y-2 border-l-2 border-accent-yellow pl-4">
                     <button 
                       onClick={() => scrollToSection('cursos')}
@@ -236,7 +236,7 @@ const Header = () => {
                     ))}
                   </div>
                 )}
-              </div>
+              </div> */}
 
               <button onClick={() => scrollToSection('galeria')} className="text-neutral-black hover:text-primary-red transition-colors duration-200 text-left py-3 font-medium text-lg hover:bg-accent-yellow/10 rounded-lg px-3">
                 Galería
