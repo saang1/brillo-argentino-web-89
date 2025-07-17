@@ -21,9 +21,9 @@ export const cursosData: Course[] = [
     title: 'Curso de Detailing Básico para Motos',
     shortDescription: 'Aprende las técnicas fundamentales del detailing en motos desde cero.',
     fullDescription: 'Nuestro curso está dirigido a todas las personas que deseen aprender desde cero el cuidado profesional de motocicletas, ya sean nuevas o con uso prolongado. Aprenderás a realizar tratamientos cerámicos, acrílicos o sin recubrimientos, y a manipular correctamente cada producto según el tipo de superficie.\n\nIncluye técnicas de lavado (tradicional, a vapor, en seco), métodos de mantenimiento post-lavado y cuidados específicos para motos con ploteos, vinilos o películas PPF.\n\nIdeal para quienes buscan iniciar su propio emprendimiento, abrir un taller de estética vehicular o trabajar de forma independiente brindando servicios de detailing especializado para motos.',
-    duration: '4 semanas',
+    duration: '4 días',
     modality: 'Presencial',
-    instructor: 'Carlos Mendoza - 10 años de experiencia',
+    instructor: 'Sebastian Pablo Gramajo y Benjamin Navarro - 7 años de experiencia',
     level: 'Principiante',
     requirements: [
       'No se requiere experiencia previa',
