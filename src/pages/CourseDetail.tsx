@@ -90,7 +90,10 @@ const CourseDetail = () => {
                 </h1>
                 
                 <p className="text-xl text-support-gray mb-8">
-                  {course.fullDescription}
+                  {course.fullDescription.split('\n').map((line, i) => (
+                  <p key={i} className="mb-4">{line}</p>
+                  ))}
+
                 </p>
                 
                 <div className="flex flex-wrap gap-6 mb-8">
@@ -109,9 +112,9 @@ const CourseDetail = () => {
                 </div>
                 
                 <div className="flex items-center gap-4">
-                  <div className="text-3xl font-bold text-primary-red">
+                  {/* <div className="text-3xl font-bold text-primary-red">
                     {course.price}
-                  </div>
+                  </div> */}
                   <a
                     href={`https://wa.me/5491169122284?text=Hola%2C%20quiero%20inscribirme%20al%20curso%20${encodeURIComponent(course.title)}`}
                     target="_blank"
