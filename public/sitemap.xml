@@ -30,39 +30,39 @@
   </url>
   <!-- Ejemplo de página de detalle de servicio -->
   <url>
-    <loc>https://elitegarage.com.ar/servicio/limpieza-tapizados</loc>
+    <loc>https://elitegarage.com.ar/servicios/limpieza-tapizados</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elitegarage.com.ar/servicio/pulido-abrillantado</loc>
+    <loc>https://elitegarage.com.ar/servicios/pulido-abrillantado</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elitegarage.com.ar/servicio/tratamientos-cuidado</loc>
+    <loc>https://elitegarage.com.ar/servicios/tratamientos-cuidado</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elitegarage.com.ar/servicio/ceramicos-vidrios</loc>
+    <loc>https://elitegarage.com.ar/servicios/ceramicos-vidrios</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elitegarage.com.ar/servicio/lavado-motor-motos</loc>
+    <loc>https://elitegarage.com.ar/servicios/lavado-motor-motos</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elitegarage.com.ar/servicio/tapizados-motos-autos</loc>
+    <loc>https://elitegarage.com.ar/servicios/tapizados-motos-autos</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elitegarage.com.ar/servicio/pintura-motos</loc>
+    <loc>https://elitegarage.com.ar/servicios/pintura-motos</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elitegarage.com.ar/servicio/limpieza-cascos-motos</loc>
+    <loc>https://elitegarage.com.ar/servicios/limpieza-cascos-motos</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://elitegarage.com.ar/servicio/pulido-escape-motos</loc>
+    <loc>https://elitegarage.com.ar/servicios/pulido-escape-motos</loc>
     <priority>0.6</priority>
   </url>
 </urlset>
