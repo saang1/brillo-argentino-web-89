@@ -17,7 +17,7 @@ const PoliticaPrivacidad = () => {
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-4">1. Información que Recopilamos</h2>
             <p className="text-gray-700 leading-relaxed mb-3">
-              En Elite Garage Spa recopilamos la siguiente información:
+              En Elite Garaje Spa recopilamos la siguiente información:
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>Información de contacto (nombre, teléfono, email)</li>
@@ -95,7 +95,7 @@ const PoliticaPrivacidad = () => {
               Para ejercer sus derechos o realizar consultas sobre esta política, contáctenos:
             </p>
             <div className="text-gray-700">
-              <p>📧 info@elitegaragespa.com</p>
+              <p>📧 elitegarajespa@gmail.com</p>
               <p>📱 +54 11 6912-2284</p>
               <p>📍 Luzuriaga 395, Barracas, CABA Buenos Aires</p>
             </div>

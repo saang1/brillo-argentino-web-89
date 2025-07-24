@@ -41,7 +41,7 @@ export const cursosData: Course[] = [
       'Modulo 8 practica y Simulaciones Reales en Diferentes Tipos de Motocicletas',
       'Modulo 9 ceras y todas sus variedades ,selladores ,tratamientos acrílicos y Cerámicos vidrio líquido diferencias'
     ],
-    certification: 'Certificado de Detailing Básico Elite Garage Spa',
+    certification: 'Certificado de Detailing Básico Elite Garaje Spa',
     image: '/lovable-uploads/cursos.jpeg',
     highlights: [
       'Clases 100% prácticas',

@@ -76,7 +76,7 @@ const Header = () => {
           <div className="flex items-center cursor-pointer">
             <img 
               src="/lovable-uploads/elitegarage-logo.svg" 
-              alt="Elite Garage Spa Logo" 
+              alt="Elite Garaje Spa Logo" 
               className="h-16 w-16 lg:h-24 lg:w-24 object-contain hover:scale-105 transition-transform duration-200"
             />
           </div>

@@ -72,7 +72,7 @@ const AboutSection = () => {
             <div className="flex flex-col items-start lg:items-start mb-6 animate-fade-in-up">
               <img
                 src="/lovable-uploads/elitegarage-logo.svg"
-                alt="Elite Garage Logo"
+                alt="Elite Garaje Logo"
                 loading="lazy" // Lazy load
                 className="w-45 h-auto mb-2"
               />
@@ -83,7 +83,7 @@ const AboutSection = () => {
             </h2>
 
             <p className="text-xl text-support-gray mb-6 leading-relaxed animate-fade-in-up delay-200">
-              Esta es la historia de Elite Garage Spa: un emprendimiento que nació en un rincón de un
+              Esta es la historia de Elite Garaje Spa: un emprendimiento que nació en un rincón de un
               estacionamiento y creció hasta convertirse en una marca con identidad propia.
               Pasión por el detalle, amor por las motos y trabajo constante transformaron un hobby
               en un proyecto rentable.
@@ -92,7 +92,7 @@ const AboutSection = () => {
             </p>
 
             <p className="text-lg text-support-gray mb-8 leading-relaxed animate-fade-in-up delay-300">
-              En Elite Garage Spa, nos especializamos en el cuidado y detailing de autos y motos,
+              En Elite Garaje Spa, nos especializamos en el cuidado y detailing de autos y motos,
               ofreciendo un servicio profesional que transforma cada vehículo en una obra maestra.
               Nuestro equipo está comprometido con la excelencia, utilizando productos certificados
               y técnicas avanzadas para garantizar resultados excepcionales.

@@ -16,7 +16,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <img
         src="/lovable-uploads/hero-section.jpeg"
-        alt="Auto y moto en Elite Garage Spa"
+        alt="Auto y moto en Elite Garaje Spa"
         loading="lazy" // Lazy load
         className="absolute inset-0 w-full h-full object-cover bg-center bg-no-repeat z-0"
         style={{ objectFit: "cover" }}
@@ -28,13 +28,13 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto animate-fade-in-up">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight text-white transition-all duration-700">
             Somos
-            <span className="block text-gradient py-2">Elite Garage Spa</span>
+            <span className="block text-gradient py-2">Elite Garaje Spa</span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-gray mb-8 max-w-2xl mx-auto leading-relaxed transition-all duration-700 delay-100">
             Detailing premium en Barracas, CABA. Cuidamos y restauramos el
             brillo de tu auto o moto con técnicas profesionales y productos de
-            alta calidad. ¡Viví la experiencia Elite Garage Spa!
+            alta calidad. ¡Viví la experiencia Elite Garaje Spa!
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

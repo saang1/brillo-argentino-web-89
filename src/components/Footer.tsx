@@ -15,19 +15,19 @@ const Footer = () => {
               <div className="flex items-center cursor-pointer">
                 <img
                   src="/lovable-uploads/elitegarage-logo.svg"
-                  alt="Elite Garage Spa Logo"
+                  alt="Elite Garaje Spa Logo"
                   className="h-16 w-16 lg:h-24 lg:w-24 object-contain hover:scale-105 transition-transform duration-200"
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Elite Garage SPA</h3>
+                <h3 className="text-xl font-bold">Elite Garaje SPA</h3>
                 <p className="text-xs text-gray-400 -mt-1">
                   Tu vehiculo como nuevo
                 </p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              En Elite Garage SPA, ofrecemos servicios de detailing de alta
+              En Elite Garaje SPA, ofrecemos servicios de detailing de alta
               calidad para que tu vehículo luzca como nuevo. Desde limpieza
               profunda hasta encerado y pulido, cuidamos cada detalle para
               brindarte la mejor experiencia.
@@ -170,7 +170,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Elite Garage Spa. Todos los derechos reservados.
+              © {currentYear} Elite Garaje Spa. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link

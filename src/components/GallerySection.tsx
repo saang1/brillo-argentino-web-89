@@ -124,7 +124,7 @@ const GallerySection = () => {
             Galería <span className="text-gradient">Antes y Después</span>
           </h2>
           <p className="text-xl text-support-gray max-w-3xl mx-auto">
-            En Elite Garage Spa, especialistas en detailing de autos y motos en
+            En Elite Garaje Spa, especialistas en detailing de autos y motos en
             Buenos Aires, cada vehículo cuenta una historia de transformación
             única. Nuestra galería de antes y después muestra el poder de
             nuestros tratamientos profesionales de detailing

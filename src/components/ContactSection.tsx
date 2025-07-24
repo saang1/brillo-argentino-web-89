@@ -60,7 +60,7 @@ Servicio de interés: ${formData.service}
 
 ${formData.message}
 
-Enviado desde la web de Elite Garage Spa`;
+Enviado desde la web de Elite Garaje Spa`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/5491169122284?text=${encodedMessage}`;
@@ -229,7 +229,7 @@ Enviado desde la web de Elite Garage Spa`;
               <div className="space-y-4">
                 <div>
                   <h4 className="text-accent-yellow font-semibold mb-1">
-                    Elite Garage Spa
+                    Elite Garaje Spa
                   </h4>
                   <p className="text-white">Luzuriaga 395</p>
                   <p className="text-support-gray text-sm">
@@ -254,10 +254,10 @@ Enviado desde la web de Elite Garage Spa`;
                     Email
                   </h4>
                   <a
-                    href="mailto:info@elitegaragespa.com"
+                    href="mailto:elitegarajespa@gmail.com"
                     className="text-white hover:text-accent-yellow transition-colors"
                   >
-                    info@elitegaragespa.com
+                    elitegarajespa@gmail.com
                   </a>
                 </div>
 
