@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+
+Sitemap: https://elitegaraje.com.ar/sitemap.xml
