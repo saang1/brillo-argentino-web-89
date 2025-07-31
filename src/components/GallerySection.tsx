@@ -63,9 +63,8 @@ const GallerySection = () => {
       service: "Limpieza + Cera",
     },
     {
-      type: "image",
-      before: "/lovable-uploads/antes-moto2.JPG",
-      after: "/lovable-uploads/despues-moto2.JPG",
+      type: "video", // Cambio de "image" a "video"
+      video: "/lovable-uploads/antesDespues-moto3.mp4", // Nueva propiedad video
       title: "Restauración Moto",
       service: "Desarme + Limpieza + Protección",
     },
