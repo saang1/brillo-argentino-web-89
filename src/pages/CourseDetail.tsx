@@ -126,13 +126,27 @@ const CourseDetail = () => {
                 </div>
               </div>
               
-              <div className="relative">
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-                />
-                <div className="absolute inset-0 bg-black/20 rounded-2xl"></div>
+              <div className="relative flex justify-center">
+                {course.video ? (
+                  <div className="relative w-full max-w-md mx-auto">
+                    <video
+                      src={course.video}
+                      controls
+                      poster={course.image}
+                      className="w-full aspect-[9/16] object-cover rounded-2xl shadow-2xl"
+                      preload="metadata"
+                    >
+                      Tu navegador no soporta videos HTML5.
+                    </video>
+                    <div className="absolute inset-0 bg-black/10 rounded-2xl pointer-events-none"></div>
+                  </div>
+                ) : (
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+                  />
+                )}
               </div>
             </div>
           </div>

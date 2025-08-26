@@ -63,11 +63,27 @@ const CoursesSection = () => {
                 >
                   <div className="bg-support-brown/20 rounded-2xl overflow-hidden hover-lift shadow-lg border border-accent-yellow/30 backdrop-blur-sm h-full">
                     <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={course.image}
-                        alt={course.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
+                      {course.video ? (
+                        <div className="flex justify-center h-full">
+                          <video
+                            src={course.video}
+                            poster={course.image}
+                            className="h-full w-auto object-cover transition-transform duration-500 group-hover:scale-110"
+                            muted
+                            preload="metadata"
+                            onMouseEnter={(e) => {
+                              const video = e.target as HTMLVideoElement;
+                              video.currentTime = 1; // Muestra un frame del video
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <img
+                          src={course.image}
+                          alt={course.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                      )}
                       <div className="absolute inset-0 bg-black/30"></div>
                       <div className="absolute top-4 right-4">
                         <span className={`px-3 py-1 rounded-full text-sm font-semibold ${getLevelColor(course.level)}`}>
@@ -79,6 +95,13 @@ const CoursesSection = () => {
                           {course.modality}
                         </span>
                       </div>
+                      {course.video && (
+                        <div className="absolute bottom-4 left-4">
+                          <span className="bg-black/70 text-white px-2 py-1 rounded text-xs font-semibold">
+                            📹 Video disponible
+                          </span>
+                        </div>
+                      )}
                     </div>
                     
                     <div className="p-6">
