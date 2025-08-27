@@ -43,7 +43,7 @@ export const cursosData: Course[] = [
       'Modulo 9 ceras y todas sus variedades ,selladores ,tratamientos acrílicos y Cerámicos vidrio líquido diferencias'
     ],
     certification: 'Certificado de Detailing Básico Elite Garaje Spa',
-    image: '',
+    image: '/lovable-uploads/cursos.jpeg',
     video: '/lovable-uploads/curso-detailing-moto.mp4', // Agrega tu video aquí
     highlights: [
       'Clases 100% prácticas',

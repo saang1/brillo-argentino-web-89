@@ -132,7 +132,7 @@ const CourseDetail = () => {
                     <video
                       src={course.video}
                       controls
-                      poster={course.image}
+                      autoPlay
                       className="w-full aspect-[9/16] object-cover rounded-2xl shadow-2xl"
                       preload="metadata"
                     >
