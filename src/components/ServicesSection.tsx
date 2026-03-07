@@ -61,6 +61,13 @@ const ServicesSection = () => {
     features: ['Limpieza exterior completa', 'Desinfección interior profunda', 'Limpieza de visera y anti-fog', 'Tratamiento antibacteriano y desodorante'],
     icon: ShieldCheck
   }, {
+    id: 'autos-inundados',
+    title: 'Restauración de Autos Inundados',
+    description: 'Recuperamos tu auto después de una inundación con extracción total de agua, secado profundo, desinfección y cambio de aislantes.',
+    price: 'Consultar',
+    features: ['Extracción total de agua y humedad', 'Secado profundo con equipos industriales', 'Desinfección antibacteriana y antifúngica', 'Cambio de aislantes de piso', 'Eliminación de olores a humedad'],
+    icon: Droplet
+  }, {
     id: 'pulido-escape-motos',
     title: 'Pullido de escapes y pintura de escapes de motos',
     description: 'Devolvé el brillo y la estética a los escapes de tu moto con nuestro servicio de pulido y pintura especializada, eliminando óxido y manchas.',
@@ -132,7 +139,7 @@ const ServicesSection = () => {
                   Ver más
                   <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
-                <a href="https://wa.me/5491169122284?text=Hola%2C%20quiero%20consultar%20por%20el%20servicio%20de%20car%20detailing" target="_blank" rel="noopener noreferrer" className="btn-primary block w-full text-center">
+                <a href={`https://wa.me/5491169122284?text=${encodeURIComponent(`Hola, me gustaría consultar por el servicio de ${service.title}`)}`} target="_blank" rel="noopener noreferrer" className="btn-primary block w-full text-center">
                   Consultar Precio
                 </a>
               </div>

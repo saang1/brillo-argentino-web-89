@@ -301,6 +301,54 @@ export const servicesData: ServiceDetail[] = [
     ],
   },
   {
+    id: 'autos-inundados',
+    title: 'Restauración de Autos Inundados',
+    shortDescription: 'Recuperamos tu auto después de una inundación con extracción total de agua, secado profundo, desinfección y cambio de aislantes para dejarlo como nuevo.',
+    fullDescription: 'La inundación de un vehículo es una emergencia que requiere atención inmediata y especializada. Nuestro servicio de restauración integral actúa en todas las capas del interior: extracción de agua, secado profundo, desinfección antibacteriana, eliminación de hongos y olores, y reemplazo de aislantes de piso dañados. Devolvemos tu auto a condiciones óptimas de forma segura y duradera.',
+    price: 'Consultar',
+    features: [
+      'Extracción total de agua y humedad',
+      'Secado profundo con equipos industriales',
+      'Desinfección antibacteriana y antifúngica',
+      'Eliminación de olores a humedad',
+      'Cambio de aislantes de piso dañados',
+      'Tratamiento de tapizados y alfombras'
+    ],
+    process: [
+      'Inspección y evaluación del nivel de daño',
+      'Extracción de agua con equipos de alta potencia',
+      'Desmontaje de alfombras, aislantes y tapizados afectados',
+      'Secado industrial con sopladores y deshumidificadores',
+      'Desinfección y tratamiento antibacteriano completo',
+      'Reemplazo de aislantes y rearmado del interior'
+    ],
+    benefits: [
+      'Prevención de hongos y bacterias',
+      'Eliminación definitiva de olores a humedad',
+      'Interior completamente restaurado',
+      'Protección a largo plazo del vehículo',
+      'Ahorro frente al reemplazo completo del interior'
+    ],
+    duration: '2-5 días',
+    warranty: '6 meses',
+    video: '/lovable-uploads/auto-inundado.mp4',
+    images: ['/lovable-uploads/limpieza-interior.jpg'],
+    faqs: [
+      {
+        question: '¿Qué tan rápido debo llevar el auto después de la inundación?',
+        answer: 'Cuanto antes, mejor. Idealmente dentro de las primeras 24-48 horas. Con el tiempo, la humedad favorece la aparición de hongos, bacterias y oxidación interna que complican la restauración y aumentan los costos.'
+      },
+      {
+        question: '¿Se pueden recuperar los tapizados o hay que reemplazarlos?',
+        answer: 'Depende del material y el tiempo de exposición al agua. En muchos casos los tapizados pueden limpiarse y desinfectarse completamente. Si hay hongos o daño irreversible, recomendamos el reemplazo para garantizar la salud dentro del vehículo.'
+      },
+      {
+        question: '¿Por qué es necesario cambiar los aislantes de piso?',
+        answer: 'Los aislantes de piso absorben grandes cantidades de agua y son muy difíciles de secar completamente. Si quedan húmedos, generan hongos y olores persistentes. Su reemplazo es fundamental para una restauración duradera y saludable.'
+      }
+    ]
+  },
+  {
     id: 'pulido-escape-motos',
     title: 'Pulido de escapes y pintura de escapes de motos',
     shortDescription: 'Devolvé el brillo y la estética a los escapes de tu moto con nuestro servicio de pulido y pintura especializada, eliminando óxido y manchas.',
