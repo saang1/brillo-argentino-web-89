@@ -154,7 +154,7 @@ const Footer = () => {
                 <span className="text-blue-400">📧</span> elitegarajespa@gmail.com
               </li>
               <li className="text-gray-300">
-                <span className="text-blue-400">📍</span> Luzuriaga 395
+                <span className="text-blue-400">📍</span> Av. Amancio Alcorta 1887, Barracas CABA
               </li>
               <li className="text-gray-300">
                 <span className="text-blue-400">🕒</span> Lun-Vie: 9:00 a.m - 19:00 p.m <br />

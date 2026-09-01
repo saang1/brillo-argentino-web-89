@@ -97,7 +97,7 @@ const PoliticaPrivacidad = () => {
             <div className="text-gray-700">
               <p>📧 elitegarajespa@gmail.com</p>
               <p>📱 +54 11 6912-2284</p>
-              <p>📍 Luzuriaga 395, Barracas, CABA Buenos Aires</p>
+              <p>📍 Av. Amancio Alcorta 1887, Barracas, CABA Buenos Aires</p>
             </div>
           </section>
         </div>

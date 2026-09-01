@@ -231,7 +231,7 @@ Enviado desde la web de Elite Garaje Spa`;
                   <h4 className="text-accent-yellow font-semibold mb-1">
                     Elite Garaje Spa
                   </h4>
-                  <p className="text-white">Luzuriaga 395</p>
+                  <p className="text-white">Av. Amancio Alcorta 1887</p>
                   <p className="text-support-gray text-sm">
                     Barracas, CABA Buenos Aires
                   </p>
@@ -303,7 +303,7 @@ Enviado desde la web de Elite Garaje Spa`;
               </h3>
               <div className="aspect-video bg-support-brown/30 rounded-lg overflow-hidden border border-accent-yellow/20">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.6269359286603!2d-58.39103392348192!3d-34.63886675935662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb6b0adbedc9%3A0x5015b28ba90c57b9!2sElite%20garaje%20spa!5e0!3m2!1ses!2sar!4v1750445723043!5m2!1ses!2sar"
+                  src="https://www.google.com/maps?q=Av.+Amancio+Alcorta+1887,+Barracas,+CABA&hl=es&z=16&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -314,7 +314,7 @@ Enviado desde la web de Elite Garaje Spa`;
                 />
               </div>
               <p className="text-support-gray text-sm mt-4">
-                Luzuriaga 395, Barracas CABA - Atendemos en nuestro local
+                Av. Amancio Alcorta 1887, Barracas CABA - Atendemos en nuestro local
               </p>
             </div>
           </div>
