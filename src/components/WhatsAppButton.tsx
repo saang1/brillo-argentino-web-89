@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { reportWhatsAppConversion } from '@/lib/gtag';
 
 const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,6 +21,7 @@ const WhatsAppButton = () => {
   const handleWhatsAppClick = () => {
     const message = "Hola! Estoy interesado en sus servicios de detailing. ¿Podrían brindarme más información?";
     const encodedMessage = encodeURIComponent(message);
+    reportWhatsAppConversion();
     window.open(`https://wa.me/5491169122284?text=${encodedMessage}`, '_blank');
   };
 

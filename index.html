@@ -66,15 +66,19 @@
       }
     </script>
 
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-477784628"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <!-- Google tag (gtag.js) - Google Analytics 4 + Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DWH86YNKME"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('config', 'AW-477784628');
-      </script>
+      // Google Analytics 4 (metricas de trafico y comportamiento)
+      gtag('config', 'G-DWH86YNKME');
+
+      // Google Ads (conversiones - ver src/lib/gtag.ts)
+      gtag('config', 'AW-477784628');
+    </script>
     
   </head>
 

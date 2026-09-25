@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useInView } from "../hooks/useInView"; // Asegúrate de que la ruta sea correcta
+import { reportWhatsAppConversion } from "@/lib/gtag";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -65,6 +66,7 @@ Enviado desde la web de Elite Garaje Spa`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/5491169122284?text=${encodedMessage}`;
 
+    reportWhatsAppConversion();
     window.open(whatsappUrl, "_blank");
 
     toast({
