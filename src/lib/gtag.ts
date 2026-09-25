@@ -29,9 +29,19 @@ export function reportWhatsAppConversion(onDone?: () => void) {
     onDone?.();
   };
 
+  // Conversion para Google Ads. transport_type "beacon" hace que el pedido
+  // sobreviva aunque la pagina se descargue justo despues del clic.
   window.gtag("event", "conversion", {
     send_to: WHATSAPP_CONVERSION_SEND_TO,
+    transport_type: "beacon",
     event_callback: finish,
+  });
+
+  // Evento propio para Google Analytics 4: permite ver desde que pagina sale
+  // cada consulta a WhatsApp.
+  window.gtag("event", "whatsapp_click", {
+    page_path: window.location.pathname,
+    transport_type: "beacon",
   });
 
   // Si gtag.js está bloqueado (adblock) el callback nunca llega: igual seguimos.
