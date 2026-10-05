@@ -1,5 +1,9 @@
-# Netlify redirects para SPA (Single Page Application)
-# Todas las rutas que no sean archivos estáticos se redirigen a index.html
-# para que React Router pueda manejar la navegación
+# Netlify redirects
+# IMPORTANTE: Netlify aplica la PRIMERA regla que coincide.
+# La landing promocional tiene que ir ANTES del catch-all del SPA.
 
+# Landing estatica servida en el subdominio promo.elitegaraje.com.ar
+https://promo.elitegaraje.com.ar/*   /promo/:splat   200!
+
+# Catch-all del SPA (React Router)
 /*    /index.html   200

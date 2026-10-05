@@ -3,6 +3,14 @@
   publish = "dist"
   command = "npm run build"
 
+# Landing estatica en el subdominio promo.elitegaraje.com.ar
+# Tiene que ir ANTES del catch-all del SPA: Netlify aplica la primera coincidencia.
+[[redirects]]
+  from = "https://promo.elitegaraje.com.ar/*"
+  to = "/promo/:splat"
+  status = 200
+  force = true
+
 # Redirects para SPA - todas las rutas no encontradas van a index.html
 [[redirects]]
   from = "/*"
