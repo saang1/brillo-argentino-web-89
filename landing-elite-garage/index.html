@@ -33,7 +33,7 @@
   "sameAs": ["https://instagram.com/elitegarajespa"],
   "openingHoursSpecification": [
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00"}
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "18:00"}
   ]
 }
 </script>
@@ -47,7 +47,9 @@ window.EGS = {
   // Google Ads: pegá acá tu ID y la etiqueta de la conversión "Clic en WhatsApp".
   // Mientras diga XXXX no se carga nada y la página funciona igual.
   googleAdsId: "AW-477784628",
-  conversionLabel: "R7jhCN7BrPIcELTU6eMB"
+  conversionLabel: "R7jhCN7BrPIcELTU6eMB",
+  // Google Analytics 4
+  ga4Id: "G-DWH86YNKME"
 };
 </script>
 
@@ -158,7 +160,7 @@ footer a{color:#d9d5cc}
   .wrap{padding:0 48px}
   .hero{padding:96px 0 112px}
   .hero .wrap{grid-template-columns:1.05fr 1fr;gap:64px}
-  .services .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .services .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .close .wrap{grid-template-columns:1fr 1fr;gap:64px}
   .wa-float{display:none}
   footer{padding-bottom:28px}
@@ -218,6 +220,7 @@ footer a{color:#d9d5cc}
         <article class="card" data-key="tapizados"><img class="card-img" src="img/servicios/tapizados.jpg" alt="Limpieza de interiores y tapizados en Elite Garage Spa" loading="lazy" onerror="this.remove()"><h3>Interiores y tapizados</h3><p>Tapizados, plásticos y alfombras, limpios a fondo.</p></article>
         <article class="card" data-key="restauracion"><img class="card-img" src="img/servicios/restauracion.jpg" alt="Restauración estética en Elite Garage Spa" loading="lazy" onerror="this.remove()"><h3>Restauración estética</h3><p>Recuperamos la terminación de piezas y superficies gastadas.</p></article>
         <article class="card" data-key="inundacion"><img class="card-img" src="img/servicios/inundacion.jpg" alt="Recuperación por inundación en Elite Garage Spa" loading="lazy" onerror="this.remove()"><h3>Recuperación por inundación</h3><p>Limpieza y recuperación de vehículos afectados por agua.</p></article>
+        <article class="card" data-key="service"><img class="card-img" src="img/servicios/service.jpg" alt="Service de motos en Elite Garage Spa" loading="lazy" onerror="this.remove()"><h3>Service de motos</h3><p>Aceite y filtros, transmisión, embrague, frenos y válvulas.</p></article>
         <article class="card" data-key="motos"><img class="card-img" src="img/servicios/motos.jpg" alt="Detailing de motos y cascos en Elite Garage Spa" loading="lazy" onerror="this.remove()"><h3>Motos y cascos</h3><p>Detailing de motos, limpieza y tratamiento de cascos.</p></article>
       </div>
     </div>
@@ -255,7 +258,7 @@ footer a{color:#d9d5cc}
         <div class="map">
           <iframe title="Ubicación de Elite Garage Spa en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Elite%20garaje%20spa%2C%20Av.%20Amancio%20Alcorta%201887%2C%20CABA&amp;z=16&amp;output=embed"></iframe>
         </div>
-        <p class="addr"><strong>Av. Amancio Alcorta 1887, Barracas, CABA</strong>Lunes a viernes de 9 a 18 h · Sábados de 9 a 14 h<br><a href="https://www.google.com/maps/place/?q=place_id:ChIJye3bCmvLvJURuVcMqYuyFVA" target="_blank" rel="noopener" style="color:var(--ink);font-weight:700">Cómo llegar</a></p>
+        <p class="addr"><strong>Av. Amancio Alcorta 1887, Barracas, CABA</strong>Lunes a sábado de 9 a 18 h<br><a href="https://www.google.com/maps/place/?q=place_id:ChIJye3bCmvLvJURuVcMqYuyFVA" target="_blank" rel="noopener" style="color:var(--ink);font-weight:700">Cómo llegar</a></p>
       </div>
     </div>
   </section>
@@ -282,6 +285,7 @@ footer a{color:#d9d5cc}
     ceramico:  {name:"tratamiento cerámico", h1:"Tratamiento cerámico para tu auto en CABA.",  lead:"Protección duradera y brillo profundo, con la pintura corregida antes de aplicar. Trabajo técnico en nuestro taller de Barracas."},
     ppf:       {name:"PPF",                  h1:"Protección de pintura PPF en CABA.",          lead:"Film protector para frente, capot y zonas de roce. Te asesoramos sobre qué conviene cubrir según tu uso."},
     tapizados: {name:"limpieza de tapizados",h1:"Limpieza de tapizados e interiores en CABA.", lead:"Tapizados, alfombras y plásticos limpios a fondo, con vapor y productos para cada material."},
+    service:   {name:"service de moto",      h1:"Service de motos en CABA.",                   lead:"Cambio de aceite y filtros, transmisión, embrague, frenos y regulación de válvulas en nuestro taller de Barracas. Pedí tu turno por WhatsApp."},
     motos:     {name:"detailing de motos",   h1:"Detailing de motos en CABA.",                 lead:"Lavado, pulido, cuidado de cascos y service en nuestra área exclusiva para motos, en Barracas."}
   };
   var key = (new URLSearchParams(location.search).get("s") || "").toLowerCase();
@@ -301,20 +305,24 @@ footer a{color:#d9d5cc}
   var waUrl = "https://wa.me/" + C.whatsapp + "?text=" + encodeURIComponent(msg);
   var links = document.querySelectorAll(".js-wa");
 
-  // 3) Conversión de Google Ads al tocar cualquier botón de WhatsApp
+  // 3) Google Analytics 4 + conversión de Google Ads al tocar cualquier botón de WhatsApp
   var adsOn = C.googleAdsId.indexOf("XXXX") === -1 && C.conversionLabel.indexOf("XXXX") === -1;
-  if (adsOn) {
+  var gaOn = !!C.ga4Id && C.ga4Id.indexOf("XXXX") === -1;
+  if (adsOn || gaOn) {
     var s = document.createElement("script");
-    s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + C.googleAdsId;
+    s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + (gaOn ? C.ga4Id : C.googleAdsId);
     document.head.appendChild(s);
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(){ dataLayer.push(arguments); };
-    gtag("js", new Date()); gtag("config", C.googleAdsId);
+    gtag("js", new Date());
+    if (gaOn) gtag("config", C.ga4Id);
+    if (adsOn) gtag("config", C.googleAdsId);
   }
   links.forEach(function(a){
     a.href = waUrl; a.target = "_blank"; a.rel = "noopener";
     a.addEventListener("click", function(){
-      if (adsOn) gtag("event", "conversion", {send_to: C.googleAdsId + "/" + C.conversionLabel, event_category: key || "general"});
+      if (gaOn) gtag("event", "whatsapp_click", {servicio: key || "general"});
+      if (adsOn) gtag("event", "conversion", {send_to: C.googleAdsId + "/" + C.conversionLabel});
     });
   });
 })();
