@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
-  Clock,
-  Shield,
   CheckCircle,
   MessageCircle,
 } from "lucide-react";
@@ -83,19 +81,6 @@ const ServiceDetail = () => {
               <p className="text-xl text-support-gray mb-8 leading-relaxed">
                 {service.fullDescription}
               </p>
-
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center bg-neutral-black/50 border border-accent-yellow/30 rounded-lg px-4 py-2">
-                  <Clock className="h-5 w-5 text-accent-yellow mr-2" />
-                  <span className="text-support-gray">{service.duration}</span>
-                </div>
-                <div className="flex items-center bg-neutral-black/50 border border-accent-yellow/30 rounded-lg px-4 py-2">
-                  <Shield className="h-5 w-5 text-accent-yellow mr-2" />
-                  <span className="text-support-gray">
-                    Garantía {service.warranty}
-                  </span>
-                </div>
-              </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
