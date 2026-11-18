@@ -24,6 +24,7 @@ const ServiceDetail = () => {
   const [processRef, processInView] = useInView({ threshold: 0.15 });
   const [benefitsRef, benefitsInView] = useInView({ threshold: 0.15 });
   const [faqRef, faqInView] = useInView({ threshold: 0.15 });
+  const [galleryRef, galleryInView] = useInView({ threshold: 0.1 });
 
   // Animación para el hero (solo una vez)
   const [heroRef, heroInView] = useInView({ threshold: 0.15 });
@@ -302,6 +303,57 @@ const ServiceDetail = () => {
           })()}
         </div>
       </section>
+
+      {/* Galería: solo si el servicio tiene más de una foto (la primera ya se ve arriba) */}
+      {service.images.length > 1 && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-neutral-black text-center mb-12">
+              Nuestro <span className="text-gradient">Taller</span>
+            </h2>
+            {(() => {
+              const gallery = service.images.slice(1);
+              const alreadyAnimated = animatedBlocksRef.current.has("gallery");
+              if (galleryInView && !alreadyAnimated) {
+                animatedBlocksRef.current.add("gallery");
+              }
+              return (
+                <div
+                  ref={galleryRef}
+                  className={`
+                    grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 max-w-5xl mx-auto
+                    transition-all duration-700
+                    ${!alreadyAnimated && galleryInView ? 'animate-fade-in-up delay-100' : ''}
+                    ${alreadyAnimated ? '' : 'opacity-0 translate-y-8'}
+                  `}
+                >
+                  {gallery.map((src, index) => {
+                    // Si sobra una foto (4, 7...), la primera va arriba a todo el ancho (horizontal)
+                    // y el resto en filas de 3 (verticales)
+                    const isWide = index === 0 && gallery.length % 3 === 1;
+                    return (
+                      <div
+                        key={src}
+                        className={`
+                          rounded-2xl overflow-hidden border border-accent-yellow/30 shadow-lg hover-lift
+                          ${isWide ? 'col-span-3 aspect-[16/9]' : 'aspect-[3/4]'}
+                        `}
+                      >
+                        <img
+                          src={src}
+                          alt={`${service.title} en Elite Garaje Spa`}
+                          loading="lazy"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })()}
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="py-16 bg-neutral-black relative">

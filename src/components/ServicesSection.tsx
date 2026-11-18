@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Car, PaintBucket, Eye, Hammer, Palette, ArrowRight, Droplet, Sparkle, Shield, CloudRain, RefreshCw, Scissors, HardHat, ShieldCheck, Zap } from 'lucide-react';
+import { Car, PaintBucket, Eye, Hammer, Palette, ArrowRight, Droplet, Sparkle, Shield, CloudRain, RefreshCw, Scissors, HardHat, ShieldCheck, Zap, Wrench } from 'lucide-react';
 import { useInView } from '../hooks/useInView'; // Asegúrate de que la ruta sea correcta
 const ServicesSection = () => {
   const services = [{
@@ -28,9 +28,9 @@ const ServicesSection = () => {
   }, {
     id: 'ceramicos-vidrios',
     title: 'Tratamientos cerámicos y vidrios líquido',
-    description: 'Aplicación de recubrimientos cerámicos para una protección duradera y un acabado brillante en la pintura y vidrios de tu vehículo.',
-    price: 'Consultar',
-    features: ['Protección Cerámica Duradera', 'Efecto hidrofóbico', 'Brillo profesional', 'Resistencia extrema'],
+    description: 'Preparamos la pintura según su estado y la protegemos con cerámicos CarPro y Gtechniq o vidrio líquido. Protección de 1 a 5 años, para autos y motos.',
+    price: 'Desde $400.000',
+    features: ['Preparación de la pintura incluida', '5 opciones de sellado', 'Protección de 1 a 5 años', 'CarPro, Gtechniq y Ternnova'],
     icon: Shield
   }, {
     id: 'lavado-motor-motos',
@@ -39,6 +39,14 @@ const ServicesSection = () => {
     price: 'Consultar',
     features: ['Aplicación de vapor', 'Desengrasa profundo', 'Seguro para electrónicos', 'Resultados inmediatos'],
     icon: CloudRain
+  }, {
+    id: 'service-motos',
+    title: 'Service de motos',
+    description: 'Mantenimiento mecánico de tu moto en nuestro taller de Barracas: aceite y filtros, transmisión, embrague, frenos y regulación de válvulas.',
+    price: 'Consultar',
+    features: ['Cambio de aceite y filtros', 'Transmisión y embrague', 'Control de frenos', 'Regulación de válvulas'],
+    icon: Wrench,
+    whatsappMessage: 'Hola, quiero consultar el precio del service para mi moto.\nMarca, modelo y año:\nKilómetros:'
   }, {
     id: 'tapizados-motos-autos',
     title: 'Reparación de tapizados de autos y motos',
@@ -139,7 +147,7 @@ const ServicesSection = () => {
                   Ver más
                   <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
-                <a href={`https://wa.me/5491169122284?text=${encodeURIComponent(`Hola, me gustaría consultar por el servicio de ${service.title}`)}`} target="_blank" rel="noopener noreferrer" className="btn-primary block w-full text-center">
+                <a href={`https://wa.me/5491169122284?text=${encodeURIComponent(service.whatsappMessage ?? `Hola, me gustaría consultar por el servicio de ${service.title}`)}`} target="_blank" rel="noopener noreferrer" className="btn-primary block w-full text-center">
                   Consultar Precio
                 </a>
               </div>

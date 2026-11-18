@@ -125,38 +125,50 @@ export const servicesData: ServiceDetail[] = [
   {
     id: 'ceramicos-vidrios',
     title: 'Tratamientos cerámicos y vidrios líquido',
-    shortDescription: 'Aplicación de recubrimientos cerámicos para una protección duradera y un acabado brillante en la pintura y vidrios de tu vehículo.',
-    fullDescription: 'Ofrecemos tratamientos cerámicos avanzados que proporcionan una capa de protección duradera contra rayones, manchas y contaminantes. Nuestros recubrimientos cerámicos no solo mejoran el brillo de la pintura, sino que también facilitan la limpieza y mantenimiento del vehículo.',
-    price: 'Desde $5.000',
-    features: ['Protección Cerámica Duradera', 'Efecto hidrofóbico', 'Brillo profesional', 'Resistencia extrema'],
+    shortDescription: 'Preparamos la pintura según su estado y la protegemos con cerámicos CarPro y Gtechniq o vidrio líquido. Protección de 1 a 5 años, para autos y motos.',
+    fullDescription: 'No es solo un sellador: es preparar la pintura y protegerla. Revisamos la pintura de tu auto, la corregimos según su estado y recién ahí aplicamos el cerámico, una capa transparente que la protege del sol, la lluvia, la contaminación y los químicos de la calle, suma brillo y hace que el agua y la suciedad resbalen. Trabajamos con CarPro, Gtechniq y Ternnova, con 5 opciones de sellado según la protección que buscás. También protegemos motos con pintura brillante, mate o satinada.',
+    price: 'Desde $400.000',
+    features: ['Preparación de la pintura incluida', '5 opciones de sellado', 'Protección de 1 a 5 años', 'CarPro, Gtechniq y Ternnova'],
     process: [
-      'Lavado profundo',
-      'Descontaminación',
-      'Pulido y corrección',
-      'Preparación de superficie',
-      'Aplicación del recubrimiento'
+      'Evaluación de la pintura: laca, rayones, swirls y opacidad',
+      'Lavado y descontaminación',
+      'Corrección y pulido según el diagnóstico',
+      'Preparación y desengrasado de la superficie',
+      'Aplicación del sellador elegido, panel por panel',
+      'Control final y entrega con indicaciones de mantenimiento'
     ],
     benefits: [
-      'Protección duradera',
-      'Efecto hidrofóbico',
-      'Brillo profesional',
-      'Resistencia extrema'
+      'Protege del sol, la lluvia, la contaminación y los químicos',
+      'Más brillo y profundidad de color',
+      'El agua y la suciedad resbalan',
+      'El vehículo se ensucia menos y se lava más fácil'
     ],
-    duration: '1-3 horas',
-    warranty: 'Permanente',
+    duration: 'Según el estado de la pintura',
+    warranty: 'Protección de 1 a 5 años según el sellador',
     video: "/lovable-uploads/ceramico.mp4",
     images: ['/lovable-uploads/ceramicos-vidrios.jpg'],
     faqs: [
       {
-        question: '¿Cuánto dura el tratamiento cerámico y requiere mantenimiento?',
-        answer: 'El tratamiento cerámico tiene una duración de 3 a 5 años dependiendo del uso del vehículo y condiciones de exposición. Para mantener sus propiedades óptimas, se recomienda realizar lavados con productos pH neutro y aplicar un mantenimiento cada 6 meses con productos específicos para cerámicos. Evita el uso de ceras o abrillantadores convencionales que pueden afectar el recubrimiento.'
+        question: '¿Por qué hay que preparar la pintura antes del cerámico, incluso en un 0km?',
+        answer: 'El cerámico no tapa defectos: sella la pintura tal como está. Por eso siempre la preparamos antes. Aunque el auto sea nuevo, la pintura llega con marcas y rayaduras finas del transporte y la concesionaria, así que todos los 0km llevan un pulido de 1 paso. En autos usados revisamos la laca y definimos la corrección según su estado: pulido de 1 paso, corrección intermedia o corrección intensiva de 3 pasos.'
       },
       {
-        question: '¿En qué se diferencia del encerado tradicional y vale la pena la inversión?',
-        answer: 'A diferencia de las ceras que duran 2-3 meses, el tratamiento cerámico forma un enlace químico permanente con la pintura ofreciendo protección superior y duradera. Aunque la inversión inicial es mayor, a largo plazo resulta más económico al reducir la frecuencia de mantenimientos y proteger el valor del vehículo. Además, proporciona resistencia química, térmica y mecánica que las ceras no pueden igualar.'
+        question: '¿Qué sellador me conviene y cuánto dura?',
+        answer: 'Depende del uso y de cuánto tiempo pensás tener el auto. Vidrio líquido Ternnova (hasta 12 meses) si buscás la menor inversión o vas a vender el auto pronto. CarPro CQuartz Lite 2.0 (hasta 2 años) como primer cerámico. CarPro CQuartz UK 3.0 (18 a 24 meses, más resistente y con más brillo) si el auto duerme en la calle o tiene uso intenso. Gtechniq Crystal Serum Light (3 a 5 años) si pensás quedártelo varios años. Y el doble sellado Crystal Serum Light + EXO para la máxima protección.'
+      },
+      {
+        question: '¿Cuánto cuesta?',
+        answer: 'El tratamiento completo en autos, con la preparación de la pintura incluida, arranca desde $400.000. El total depende del tamaño del auto, el estado de la pintura y el sellador que elijas. Mandanos por WhatsApp marca, modelo y año, si es 0km o usado y 2 o 3 fotos de la pintura con luz de día, y te confirmamos el precio exacto. En autos repintados o con defectos importantes hacemos una evaluación previa.'
+      },
+      {
+        question: '¿Hacen tratamiento cerámico en motos?',
+        answer: 'Sí. Para pinturas brillantes tenemos opciones desde vidrio líquido hasta Gtechniq Crystal Serum Light + EXO, y para pinturas mate o satinadas usamos Gtechniq C1, que protege sin cambiar la terminación. Incluye lavado, preparación de superficies y acondicionamiento de plásticos exteriores, desde $100.000.'
+      },
+      {
+        question: '¿Qué formas de pago aceptan?',
+        answer: 'Efectivo o transferencia. Con tarjeta Santander, 3 cuotas sin interés; con otras tarjetas, 3 cuotas con recargo. Los turnos se reservan con seña.'
       }
     ],
-    
   },
   {
     id: 'lavado-motor-motos',
@@ -192,7 +204,57 @@ export const servicesData: ServiceDetail[] = [
         answer: 'Si, el lavado a vapor es altamente efectivo incluso en motos con suciedad y grasa acumulada. Utilizamos vapor a alta presión que penetra y descompone la suciedad más difícil, eliminando grasa y contaminantes sin dañar las superficies. Además, podemos complementar el servicio con productos específicos para tratar manchas difíciles o áreas muy sucias.'
       }
     ],
-    
+
+  },
+  {
+    id: 'service-motos',
+    title: 'Service de motos',
+    shortDescription: 'Mantenimiento mecánico de tu moto en nuestro taller de Barracas: aceite y filtros, transmisión, embrague, frenos y regulación de válvulas.',
+    fullDescription: 'Además del detailing, hacemos el mantenimiento mecánico de tu moto en nuestro taller de Barracas, en un área exclusiva para motos. Cambio de aceite y filtros, transmisión, embrague, frenos y regulación de válvulas, con el mismo cuidado que ponemos en cada trabajo. Pedí tu turno por WhatsApp.',
+    price: 'Consultar',
+    features: ['Cambio de aceite y filtros', 'Transmisión y embrague', 'Control de frenos', 'Regulación de válvulas'],
+    process: [
+      'Recepción de la moto y consulta sobre su uso y kilometraje',
+      'Revisión general del estado de la unidad',
+      'Cambio de aceite y filtros',
+      'Revisión y ajuste de transmisión, embrague y frenos',
+      'Regulación de válvulas, si corresponde según el kilometraje',
+      'Prueba final y entrega'
+    ],
+    benefits: [
+      'Moto más confiable y segura',
+      'Mayor vida útil del motor',
+      'Prevención de fallas y reparaciones costosas',
+      'Todo en un mismo lugar: service y detailing'
+    ],
+    duration: 'Según el trabajo a realizar',
+    warranty: 'Consultar',
+    video: '',
+    images: [
+      '/lovable-uploads/service-motos/moto-taller.jpg',
+      '/lovable-uploads/service-motos/taller-amplio.jpg',
+      '/lovable-uploads/service-motos/taller-herramientas.jpg',
+      '/lovable-uploads/service-motos/moto-frente.jpg',
+      '/lovable-uploads/service-motos/moto-calle.jpg'
+    ],
+    faqs: [
+      {
+        question: '¿Qué incluye el service?',
+        answer: 'Cambio de aceite y filtros, revisión de transmisión, embrague y frenos, y regulación de válvulas cuando corresponde según el kilometraje. Si encontramos algo más que necesite atención, te avisamos antes de hacer cualquier trabajo extra.'
+      },
+      {
+        question: '¿Cada cuánto tengo que hacerle el service a mi moto?',
+        answer: 'Depende del modelo y del uso. Como referencia general se hace según los kilómetros que indica el fabricante o una vez por año, lo que ocurra primero. Pasanos marca, modelo, año y kilometraje y te decimos qué le toca.'
+      },
+      {
+        question: '¿Cuánto cuesta?',
+        answer: 'El precio depende de la moto y de lo que necesite. Escribinos por WhatsApp con marca, modelo, año y kilómetros y te pasamos el presupuesto.'
+      },
+      {
+        question: '¿Puedo sumar un lavado o detailing en el mismo turno?',
+        answer: 'Sí. Como también hacemos detailing de motos, podés combinar el service con un lavado, pulido o tratamiento cerámico y retirar la moto lista en una sola visita.'
+      }
+    ],
   },
   {
     id: 'tapizados-motos-autos',
