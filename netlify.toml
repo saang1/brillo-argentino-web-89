@@ -5,19 +5,7 @@
 
 # Landing estatica en el subdominio promo.elitegaraje.com.ar
 # Tiene que ir ANTES del catch-all del SPA: Netlify aplica la primera coincidencia.
-# Las secciones van con barra final (sin ella se rompen las rutas relativas de img/).
-[[redirects]]
-  from = "https://promo.elitegaraje.com.ar/ceramico"
-  to = "https://promo.elitegaraje.com.ar/ceramico/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://promo.elitegaraje.com.ar/ceramico-motos"
-  to = "https://promo.elitegaraje.com.ar/ceramico-motos/"
-  status = 301
-  force = true
-
+# Las secciones usan rutas absolutas de imagen (/ceramico/img/...), asi andan con o sin barra final.
 [[redirects]]
   from = "https://promo.elitegaraje.com.ar/*"
   to = "/promo/:splat"

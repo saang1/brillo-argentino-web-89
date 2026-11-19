@@ -3,8 +3,6 @@
 # La landing promocional tiene que ir ANTES del catch-all del SPA.
 
 # Landing estatica servida en el subdominio promo.elitegaraje.com.ar
-https://promo.elitegaraje.com.ar/ceramico         https://promo.elitegaraje.com.ar/ceramico/         301!
-https://promo.elitegaraje.com.ar/ceramico-motos   https://promo.elitegaraje.com.ar/ceramico-motos/   301!
 https://promo.elitegaraje.com.ar/*   /promo/:splat   200!
 
 # Catch-all del SPA (React Router)
