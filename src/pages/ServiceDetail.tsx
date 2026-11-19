@@ -19,6 +19,16 @@ const ServiceDetail = () => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [serviceId]);
 
+  // Título de la pestaña por servicio (si tiene uno propio)
+  useEffect(() => {
+    if (!service?.pageTitle) return;
+    const previousTitle = document.title;
+    document.title = service.pageTitle;
+    return () => {
+      document.title = previousTitle;
+    };
+  }, [service?.pageTitle]);
+
   // Para animar los bloques principales SOLO UNA VEZ
   const animatedBlocksRef = useRef<Set<string>>(new Set());
   const [processRef, processInView] = useInView({ threshold: 0.15 });
@@ -76,6 +86,11 @@ const ServiceDetail = () => {
             `}
           >
             <div>
+              {service.eyebrow && (
+                <p className="text-accent-yellow font-semibold uppercase tracking-wider text-sm mb-3">
+                  {service.eyebrow}
+                </p>
+              )}
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 {service.title}
               </h1>

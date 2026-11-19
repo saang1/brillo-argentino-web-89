@@ -13,6 +13,10 @@ export interface ServiceDetail {
   video: string;
   images: string[];
   faqs: { question: string; answer: string; }[];
+  /** Texto corto que se muestra arriba del título (opcional) */
+  eyebrow?: string;
+  /** Título de la pestaña del navegador (opcional) */
+  pageTitle?: string;
 }
 
 export const servicesData: ServiceDetail[] = [
@@ -209,6 +213,8 @@ export const servicesData: ServiceDetail[] = [
   {
     id: 'service-motos',
     title: 'Service de motos',
+    eyebrow: 'Para motos de 150 a 1200 cc',
+    pageTitle: 'Service de motos en Barracas, CABA | Elite Garaje Spa',
     shortDescription: 'Mantenimiento mecánico de tu moto en nuestro taller de Barracas: aceite y filtros, transmisión, embrague, frenos y regulación de válvulas.',
     fullDescription: 'Además del detailing, hacemos el mantenimiento mecánico de tu moto en nuestro taller de Barracas, en un área exclusiva para motos. Cambio de aceite y filtros, transmisión, embrague, frenos y regulación de válvulas, con el mismo cuidado que ponemos en cada trabajo. Pedí tu turno por WhatsApp.',
     price: 'Consultar',
