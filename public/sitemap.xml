@@ -65,4 +65,12 @@
     <loc>https://elitegaraje.com.ar/servicios/pulido-escape-motos</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://elitegaraje.com.ar/servicios/service-motos</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://elitegaraje.com.ar/servicios/autos-inundados</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>

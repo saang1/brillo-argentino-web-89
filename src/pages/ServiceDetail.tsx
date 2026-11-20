@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
+  Calculator,
   CheckCircle,
   MessageCircle,
 } from "lucide-react";
@@ -28,6 +29,19 @@ const ServiceDetail = () => {
       document.title = previousTitle;
     };
   }, [service?.pageTitle]);
+
+  // Canonical propio de cada servicio. Al entrar directo a la URL ya viene bien en el
+  // HTML (scripts/prerender-servicios.mjs); esto lo mantiene al navegar dentro del sitio.
+  useEffect(() => {
+    if (!serviceId) return;
+    const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) return;
+    const previous = canonical.href;
+    canonical.href = `https://elitegaraje.com.ar/servicios/${serviceId}`;
+    return () => {
+      canonical.href = previous;
+    };
+  }, [serviceId]);
 
   // Para animar los bloques principales SOLO UNA VEZ
   const animatedBlocksRef = useRef<Set<string>>(new Set());
@@ -98,7 +112,7 @@ const ServiceDetail = () => {
                 {service.fullDescription}
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4">
                 <a
                   href={`https://wa.me/5491169122284?text=Hola%2C%20quiero%20consultar%20por%20${encodeURIComponent(
                     service.title
@@ -119,6 +133,16 @@ const ServiceDetail = () => {
                 >
                   Agendar Turno
                 </a>
+                {service.cotizadores?.map((cotizador) => (
+                  <a
+                    key={cotizador.url}
+                    href={cotizador.url}
+                    className="inline-flex items-center justify-center gap-2 bg-accent-yellow text-neutral-black px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 text-center"
+                  >
+                    <Calculator className="h-5 w-5" />
+                    {cotizador.label}
+                  </a>
+                ))}
               </div>
             </div>
 

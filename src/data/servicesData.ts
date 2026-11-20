@@ -17,6 +17,8 @@ export interface ServiceDetail {
   eyebrow?: string;
   /** Título de la pestaña del navegador (opcional) */
   pageTitle?: string;
+  // Botones a los cotizadores de promo.elitegaraje.com.ar (se muestran arriba, junto a WhatsApp)
+  cotizadores?: { label: string; url: string; }[];
 }
 
 export const servicesData: ServiceDetail[] = [
@@ -151,6 +153,10 @@ export const servicesData: ServiceDetail[] = [
     warranty: 'Protección de 1 a 5 años según el sellador',
     video: "/lovable-uploads/ceramico.mp4",
     images: ['/lovable-uploads/ceramicos-vidrios.jpg'],
+    cotizadores: [
+      { label: 'Calculá tu precio', url: 'https://promo.elitegaraje.com.ar/ceramico/' },
+      { label: 'Calculá el precio para tu moto', url: 'https://promo.elitegaraje.com.ar/ceramico-motos/' }
+    ],
     faqs: [
       {
         question: '¿Por qué hay que preparar la pintura antes del cerámico, incluso en un 0km?',
